@@ -1,0 +1,27 @@
+Python Menu:
+	Employees
+		List of employees
+		List of employees working at the moment
+		Edit
+			Change employees from resting to working
+			Hire
+			Fire
+			Change information of the workers
+	Cabins
+		List of Cabins
+		Change cabins form available to using
+		Edit
+			Repairing
+			Change cabins
+	Users
+		Users of the cabins (rigth now)
+		All the users of the day
+		Edit
+			Change info of the users
+			Add users
+	Rents
+		Rents of the day
+		Rents of the week
+		Add rents
+	
+	

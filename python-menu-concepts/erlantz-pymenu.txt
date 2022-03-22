@@ -1,0 +1,45 @@
+MENU
+=========
+1 - Manage users
+2 - Manage employees
+3 - Manage cabins
+4 - Manage shop
+0 - Exit
+
+
+
+
+
+MENU > Manage users
+===================
+1 - View users
+2 - Add a new user
+3 - Edit a user
+4 - Delete a user
+0 - Go back
+
+
+MENU > Manage employees
+=======================
+1 - View employees
+2 - Hire
+3 - Edit
+4 - Fire
+0 - Go back
+
+
+MENU > Manage cabins
+===================
+1 - View cabins
+2 - View currently available cabins
+3 - Edit cabins
+0 - Go back
+
+
+MENU > Manage shop
+===================
+1 - View items
+2 - Add stock
+3 - Edit items
+4 - Remove items
+0 - Go back

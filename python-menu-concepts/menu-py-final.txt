@@ -1,0 +1,45 @@
+MENU
+========
+1-Users
+2-Employees
+3-Cabins
+4-Shop
+0-Exit
+
+
+
+Menu>Users
+============
+1-View users
+2-Add users
+3-Edit users
+4-Delete users
+0-Go back
+
+Menu>Employees
+================
+1-View employees
+2-View employees working at the moment
+3-Hire
+4-Fire
+5-Edit
+6-Change employee status
+0-Exit
+
+Menu>Cabins
+==============
+1-View cabins
+2-Aviailable cabins
+3-Edit cabins(repairing)
+4-Change cabin status
+0-Exit
+
+Menu>Shop
+===========
+1-View items
+2-Add stock
+3-Edit items
+4-Remove items
+5-(Rents of the day)
+6-(Rent of the week)
+0-Exit
