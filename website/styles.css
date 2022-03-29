@@ -1,0 +1,21 @@
+body {
+	display: flex;
+	flex-direction: column;
+	left: 0;
+}
+
+.indexmain {
+	align-self: center;
+	background-color: red;
+	width: 1200px;
+	display: flex;
+	flex-direction: column;
+}
+
+.mainnav {
+	border-radius: 8px;
+}
+
+.navbar-brand:hover {
+	text-decoration: none;
+}
