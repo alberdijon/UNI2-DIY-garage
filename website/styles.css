@@ -4,18 +4,30 @@ body {
 	left: 0;
 }
 
-.indexmain {
+.main {
 	align-self: center;
-	background-color: red;
-	width: 1200px;
+	width: 100%;
+	height: 2000px;
+	padding: 0px 30px;
 	display: flex;
 	flex-direction: column;
 }
 
 .mainnav {
-	border-radius: 8px;
+	border-radius: 0px 0px 8px 8px;
+	padding: 10px;
+}
+
+.me-auto {
+	margin-right: auto;
 }
 
 .navbar-brand:hover {
 	text-decoration: none;
+}
+
+footer {
+	background-color: red;
+	width: 100%;
+	display: flex;
 }
