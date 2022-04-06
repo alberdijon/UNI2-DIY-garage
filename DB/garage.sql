@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-03-2022 a las 12:04:49
+-- Tiempo de generación: 06-04-2022 a las 10:40:29
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -58,7 +58,8 @@ CREATE TABLE `client` (
   `Surname` varchar(20) NOT NULL,
   `Telf` int(14) NOT NULL,
   `E-mail` varchar(30) NOT NULL,
-  `DNI` varchar(10) NOT NULL
+  `DNI` varchar(10) NOT NULL,
+  `Contraseña` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -129,7 +130,7 @@ CREATE TABLE `vehicle` (
   `Color` text NOT NULL,
   `Year` year(4) NOT NULL,
   `Fuel` text NOT NULL,
-  `Client-ID` int(5) NOT NULL
+  `Client-DNI` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
