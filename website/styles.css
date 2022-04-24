@@ -2,6 +2,7 @@ body {
 	display: flex;
 	flex-direction: column;
 	left: 0;
+	top: 0;
 }
 
 .main {
@@ -13,40 +14,33 @@ body {
 	flex-direction: column;
 }
 
-.mainnav {
-	border-radius: 0px 0px 8px 8px;
-	padding: 10px;
+.loginbody {
+	/*filenames gotta be changed, this should be random somehow*/
+	background-image: url(./backgrounds/yrka-pictured-2KWoLew_M5Q-unsplash.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	height: 100%;
+	margin: 0;
 }
 
-.me-auto {
-	margin-right: auto;
-}
-
-.navbar-brand:hover {
-	text-decoration: none;
-}
-
-footer {
-	background-color: #f8f9fa;
-	width: 100%;
+.loginmain {
+	margin: calc(50vh - 200px) 0px;
+	align-self: center;
 	display: flex;
 	flex-direction: row;
-	border-radius: 8px 8px 0px 0px;
+	height: 400px;
 }
 
-.footerlogo {
+.loginsquare {
+	background-color: white;
+	width: 500px;
+	height: 300px;
+	border-radius: 10px;
 	display: flex;
-	align-items: center;
-	vertical-align: middle;
-}
-
-.footerlogo img {
-	width: 300px;
-}
-
-.footerli {
-}
-
-.footerli li {
-	list-style-type: none;
+	flex-direction: column;
+	align-self: center;
+	opacity: 95%;
+	margin: calc(50vh - 150px) 0px;
 }

@@ -1,7 +1,10 @@
 <html lang="en">
+    <head>
+        <link rel="stylesheet" href="./elements/elementstyles.css" />
+    </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top mainnav">
-            <a class="navbar-brand" href="./index.html">DIY garage</a>
+            <a class="navbar-brand" href="./index.php">DIY garage</a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -16,26 +19,31 @@
                         <a class="nav-link" href=""><span class="spanlink">Home</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""
-                            ><span class="spanlink">Reserve</span></a
-                        >
+                        <a class="nav-link" href="">
+                            <span class="spanlink">Reserve</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""
-                            ><span class="spanlink">About us</span></a
-                        >
+                        <a class="nav-link" href="">
+                            <span class="spanlink">Shop</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">
+                            <span class="spanlink">About</span>
+                        </a>
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"
-                            ><span class="spanlink">Sign up</span></a
-                        >
+                        <a class="nav-link" href="#">
+                            <span class="spanlink">Sign up</span>
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"
-                            ><span class="spanlink">Log in</span></a
-                        >
+                        <a class="nav-link" href="#">
+                            <span class="spanlink">Log in</span>
+                        </a>
                     </li>
                 </ul>
             </div>
