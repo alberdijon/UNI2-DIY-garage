@@ -39,6 +39,7 @@ public class View extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         SwToGraphs = new javax.swing.JButton();
+        jLabelConnection = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         LowStock = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -166,6 +167,11 @@ public class View extends javax.swing.JFrame {
             }
         });
         jPanel4.add(SwToGraphs, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 170, 30));
+
+        jLabelConnection.setForeground(new java.awt.Color(102, 102, 102));
+        jLabelConnection.setText("Connecting...");
+        jLabelConnection.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jPanel4.add(jLabelConnection, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 620, 50));
 
@@ -331,6 +337,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton WorkerSalaries;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelConnection;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
