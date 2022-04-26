@@ -46,6 +46,12 @@ public class View extends javax.swing.JFrame {
         PopularItems = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        ProductSoldToday = new javax.swing.JInternalFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ProductsSoldToday = new javax.swing.JTable();
+        NewReservations = new javax.swing.JInternalFrame();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Reservations = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -58,7 +64,6 @@ public class View extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("[Logo]");
         jLabel1.setOpaque(true);
@@ -121,6 +126,11 @@ public class View extends javax.swing.JFrame {
         UpcomingReservations.setText("Upcoming reservations");
         UpcomingReservations.setActionCommand("UpcomingReservations");
         UpcomingReservations.setBorderPainted(false);
+        UpcomingReservations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpcomingReservationsActionPerformed(evt);
+            }
+        });
         jPanel3.add(UpcomingReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 180, 40));
 
         PopularCars.setBackground(new java.awt.Color(153, 153, 255));
@@ -245,6 +255,86 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(PopularItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
+        ProductSoldToday.setTitle("Popular items");
+        ProductSoldToday.setToolTipText("");
+        ProductSoldToday.setVisible(false);
+        ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane3.setBorder(null);
+
+        ProductsSoldToday.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
+            },
+            new String [] {
+                "Client_ID", "Name", "Brand", "Price", "Quantity", "Total Price"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ProductsSoldToday.setToolTipText("");
+        jScrollPane3.setViewportView(ProductsSoldToday);
+        if (ProductsSoldToday.getColumnModel().getColumnCount() > 0) {
+            ProductsSoldToday.getColumnModel().getColumn(0).setResizable(false);
+            ProductsSoldToday.getColumnModel().getColumn(1).setResizable(false);
+            ProductsSoldToday.getColumnModel().getColumn(2).setResizable(false);
+            ProductsSoldToday.getColumnModel().getColumn(3).setResizable(false);
+            ProductsSoldToday.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
+
+        jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+
+        NewReservations.setTitle("Popular items");
+        NewReservations.setToolTipText("");
+        NewReservations.setVisible(false);
+        NewReservations.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane4.setBorder(null);
+
+        Reservations.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Customer_ID", "Cabin_ID", "Date", "Hour", "Total"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Reservations.setToolTipText("");
+        jScrollPane4.setViewportView(Reservations);
+        if (Reservations.getColumnModel().getColumnCount() > 0) {
+            Reservations.getColumnModel().getColumn(0).setResizable(false);
+            Reservations.getColumnModel().getColumn(1).setResizable(false);
+            Reservations.getColumnModel().getColumn(2).setResizable(false);
+            Reservations.getColumnModel().getColumn(3).setResizable(false);
+            Reservations.getColumnModel().getColumn(4).setResizable(false);
+        }
+
+        NewReservations.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
+
+        jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 450));
 
         getAccessibleContext().setAccessibleDescription("");
@@ -273,62 +363,43 @@ public class View extends javax.swing.JFrame {
         HideRest();
         PopularItems.setVisible(true);
     }//GEN-LAST:event_BtnPopularItemsActionPerformed
+
+    private void UpcomingReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpcomingReservationsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpcomingReservationsActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
         PopularItems.setVisible(false);
     }
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+    public static View viewaSortuBistaratu() {
+        View v = new View();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View().setVisible(true);
-
+                v.setVisible(true);
             }
         });
+        return v;
     }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnPopularItems;
-    private javax.swing.JButton BtnWorkerList;
-    private javax.swing.JButton CustomerList;
+    public javax.swing.JButton BtnPopularItems;
+    public javax.swing.JButton BtnWorkerList;
+    public javax.swing.JButton CustomerList;
     private javax.swing.JInternalFrame LowStock;
-    private javax.swing.JButton PopularCars;
+    public javax.swing.JInternalFrame NewReservations;
+    public javax.swing.JButton PopularCars;
     private javax.swing.JInternalFrame PopularItems;
-    private javax.swing.JButton SoldToday;
-    private javax.swing.JButton SwToGraphs;
-    private javax.swing.JButton UpcomingReservations;
-    private javax.swing.JButton ViewLowStock;
-    private javax.swing.JButton WorkerSalaries;
+    public javax.swing.JInternalFrame ProductSoldToday;
+    public javax.swing.JTable ProductsSoldToday;
+    public javax.swing.JTable Reservations;
+    public javax.swing.JButton SoldToday;
+    public javax.swing.JButton SwToGraphs;
+    public javax.swing.JButton UpcomingReservations;
+    public javax.swing.JButton ViewLowStock;
+    public javax.swing.JButton WorkerSalaries;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
@@ -336,6 +407,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
