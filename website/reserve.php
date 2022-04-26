@@ -6,15 +6,8 @@
 	</head>
 	<body>
 		<div class="main">
-			<?php include ("./elements/navbar.php"); ?>
-		</div>
-		<div class="hero-image">
-			<div class="hero-text">
-				<h1>Welcome to our garage</h1>
-				Scroll down for more info
-			</div>
-		</div>
-		<div class="main">
+		<?php include ("./elements/navbar.php"); ?>
+        <div class="space"></div>
 			this page isn't ready
 		<?php include ("./elements/footer.html"); ?>
 		</div>

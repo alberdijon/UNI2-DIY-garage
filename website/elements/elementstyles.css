@@ -61,6 +61,8 @@ footer {
 .mainnav {
 	border-radius: 0px 0px 8px 8px;
 	padding: 10px;
+	position: fixed;
+	width: calc(100% - 60px);
 }
 
 .me-auto {
@@ -69,4 +71,31 @@ footer {
 
 .navbar-brand:hover {
 	text-decoration: none;
+}
+
+@media (max-width: 600px) {
+	.top {
+		flex-direction: column;
+		align-items: center;
+	}
+	.footerli {
+		padding: 20px 0px;
+		width: 100%;
+		flex-direction: column;
+		margin-left: -40px;
+	}
+	.footerlogo img {
+		width: 150px;
+		height: 75px;
+		margin: 0px;
+	}
+	.footerlogo {
+		flex-direction: column;
+		width: 100%;
+		margin-top: 20px;
+	}
+
+	.mainnav {
+		width: calc(100% - 20px);
+	}
 }

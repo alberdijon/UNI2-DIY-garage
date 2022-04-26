@@ -1,17 +1,43 @@
 body {
-	display: flex;
-	flex-direction: column;
 	left: 0;
 	top: 0;
+}
+
+.flexv {
+	display: flex;
+	flex-direction: column;
 }
 
 .main {
 	align-self: center;
 	width: 100%;
-	height: 2000px;
 	padding: 0px 30px;
 	display: flex;
 	flex-direction: column;
+}
+
+.space {
+	height: 60px;
+	width: auto;
+}
+
+.hero-image {
+	background-image: url("./backgrounds/paul-kansonkho-fDvByj8ms3k-unsplash.jpg");
+	height: 105%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	border-radius: 0px 0px 20px 20px;
+}
+
+.hero-text {
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: rgb(255, 255, 255);
 }
 
 .loginbody {
@@ -43,4 +69,10 @@ body {
 	align-self: center;
 	opacity: 95%;
 	margin: calc(50vh - 150px) 0px;
+}
+
+@media (max-width: 600px) {
+	.main {
+		padding: 0px 10px;
+	}
 }
