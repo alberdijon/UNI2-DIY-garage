@@ -19,8 +19,9 @@
 						<label for="password">Password</label>
 						<input type="password" class="form-control" id="password" placeholder="Enter password" require>
 					</div>
-					<button type="submit" class="btn lbutton">Login</button>
-					<button class="btn cbutton">Create account</button>
+					<button type="submit" class="btn llbutton">Log in</button>
+					&nbsp;
+					<a href="signup.php">Create an account</a>
 				</form>
 			</div>
 		</div>
