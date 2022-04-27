@@ -58,6 +58,12 @@ footer {
 	list-style-type: none;
 }
 
+.footerli a,
+.footerli a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
 .mainnav {
 	border-radius: 0px 0px 8px 8px;
 	padding: 10px;
