@@ -21,6 +21,8 @@ body {
 	width: auto;
 }
 
+/*INDEX*/
+
 .hero-image {
 	background-image: url("./backgrounds/paul-kansonkho-fDvByj8ms3k-unsplash.jpg");
 	height: 105%;
@@ -39,6 +41,8 @@ body {
 	transform: translate(-50%, -50%);
 	color: rgb(255, 255, 255);
 }
+
+/*LOGIN*/
 
 .loginbody {
 	/*filenames gotta be changed, this should be random somehow*/
@@ -62,19 +66,53 @@ body {
 .loginsquare {
 	background-color: white;
 	width: 500px;
-	height: 300px;
+	height: 350px;
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	align-self: center;
 	opacity: 95%;
 	margin: calc(50vh - 150px) 0px;
+	padding: 20px;
+}
+
+.loginlogo {
+	height: auto;
+	width: 400px;
+	align-self: center;
+	margin: 20px;
+}
+
+.lbutton {
+	background-color: rgb(180, 255, 217);
+	color: black;
+	transition-duration: 0.2s;
+	padding: 15px 30px;
+	border-radius: 10px;
+}
+
+.lbutton:hover {
+	box-shadow: 0px 0px 15px 5px rgb(204, 255, 229);
+}
+
+.cbutton {
+	background-color: white;
+	box-shadow: inset 0px 0px 0px 3px black;
+	color: black;
+	transition-duration: 0.2s;
+	padding: 15px 10px;
+	border-radius: 10px;
+}
+
+.cbutton:hover {
+	box-shadow: inset 0px 0px 0px 5px black;
 }
 
 .title {
 	padding: 15px 0px;
 }
 
+/*RESERVE*/
 .reservemain {
 	display: flex;
 	flex-direction: row;
@@ -89,10 +127,22 @@ body {
 	flex-direction: column;
 }
 
+/*DATE AND TIME*/
 .rdatetime {
 	flex-grow: 1;
 	margin: 10px;
 	margin-left: 0;
+}
+
+.rdtsubmit {
+	background-color: black;
+	color: white;
+	transition-duration: 0.2s;
+}
+
+.rdtsubmit:hover {
+	color: white;
+	box-shadow: 0px 0px 10px 0px black;
 }
 
 .rgarage {
@@ -106,6 +156,7 @@ body {
 	margin-right: 0;
 }
 
+/*AVAILABILITY GRAPHIC*/
 .rgraphic {
 	width: 100%;
 	height: 400px;
@@ -149,8 +200,19 @@ body {
 .cabin {
 	font-size: 40px;
 	color: black;
-	display: flex;
+	text-align: center;
+	position: relative;
 }
+
+.cabin p {
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/*CONFIRMATION*/
 
 .greenbutton {
 	border: none;
@@ -166,7 +228,48 @@ body {
 	box-shadow: 0px 0px 15px 5px rgb(204, 255, 229);
 }
 
+/*RESPONSIVE*/
+
+@media (max-width: 1000px) {
+	/*Reserve*/
+	.reservemain {
+		flex-direction: row;
+	}
+	.rgraphic {
+		height: 200px;
+	}
+
+	/*Login*/
+	.loginlogo {
+		height: 150px;
+		width: 300px;
+	}
+	.loginsquare {
+		height: 350px;
+		width: 400px;
+		margin: 0px;
+	}
+}
+
+@media (max-width: 800px) {
+	/*Reserve*/
+	.reservemain {
+		flex-direction: column;
+	}
+	.rgraphic {
+		height: 300px;
+	}
+
+	/*Login*/
+	.loginmain {
+		flex-direction: column;
+		margin: calc(50vh - 300px) 0px;
+		height: 600px;
+	}
+}
+
 @media (max-width: 600px) {
+	/*Main / mobile*/
 	.main {
 		padding: 0px 10px;
 	}

@@ -1,8 +1,8 @@
 <html>
 	<head>
 		<title>uni2</title>
-		<link rel="stylesheet" href="styles.css" />
 		<?php include ("./elements/bs4.html"); ?>
+        <link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
 		<div class="main">
@@ -12,17 +12,28 @@
             <div class="reservemain">
                 <div class="rdatetime">
                     <h3>Date and time</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date" require>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <input type="time" class="form-control" id="time" require>
+                        </div>
+                        <button type="submit" class="btn rdtsubmit">Submit</button>
+                    </form>
                 </div>
                 <div class="rgarage">
                     <h3>Select a cabin</h3>
                     <div class="rgraphic">
-                        <div class="rgcabin cabin">1</div>
-                        <div class="rgcabin cabin">2</div>
-                        <div class="rgcabin cabin">3</div>
+                        <div class="rgcabin cabin"><p>1</p></div>
+                        <div class="rgcabin cabin"><p>2</p></div>
+                        <div class="rgcabin cabin"><p>3</p></div>
                         <div class="rgvcabin">
-                            <div class="rgmcabin cabin">4</div>
-                            <div class="rgmcabin cabin">5</div>
-                            <div class="rgmcabin cabin">6</div>
+                            <div class="rgmcabin cabin"><p>4</p></div>
+                            <div class="rgmcabin cabin"><p>5</p></div>
+                            <div class="rgmcabin cabin"><p>6</p></div>
                         </div>
                     </div>
                 </div>
