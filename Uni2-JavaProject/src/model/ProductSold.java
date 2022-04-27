@@ -4,6 +4,9 @@
  */
 package model;
 
+import java.sql.Date;
+import java.sql.Time;
+
 import java.util.Objects;
 
 /**
@@ -11,68 +14,78 @@ import java.util.Objects;
  * @author rodriguez.markel
  */
 public class ProductSold {
-    public int id;
-    public String brand;
-    public String name;
-    public int price;
-    public int stock;
+    private String clientDni;
+    private int productId;
+    private int amount;
+    private Date date;
+    private Time hour;
+    private int totalPrice;
 
-    public ProductSold(int id, String brand, String name, int price, int stock) {
-        this.id = id;
-        this.brand = brand;
-        this.name = name;
-        this.price = price;
-        this.stock = stock;
+    public ProductSold(String clientDni, int productId, int amount, Date date, Time hour, int totalPrice) {
+        this.clientDni = clientDni;
+        this.productId = productId;
+        this.amount = amount;
+        this.date = date;
+        this.hour = hour;
+        this.totalPrice = totalPrice;
     }
 
-    public int getId() {
-        return id;
+    public String getClientDni() {
+        return clientDni;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setClientDni(String clientDni) {
+        this.clientDni = clientDni;
     }
 
-    public String getBrand() {
-        return brand;
+    public int getProductId() {
+        return productId;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public String getName() {
-        return name;
+    public int getAmount() {
+        return amount;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
-    public int getPrice() {
-        return price;
+    public Date getDate() {
+        return date;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
-    public int getStock() {
-        return stock;
+    public Time getHour() {
+        return hour;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public void setHour(Time hour) {
+        this.hour = hour;
+    }
+
+    public int getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(int totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override
     public String toString() {
-        return "Products{" + "id=" + id + ", brand=" + brand + ", name=" + name + ", price=" + price + ", stock=" + stock + '}';
+        return "ProductSold{" + "clientDni=" + clientDni + ", productId=" + productId + ", amount=" + amount + ", date=" + date + ", hour=" + hour + ", totalPrice=" + totalPrice + '}';
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
+        int hash = 7;
         return hash;
     }
 
@@ -88,17 +101,27 @@ public class ProductSold {
             return false;
         }
         final ProductSold other = (ProductSold) obj;
-        if (this.id != other.id) {
+        if (this.productId != other.productId) {
             return false;
         }
-        if (!Objects.equals(this.brand, other.brand)) {
+        if (this.amount != other.amount) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (this.totalPrice != other.totalPrice) {
+            return false;
+        }
+        if (!Objects.equals(this.clientDni, other.clientDni)) {
+            return false;
+        }
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.hour, other.hour)) {
             return false;
         }
         return true;
     }
+
     
     
-}
+}   

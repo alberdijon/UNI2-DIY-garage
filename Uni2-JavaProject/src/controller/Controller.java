@@ -45,7 +45,7 @@ import model.Model;
                 model.selectAllProductSoldToday();
                 
                 view.ProductsSoldToday.setVisible(true);
-                 view.ProductsSoldToday.addRow(rows);
+                
         }
     }
 }

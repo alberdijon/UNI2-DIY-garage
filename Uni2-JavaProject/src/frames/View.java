@@ -4,6 +4,11 @@
  */
 package frames;
 
+
+import java.util.ArrayList;
+import model.ProductSold;
+import model.ProductSoldTable;
+
 /**
  *
  * @author Erlantz
@@ -255,7 +260,7 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(PopularItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-        ProductSoldToday.setTitle("Popular items");
+        ProductSoldToday.setTitle("Products sold  today");
         ProductSoldToday.setToolTipText("");
         ProductSoldToday.setVisible(false);
         ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -264,34 +269,16 @@ public class View extends javax.swing.JFrame {
 
         ProductsSoldToday.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
-                "Client_ID", "Name", "Brand", "Price", "Quantity", "Total Price"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, true
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         ProductsSoldToday.setToolTipText("");
         jScrollPane3.setViewportView(ProductsSoldToday);
-        if (ProductsSoldToday.getColumnModel().getColumnCount() > 0) {
-            ProductsSoldToday.getColumnModel().getColumn(0).setResizable(false);
-            ProductsSoldToday.getColumnModel().getColumn(1).setResizable(false);
-            ProductsSoldToday.getColumnModel().getColumn(2).setResizable(false);
-            ProductsSoldToday.getColumnModel().getColumn(3).setResizable(false);
-            ProductsSoldToday.getColumnModel().getColumn(4).setResizable(false);
-        }
 
-        ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
+        ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
 
         jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
@@ -302,34 +289,8 @@ public class View extends javax.swing.JFrame {
 
         jScrollPane4.setBorder(null);
 
-        Reservations.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Customer_ID", "Cabin_ID", "Date", "Hour", "Total"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
         Reservations.setToolTipText("");
         jScrollPane4.setViewportView(Reservations);
-        if (Reservations.getColumnModel().getColumnCount() > 0) {
-            Reservations.getColumnModel().getColumn(0).setResizable(false);
-            Reservations.getColumnModel().getColumn(1).setResizable(false);
-            Reservations.getColumnModel().getColumn(2).setResizable(false);
-            Reservations.getColumnModel().getColumn(3).setResizable(false);
-            Reservations.getColumnModel().getColumn(4).setResizable(false);
-        }
 
         NewReservations.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
 
