@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>uni2</title>
+		<title>Welcome - uni2</title>
 		<link rel="stylesheet" href="styles.css" />
 		<?php include ("./elements/bs4.html"); ?>
 	</head>

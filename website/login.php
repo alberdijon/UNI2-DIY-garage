@@ -1,12 +1,12 @@
 <html lang="en">
 	<head>
-		<title>Login - uni2</title>
+		<title>Log in - uni2</title>
 		<?php include ("./elements/bs4.html"); ?>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body class="loginbody flexv">
 		<div class="loginmain">
-			<img src="./logo.png" class="loginlogo" />
+			<img src="./logow.png" class="loginlogo" />
 			<div class="loginsquare">
 				<a href="./index.php">&#8592; Back to home</a>
 				<h2>Welcome back.</h2>

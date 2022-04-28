@@ -169,7 +169,7 @@ body {
 }
 
 .rgarage {
-	flex-grow: 2;
+	flex-grow: 3;
 	margin: 10px;
 }
 
@@ -177,6 +177,11 @@ body {
 	flex-grow: 1;
 	margin: 10px;
 	margin-right: 0;
+}
+
+.rconfirmprice {
+	font-size: 60px;
+	text-align: center;
 }
 
 /*AVAILABILITY GRAPHIC*/

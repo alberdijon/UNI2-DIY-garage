@@ -6,7 +6,7 @@
 	</head>
 	<body class="signupbody flexv">
 		<div class="loginmain">
-			<img src="./logo.png" class="loginlogo" />
+			<img src="./logow.png" class="loginlogo" />
 			<div class="signupsquare">
 				<a href="./index.php">&#8592; Back to home</a>
 				<h2>Introduce yourself.</h2>

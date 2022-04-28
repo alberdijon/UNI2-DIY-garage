@@ -79,6 +79,10 @@ footer {
 	text-decoration: none;
 }
 
+.navimg {
+	height: 30px;
+}
+
 @media (max-width: 600px) {
 	.top {
 		flex-direction: column;

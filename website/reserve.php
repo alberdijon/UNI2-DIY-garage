@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>uni2</title>
+		<title>Reserve - uni2</title>
 		<?php include ("./elements/bs4.html"); ?>
         <link rel="stylesheet" href="styles.css" />
 	</head>
@@ -19,7 +19,11 @@
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
-                            <input type="time" class="form-control" id="time" require>
+                            <input type="time" step="3600" class="form-control" id="time" require>
+                        </div>
+                        <div class="form-group">
+                            <label for="duration">Duration (hours)</label>
+                            <input type="number" class="form-control" id="duration" value="1" min="1" max="3" require>
                         </div>
                         <button type="submit" class="btn rdtsubmit">Submit</button>
                     </form>
@@ -39,6 +43,9 @@
                 </div>
                 <div class="rconfirm">
                     <h3>Price</h3>
+                    <div class="rconfirmprice">
+                        0€
+                    </div>
                     <button class="greenbutton" type="submit">Confirm</button>
                 </div>
             </div>
