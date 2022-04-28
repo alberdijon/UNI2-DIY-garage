@@ -49,6 +49,8 @@
                     <button class="greenbutton" type="submit">Confirm</button>
                 </div>
             </div>
+            <div class="spacel"></div>
+            <h1 class="title">About the cabins</h1>
 		<?php include ("./elements/footer.html"); ?>
 		</div>
 	</body>

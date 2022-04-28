@@ -34,7 +34,10 @@
                         </a>
                     </li>
                 </ul>
-                <ul class="navbar-nav navbar-right">
+                <?php
+                if(!isset($_SESSION['name'])){
+                ?>
+                     <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
                         <a class="nav-link" href="signup.php">
                             <span class="spanlink">Sign up</span>
@@ -46,6 +49,33 @@
                         </a>
                     </li>
                 </ul>
+
+                    <?php
+                }
+                    ?>
+                   <?php
+                         if(isset($_SESSION['name'])){
+                            $user = $_SESSION['name'];
+                    ?>
+
+                    <ul class="navbar-nav navbar-right">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                                <span class="spanlink">
+                                   <?php echo "$user"; ?>
+                                </span>
+                            </a>
+                        </li>
+                    <div class="dropdown-menu">
+                            <a class="dropdown-item" href="UserProfile.php">My profile</a>
+                            <a class="dropdown-item" href="LogOut.php">Log Out</a>
+                    </div>
+
+                </li>
+                <?php
+                    }
+                ?>
+               
             </div>
         </nav>
     </body>

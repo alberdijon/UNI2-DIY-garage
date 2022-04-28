@@ -10,7 +10,7 @@
 			<div class="loginsquare">
 				<a href="./index.php">&#8592; Back to home</a>
 				<h2>Welcome back.</h2>
-				<form>
+				<form action="./backend/login.php" method="post">
 					<div class="form-group">
 						<label for="email">Email address</label>
 						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" require>
@@ -23,6 +23,17 @@
 					&nbsp;
 					<a href="signup.php">Create an account</a>
 				</form>
+				<?php
+            if(isset($_GET["credentials"])){
+                if($_GET["credentials"]=="false"){
+                    ?>
+
+                    <p style="color:#F00">
+                        <b>Something's wrong</b></p>
+                    <?php
+                }
+            }
+            ?>
 			</div>
 		</div>
 	</body>
