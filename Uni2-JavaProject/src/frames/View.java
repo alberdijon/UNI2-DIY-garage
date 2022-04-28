@@ -5,9 +5,7 @@
 package frames;
 
 
-import java.util.ArrayList;
-import model.ProductSold;
-import model.ProductSoldTable;
+
 
 /**
  *

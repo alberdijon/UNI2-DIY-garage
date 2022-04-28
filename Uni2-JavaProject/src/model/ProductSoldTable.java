@@ -13,25 +13,29 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ProductSoldTable extends AbstractTableModel{
     private ArrayList<ProductSold> product = new ArrayList<>();
-    private String[] columnName = {"Client-DNI, Product-ID, Amount, Date, Hour, Total_price"};
+    private final String[] columnName = {"Client-DNI, Product-ID, Amount, Date, Hour, Total_price"};
 
      public ProductSoldTable(ArrayList<ProductSold> product){
         this.product = product;
      
     }
      
+    @Override
     public int getRowCount() {
         return product.size();
     }
 
+    @Override
     public int getColumnCount() {
         return columnName.length;
     }
    
+    @Override
     public String getColumnName(int column){
         return columnName[column];
     }
    
+    @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
        switch(columnIndex){
             case 0: return product.get(rowIndex).getClientDni();

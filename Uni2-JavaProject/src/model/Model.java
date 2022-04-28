@@ -10,10 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Date;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,12 +23,12 @@ public class Model {
     public Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/garage";
-            String user = "root";
-            String password = "";
+            String url = "jdbc:mysql://192.168.72.34:3306/diy_garage";
+            String user = "uni";
+            String password = "uni";
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
-            System.out.println(e.getMessage());;
+            System.out.println(e.getMessage());
         }
 
         return conn;
@@ -39,7 +36,7 @@ public class Model {
     }
 
     public void selectAllReservations() {
-        String sql = "SELECT Cabin-ID, Client-DNI, Hour, Date, Total FROM cabin_client";
+        String sql = "SELECT Cabin-ID, Client-DNI, Hour, Date, Total FROM cabin-client";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
@@ -48,10 +45,10 @@ public class Model {
             // loop through the result set
             while (rs.next()) {
                 System.out.println(rs.getInt("Cabin-ID") +  "\t" + 
-                                   rs.getInt("Client-DNI") + "\t" +
-                                   rs.getString("Hour") + "\t" +
-                                   rs.getString("Date") + "\t" +
-                                   rs.getString("Total"));
+                                   rs.getString("Client-DNI") + "\t" +
+                                   rs.getTime("Hour") + "\t" +
+                                   rs.getDate("Date") + "\t" +
+                                   rs.getInt("Total"));
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -60,12 +57,12 @@ public class Model {
     
     public void selectAllProductSoldToday() {
         
-        Date today = new Date();
+        
        
         ArrayList<ProductSold> product = new ArrayList<>();
         
         
-        String sql = "SELECT Client-DNI, Product-ID, Amount, Date, Hour, Total_price FROM shop WHERE Date = " + today;
+        String sql = "SELECT Client-DNI, Product-ID, Amount, Date, Hour, Total_price FROM shop ";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();

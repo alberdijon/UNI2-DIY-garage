@@ -9,5 +9,11 @@ package model;
  * @author rodriguez.markel
  */
 public class Client {
+    private String name;
+    private String surname;
+    private int telf;
+    private String email;
+    private String dni;
+    private String password;
     
 }
