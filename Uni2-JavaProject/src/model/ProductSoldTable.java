@@ -12,11 +12,15 @@ import javax.swing.table.AbstractTableModel;
  * @author rodriguez.markel
  */
 public class ProductSoldTable extends AbstractTableModel{
-    private ArrayList<ProductSold> product = new ArrayList<>();
-    private final String[] columnName = {"Client-DNI, Product-ID, Amount, Date, Hour, Total_price"};
+    public ArrayList<ProductSold> product = new ArrayList<>();
+    public final String[] columnName = {"Client_DNI, Product_ID, Amount, Date, Hour, Total_price"};
 
-     public ProductSoldTable(ArrayList<ProductSold> product){
-        this.product = product;
+
+    
+    
+
+     public ProductSoldTable(ArrayList<ProductSold> products){
+        this.product = products;
      
     }
      

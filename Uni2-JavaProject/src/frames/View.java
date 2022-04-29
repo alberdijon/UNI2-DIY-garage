@@ -51,7 +51,7 @@ public class View extends javax.swing.JFrame {
         jTable2 = new javax.swing.JTable();
         ProductSoldToday = new javax.swing.JInternalFrame();
         jScrollPane3 = new javax.swing.JScrollPane();
-        ProductsSoldToday = new javax.swing.JTable();
+        ProductSold = new javax.swing.JTable();
         NewReservations = new javax.swing.JInternalFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         Reservations = new javax.swing.JTable();
@@ -263,18 +263,8 @@ public class View extends javax.swing.JFrame {
         ProductSoldToday.setVisible(false);
         ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane3.setBorder(null);
-
-        ProductsSoldToday.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
-        ProductsSoldToday.setToolTipText("");
-        jScrollPane3.setViewportView(ProductsSoldToday);
+        ProductSold.setModel(ProductSoldTable(ProductSold));
+        jScrollPane3.setViewportView(ProductSold);
 
         ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
 
@@ -351,8 +341,8 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JInternalFrame NewReservations;
     public javax.swing.JButton PopularCars;
     private javax.swing.JInternalFrame PopularItems;
+    public javax.swing.JTable ProductSold;
     public javax.swing.JInternalFrame ProductSoldToday;
-    public javax.swing.JTable ProductsSoldToday;
     public javax.swing.JTable Reservations;
     public javax.swing.JButton SoldToday;
     public javax.swing.JButton SwToGraphs;

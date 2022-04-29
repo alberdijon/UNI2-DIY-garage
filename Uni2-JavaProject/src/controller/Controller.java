@@ -44,7 +44,9 @@ import model.Model;
                 
                 model.selectAllProductSoldToday();
                 
-                view.ProductsSoldToday.setVisible(true);
+                view.ProductSoldToday.setVisible(true);
+                view.ProductSold.setVisible(true);
+                view.ProductSoldToday.setSize(500, 500);
                 
         }
     }

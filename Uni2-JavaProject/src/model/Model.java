@@ -23,9 +23,9 @@ public class Model {
     public Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:mysql://192.168.72.34:3306/diy_garage";
-            String user = "uni";
-            String password = "uni";
+            String url = "jdbc:mysql://localhost:3306/garage";
+            String user = "root";
+            String password = "";
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -36,7 +36,7 @@ public class Model {
     }
 
     public void selectAllReservations() {
-        String sql = "SELECT Cabin-ID, Client-DNI, Hour, Date, Total FROM cabin-client";
+        String sql = "SELECT Cabin_ID, Client_DNI, Hour, Date, Total FROM cabin-client";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
@@ -44,8 +44,8 @@ public class Model {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(rs.getInt("Cabin-ID") +  "\t" + 
-                                   rs.getString("Client-DNI") + "\t" +
+                System.out.println(rs.getInt("Cabin_ID") +  "\t" + 
+                                   rs.getString("Client_DNI") + "\t" +
                                    rs.getTime("Hour") + "\t" +
                                    rs.getDate("Date") + "\t" +
                                    rs.getInt("Total"));
@@ -59,18 +59,20 @@ public class Model {
         
         
        
-        ArrayList<ProductSold> product = new ArrayList<>();
+       
         
         
-        String sql = "SELECT Client-DNI, Product-ID, Amount, Date, Hour, Total_price FROM shop ";
+        String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop ";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
-                
+                 ArrayList<ProductSold> products = new ArrayList<>();
             // loop through the result set
             while (rs.next()) {
-                product.add(new ProductSold(rs.getString("Client-DNI"),rs.getInt("Product-ID"),rs.getInt("Amount"),rs.getDate("Date"),rs.getTime("Hour"),rs.getInt("Total_price")));
+                
+                
+                products.add(new ProductSold(rs.getString("Client_DNI"),rs.getInt("Product_ID"),rs.getInt("Amount"),rs.getDate("Date"),rs.getTime("Hour"),rs.getInt("Total_price")));
                
             }
         } catch (SQLException e) {
