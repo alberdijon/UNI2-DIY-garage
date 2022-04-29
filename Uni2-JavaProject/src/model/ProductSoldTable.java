@@ -6,7 +6,7 @@ package model;
 
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-
+import model.Model;
 /**
  *
  * @author rodriguez.markel
@@ -16,10 +16,10 @@ public class ProductSoldTable extends AbstractTableModel{
     public final String[] columnName = {"Client_DNI, Product_ID, Amount, Date, Hour, Total_price"};
 
 
-    
+      
     
 
-     public ProductSoldTable(ArrayList<ProductSold> products){
+    public ProductSoldTable(ArrayList<ProductSold> products){
         this.product = products;
      
     }

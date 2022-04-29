@@ -59,7 +59,7 @@ public class Model {
         
         
        
-       
+       ArrayList<ProductSold> products = new ArrayList<>();
         
         
         String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop ";
@@ -67,7 +67,7 @@ public class Model {
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
-                 ArrayList<ProductSold> products = new ArrayList<>();
+                 
             // loop through the result set
             while (rs.next()) {
                 
