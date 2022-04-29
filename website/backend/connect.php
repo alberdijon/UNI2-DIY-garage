@@ -1,6 +1,6 @@
 <?php
 	function KonektatuDatuBasera() {
-			if (!($konexioa=mysqli_connect("192.168.72.34","uni2","uni2"))) {	
+			if (!($konexioa=mysqli_connect("localhost","root",""))) {	
 				echo "There was an error connecting to the DB.";
 				exit();
 			} else {

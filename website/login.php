@@ -4,6 +4,17 @@
 		<?php include ("./elements/bs4.html"); ?>
 		<link rel="stylesheet" href="styles.css" />
 	</head>
+	<?php
+				if(isset($_GET["credentials"])){
+					if($_GET["credentials"]=="false"){
+						?>
+						<div class="alert alert-danger" role="alert">
+							Wrong credentials.
+						</div>
+						<?php
+					}
+				}
+				?>
 	<body class="loginbody flexv">
 		<div class="loginmain">
 			<img src="./logow.png" class="loginlogo" />
@@ -23,17 +34,6 @@
 					&nbsp;
 					<a href="signup.php">Create an account</a>
 				</form>
-				<?php
-            if(isset($_GET["credentials"])){
-                if($_GET["credentials"]=="false"){
-                    ?>
-
-                    <p style="color:#F00">
-                        <b>Something's wrong</b></p>
-                    <?php
-                }
-            }
-            ?>
 			</div>
 		</div>
 	</body>

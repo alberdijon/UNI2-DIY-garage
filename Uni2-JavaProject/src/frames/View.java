@@ -4,6 +4,9 @@
  */
 package frames;
 
+
+
+
 /**
  *
  * @author Erlantz
@@ -39,7 +42,6 @@ public class View extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         SwToGraphs = new javax.swing.JButton();
-        jLabelConnection = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         LowStock = new javax.swing.JInternalFrame();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -47,6 +49,12 @@ public class View extends javax.swing.JFrame {
         PopularItems = new javax.swing.JInternalFrame();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        ProductSoldToday = new javax.swing.JInternalFrame();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        ProductsSoldToday = new javax.swing.JTable();
+        NewReservations = new javax.swing.JInternalFrame();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Reservations = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -59,7 +67,6 @@ public class View extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(255, 204, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("[Logo]");
         jLabel1.setOpaque(true);
@@ -122,6 +129,11 @@ public class View extends javax.swing.JFrame {
         UpcomingReservations.setText("Upcoming reservations");
         UpcomingReservations.setActionCommand("UpcomingReservations");
         UpcomingReservations.setBorderPainted(false);
+        UpcomingReservations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpcomingReservationsActionPerformed(evt);
+            }
+        });
         jPanel3.add(UpcomingReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 180, 40));
 
         PopularCars.setBackground(new java.awt.Color(153, 153, 255));
@@ -167,11 +179,6 @@ public class View extends javax.swing.JFrame {
             }
         });
         jPanel4.add(SwToGraphs, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 170, 30));
-
-        jLabelConnection.setForeground(new java.awt.Color(102, 102, 102));
-        jLabelConnection.setText("Connecting...");
-        jLabelConnection.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        jPanel4.add(jLabelConnection, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 620, 50));
 
@@ -251,6 +258,42 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(PopularItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
+        ProductSoldToday.setTitle("Products sold  today");
+        ProductSoldToday.setToolTipText("");
+        ProductSoldToday.setVisible(false);
+        ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane3.setBorder(null);
+
+        ProductsSoldToday.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        ProductsSoldToday.setToolTipText("");
+        jScrollPane3.setViewportView(ProductsSoldToday);
+
+        ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
+
+        jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+
+        NewReservations.setTitle("Popular items");
+        NewReservations.setToolTipText("");
+        NewReservations.setVisible(false);
+        NewReservations.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane4.setBorder(null);
+
+        Reservations.setToolTipText("");
+        jScrollPane4.setViewportView(Reservations);
+
+        NewReservations.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
+
+        jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 450));
 
         getAccessibleContext().setAccessibleDescription("");
@@ -268,7 +311,8 @@ public class View extends javax.swing.JFrame {
     }//GEN-LAST:event_ViewLowStockActionPerformed
 
     private void SoldTodayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoldTodayActionPerformed
-        // TODO add your handling code here:
+        HideRest();
+        ProductsSoldToday.setVisible(true);
     }//GEN-LAST:event_SoldTodayActionPerformed
 
     private void BtnWorkerListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnWorkerListActionPerformed
@@ -279,70 +323,55 @@ public class View extends javax.swing.JFrame {
         HideRest();
         PopularItems.setVisible(true);
     }//GEN-LAST:event_BtnPopularItemsActionPerformed
+
+    private void UpcomingReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpcomingReservationsActionPerformed
+        HideRest();
+        NewReservations.setVisible(true);
+    }//GEN-LAST:event_UpcomingReservationsActionPerformed
     
-    private void HideRest() {
+    public void HideRest() {
         LowStock.setVisible(false);
         PopularItems.setVisible(false);
+        ProductsSoldToday.setVisible(false);
+        NewReservations.setVisible(false);
     }
     
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(View.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+    public static View viewaSortuBistaratu() {
+        View v = new View();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new View().setVisible(true);
-
+                v.setVisible(true);
             }
         });
+        return v;
     }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnPopularItems;
-    private javax.swing.JButton BtnWorkerList;
-    private javax.swing.JButton CustomerList;
+    public javax.swing.JButton BtnPopularItems;
+    public javax.swing.JButton BtnWorkerList;
+    public javax.swing.JButton CustomerList;
     private javax.swing.JInternalFrame LowStock;
-    private javax.swing.JButton PopularCars;
+    public javax.swing.JInternalFrame NewReservations;
+    public javax.swing.JButton PopularCars;
     private javax.swing.JInternalFrame PopularItems;
-    private javax.swing.JButton SoldToday;
-    private javax.swing.JButton SwToGraphs;
-    private javax.swing.JButton UpcomingReservations;
-    private javax.swing.JButton ViewLowStock;
-    private javax.swing.JButton WorkerSalaries;
+    public javax.swing.JInternalFrame ProductSoldToday;
+    public javax.swing.JTable ProductsSoldToday;
+    public javax.swing.JTable Reservations;
+    public javax.swing.JButton SoldToday;
+    public javax.swing.JButton SwToGraphs;
+    public javax.swing.JButton UpcomingReservations;
+    public javax.swing.JButton ViewLowStock;
+    public javax.swing.JButton WorkerSalaries;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabelConnection;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
