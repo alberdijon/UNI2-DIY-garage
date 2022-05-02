@@ -41,4 +41,23 @@ class Employees(Persons):
         return self.gmail
 
     def setjob(self):
-        job = input("Enter the value of the gmail")
+        job = input("Enter the value of the job")
+
+    def getjob(self):
+        return self.job
+
+    def setworking(self):
+        working = input("Enter the employee is working")
+
+    def getworking(self):
+        return self.working
+
+    def setsalary(self):
+        salary = input("Enter the value of the salary")
+
+    def getgmail(self):
+        return self.salary
+
+    def print(self):
+        print(self.id, self.name, self.surname, self.gmail, self.mobile, self.job, self.working, self.salary)
+

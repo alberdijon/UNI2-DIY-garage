@@ -21,6 +21,10 @@ public class ProductSold {
     private Time hour;
     private int totalPrice;
 
+
+    
+    
+
     public ProductSold(String clientDni, int productId, int amount, Date date, Time hour, int totalPrice) {
         this.clientDni = clientDni;
         this.productId = productId;
