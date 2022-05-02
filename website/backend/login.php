@@ -5,20 +5,24 @@
     $password=$_POST["password"];
 
     $link=KonektatuDatuBasera();
-    $emaitza=mysqli_query($link,"SELECT E-mail, password
+    $emaitza=mysqli_query($link,"SELECT E_mail, Password
                                 FROM client
-                                WHERE E-mail = '$email' AND password = '$password'
+                                WHERE E_mail = '$email' AND Password = '$password'
                         ");
 
     if(mysqli_num_rows($emaitza)==0){
         header("Location:../login.php?credentials=false");
     }
     else{
-        $name = mysqli_query($link,"select name from client where E-mail = '$email'");
+        $name = mysqli_query($link,"SELECT Name FROM client WHERE E_mail = '$email'");
         $name = mysqli_fetch_array($name);
         $name = $name[0];
 
-        $userID = mysqli_query($link,"select DNI from client where E-mail = '$email'");
+        $email = mysqli_query($link,"SELECT e_mail FROM client WHERE E_mail = '$email'");
+        $email = mysqli_fetch_array($email);
+        $email = $email[0];
+
+        $userID = mysqli_query($link,"SELECT DNI from client WHERE E_mail = '$email'");
         $userID = mysqli_fetch_array($userID);
         $userID = $userID[0];
 
@@ -35,6 +39,6 @@
         $_SESSION['session'] = $session;
 
         
-        header("Location:index.php");
+        header("Location:../dashboard.php");
     }
 ?>

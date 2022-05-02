@@ -5,6 +5,14 @@
         <link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
+        <?php 
+            session_start();
+            if(!isset($_SESSION['name'])){
+                header("Location: login.php");
+            } else {
+                $user = $_SESSION['name'];
+            }
+        ?>
 		<div class="main">
 		<?php include ("./elements/navbar.php"); ?>
         <div class="space"></div>

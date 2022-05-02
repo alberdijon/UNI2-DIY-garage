@@ -24,11 +24,11 @@
 				<form action="./backend/login.php" method="post">
 					<div class="form-group">
 						<label for="email">Email address</label>
-						<input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" require>
+						<input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" require>
 					</div>
 					<div class="form-group">
 						<label for="password">Password</label>
-						<input type="password" class="form-control" id="password" placeholder="Enter password" require>
+						<input type="password" class="form-control" name="password" placeholder="Enter password" require>
 					</div>
 					<button type="submit" class="btn llbutton">Log in</button>
 					&nbsp;

@@ -34,6 +34,7 @@
                         </a>
                     </li>
                 </ul>
+                <!-- If the user does not exist, show login/signup -->
                 <?php
                 if(!isset($_SESSION['name'])){
                 ?>
@@ -53,29 +54,27 @@
                     <?php
                 }
                     ?>
+                    <!-- If the user does exist, create $user -->
                    <?php
                          if(isset($_SESSION['name'])){
                             $user = $_SESSION['name'];
                     ?>
-
+                    <!-- This should probably be a dropdown -->
+                    <!-- However, I don't know how to make it work xd -->
                     <ul class="navbar-nav navbar-right">
                         <li class="nav-item">
-                            <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+                            <a class="nav-link" href="./dashboard.php">
                                 <span class="spanlink">
+                                    <!-- And display the user instead of the login buttons -->
                                    <?php echo "$user"; ?>
                                 </span>
                             </a>
                         </li>
-                    <div class="dropdown-menu">
-                            <a class="dropdown-item" href="UserProfile.php">My profile</a>
-                            <a class="dropdown-item" href="LogOut.php">Log Out</a>
-                    </div>
-
-                </li>
+                    </li>
                 <?php
                     }
                 ?>
-               
+
             </div>
         </nav>
     </body>

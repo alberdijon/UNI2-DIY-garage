@@ -20,7 +20,7 @@
 			<h1 class="title">Do it yourself.</h1>
 			<div class="maincontent"></div>
 			<div class="maincontent"></div>
-		<?php include ("./elements/footer.html"); ?>
+			<?php include ("./elements/footer.html"); ?>
 		</div>
 	</body>
 </html>
