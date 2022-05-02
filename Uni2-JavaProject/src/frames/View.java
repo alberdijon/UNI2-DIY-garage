@@ -5,6 +5,7 @@
 package frames;
 
 import model.ProductSoldTable;
+import model.Model;
 
 
 
@@ -265,14 +266,6 @@ public class View extends javax.swing.JFrame {
         ProductSoldToday.setVisible(false);
         ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        ProductSold.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-
-            }
-        ));
         jScrollPane3.setViewportView(ProductSold);
 
         ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));

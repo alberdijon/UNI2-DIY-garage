@@ -45,6 +45,9 @@ import model.Model;
                 model.selectAllProductSoldToday();
                 
                 view.ProductSoldToday.setVisible(true);
+                view.ProductSold.setShowGrid(true);
+                view.ProductSold.setShowVerticalLines(true);
+                 
                 view.ProductSold.setVisible(true);
                 
                 

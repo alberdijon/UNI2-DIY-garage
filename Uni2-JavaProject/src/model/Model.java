@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author rodriguez.markel
  */
 public class Model {
-        
+
  
  
     public Connection connect() {
@@ -72,11 +72,12 @@ public class Model {
             while (rs.next()) {
                 
                 
-                ProductSold p = new ProductSold(rs.getString("Client_DNI"),rs.getInt("Product_ID"),rs.getInt("Amount"),rs.getDate("Date"),rs.getTime("Hour"),rs.getInt("Total_price"));
+               ProductSold p = new ProductSold(rs.getString("Client_DNI"),rs.getInt("Product_ID"),rs.getInt("Amount"),rs.getDate("Date"),rs.getTime("Hour"),rs.getInt("Total_price"));
                
                products.add(p);
                
-                System.out.println(products);
+               
+               
                
             }
         } catch (SQLException e) {

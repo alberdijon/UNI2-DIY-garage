@@ -14,9 +14,11 @@ import javax.swing.table.AbstractTableModel;
  */
 public class ProductSoldTable extends AbstractTableModel{
     public ArrayList<ProductSold> product = new ArrayList<>();
-    public final String[] columnName = {"Client_DNI, Product_ID, Amount, Date, Hour, Total_price"};
-   
+    public final String[] columnName = {"Client_DNI","Product_ID","Amount","Date","Hour","Total_price"};
 
+
+   
+    
 
     public ProductSoldTable(ArrayList<ProductSold> products){
         
