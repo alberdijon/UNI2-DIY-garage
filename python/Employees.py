@@ -1,13 +1,73 @@
-import Persons
+import pickle
 
-class Employees(Persons):
+from Person import *
 
-    def __init__(self, ei, en, es, eg, em, j, w, s ):
 
-        super.__init__(ei,en, es, eg, em)
+def viewemployees():
+    inp = open('employees.pkl', 'rb')
+    employees = []
+    cont = 1
 
+    while cont == 1:
+        try:
+            employees.append(pickle.load(inp))
+
+        except EOFError:
+            print('end of employees')
+            cont = 0
+
+    for emp in employees:
+        print(emp)
+
+
+def hire():
+
+    ans = 1
+    while ans == 1:
+        id = input("Add new employee id: ")
+        name = input("Add new employee name: ")
+        surname = input("Add new employee surname: ")
+        gmail = input("Add new employee gmail: ")
+        mobile = input("Add new employee phone number: ")
+        job = input("Add new employee job: ")
+        salary = input("Add new employee salary: ")
+        emple = Employees(id, name, surname, gmail, mobile, job, salary)
+
+        # sample usage
+
+        ans = int(input("Do you want to add a new student? (1/0)"))
+    with open('employees.pkl', 'a') as outp:  # Overwrites any existing file.
+        outp.write(f"{emple.id} {emple.name} {emple.surname} {emple.gmail} {emple.mobile} {emple.job} {emple.salary}\n")
+    del emple
+
+
+def fire():
+    inp = open('employees.pkl', 'r')
+    lines = inp.readlines()
+    inp.close()
+
+    n = input('enter the number of the row you want delete')
+
+    del lines[n]
+
+    new_inp = open('employees.pkl', 'w+')
+
+    for line in lines:
+        new_inp.write(line)
+
+    new_inp.close()
+
+
+class Employees(Person):
+
+    def __init__(self, ei, en, es, eg, em, j, s):
+
+        self.id = ei
+        self.name = en
+        self.surname = es
+        self.gmail = eg
+        self.mobile = em
         self.job = j
-        self.working = w
         self.salary = s
 
     def setid(self):
@@ -46,12 +106,6 @@ class Employees(Persons):
     def getjob(self):
         return self.job
 
-    def setworking(self):
-        working = input("Enter the employee is working")
-
-    def getworking(self):
-        return self.working
-
     def setsalary(self):
         salary = input("Enter the value of the salary")
 
@@ -59,5 +113,10 @@ class Employees(Persons):
         return self.salary
 
     def print(self):
-        print(self.id, self.name, self.surname, self.gmail, self.mobile, self.job, self.working, self.salary)
+        print(self.id, self.name, self.surname, self.gmail, self.mobile, self.job, self.salary)
+
+
+
+
+
 
