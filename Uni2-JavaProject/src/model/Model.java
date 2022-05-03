@@ -11,10 +11,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
+
 
 /**
  *
@@ -43,7 +41,7 @@ public class Model {
        
         ArrayList<NewReservation> reservations = new ArrayList<>();
         
-        String sql = "SELECT Cabin_ID, Client_DNI, Hour, Date, Total FROM cabin-client";
+        String sql = "SELECT Cabin_ID, Client_DNI, Hour, Date, Total FROM reservations";
         
         
         
