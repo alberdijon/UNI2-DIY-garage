@@ -6,11 +6,15 @@
 package model;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  *
@@ -35,35 +39,40 @@ public class Model {
 
     }
 
-    public void selectAllReservations() {
+    public ArrayList<NewReservation> selectAllReservations() {
+       
+        ArrayList<NewReservation> reservations = new ArrayList<>();
+        
         String sql = "SELECT Cabin_ID, Client_DNI, Hour, Date, Total FROM cabin-client";
-
+        
+        
+        
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
 
             // loop through the result set
             while (rs.next()) {
-                System.out.println(rs.getInt("Cabin_ID") +  "\t" + 
-                                   rs.getString("Client_DNI") + "\t" +
-                                   rs.getTime("Hour") + "\t" +
-                                   rs.getDate("Date") + "\t" +
-                                   rs.getInt("Total"));
+                
+               NewReservation r = new NewReservation(rs.getInt("Cabin_ID"),rs.getString("Client_DNI"),rs.getTime("Hour"),rs.getDate("Date"),rs.getInt("Total"));
+               
+               reservations.add(r);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return reservations;
     }
     
-    public void selectAllProductSoldToday() {
+    public ArrayList<ProductSold> selectAllProductSoldToday()  {
         
         
        
        ArrayList<ProductSold> products = new ArrayList<>();
+   
         
+        String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop";
         
-        String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop ";
-
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
@@ -83,6 +92,8 @@ public class Model {
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+        return products;
+        
     }
 
     

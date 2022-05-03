@@ -8,7 +8,12 @@ package controller;
 import frames.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import model.Model;
+import model.NewReservation;
+import model.NewReservationTable;
+import model.ProductSold;
+import model.ProductSoldTable;
 
 /**
  *
@@ -42,15 +47,19 @@ import model.Model;
             
             case "SoldToday":
                 
-                model.selectAllProductSoldToday();
+                
                 
                 view.ProductSoldToday.setVisible(true);
-                view.ProductSold.setShowGrid(true);
-                view.ProductSold.setShowVerticalLines(true);
-                 
+
+                ArrayList <ProductSold> product = model.selectAllProductSoldToday();
+                view.ProductSold.setModel(new ProductSoldTable(model.selectAllProductSoldToday()));
                 view.ProductSold.setVisible(true);
                 
-                
+            case "UpcomingReservations":
+                view.NewReservations.setVisible(true);
+                view.Reservations.setVisible(true);
+                ArrayList <NewReservation> reservation = model.selectAllReservations();
+                view.Reservations.setModel(new NewReservationTable(model.selectAllReservations()));
         }
     }
 }
