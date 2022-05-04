@@ -1,6 +1,0 @@
-1,30,Jumbo,True
-2,30,Jumbo,True
-3,30,Jumbo,False
-4,20,Normal,False
-5,20,Normal,True
-6,20,Normal,False

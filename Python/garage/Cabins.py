@@ -1,9 +1,8 @@
-
-import BasicMethods
+from BasicMethods import *
 
 
 class Cabins:
-
+    
     def __init__(self,id,pricePerHour,type,availability):
         self.id = id
         self.pricePerHour = pricePerHour
@@ -28,24 +27,55 @@ class Cabins:
         print(self.availability)
     def print_(self):
         print(self.id + " " + self.pricePerHour + " " + self.type + " " + self.availability)
+    def listOfCabins():
+        allCabins=[]
+        pkl = open("Cabins.pkl","r")
+        for line in pkl:
+            allCabins.append(line.split(","))
+            return allCabins
+
     def view_cabins():
-       txt = open("Cabins.txt")
-       for line in txt:
+       pkl = open("Cabins.pkl","r")
+       for line in pkl:
            print(line)
     def available_cabins():
-        txt = open("Cabins.txt")
-        for line in txt:
-            cabineo = (line.split(","))
-            a=cabineo[0]
-            b=cabineo[1]
-            c=cabineo[2]
-            d=cabineo[3]
-            print(a,b,c,d)
-            c1=Cabins(a,b,c,d)
+        pkl = open("Cabins.pkl","r")
+    def change_estatus():
+        Cabins.listOfCabins()
+        pkl = open("Cabins.pkl","w")
+        id=int(BasicMethods.askInteger("ID"))
+        estatus=input("What estatus you want apply? A for available, O for occupied and R for repairing ")
+        if estatus == "A":
+            Cabins.allCabins[id][3]="A"
+        
+        if estatus == "O":
+            Cabins.allCabins[id][3]="O"
             
-            if c1.availability == True:
-                    
-                    c1.print_
+        if estatus == "R":
+            Cabins.allCabins[id][3]="R"
+        else :
+            print("Wrong value, repeat please")
+            
 
+    def cabinsMenu():
+        BasicMethods.MenuOptions()
+        option=BasicMethods.askInteger("option")
+        while option !=0:
+            BasicMethods.MenuOptions()
+            option=BasicMethods.askInteger("option")
+            if option == 1 :
+                Cabins.view_cabins()
+            if option == 2 :
+                Cabins.available_cabins()
+            if option == 3 :
+                Cabins.change_estatus()
+            else:
+                print("Wrong value, please repeat the process")
 
+            
+
+                
+
+           
     
+

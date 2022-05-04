@@ -1,4 +1,4 @@
-
+from Cabins import *
 
 class BasicMethods:
 
@@ -11,11 +11,16 @@ class BasicMethods:
     def askBoolean(name):
         a=int(input("Enter a value for "+ name+" 1 for yes, 2 for no: "))
         if a==1:
-            return True
+            available=True
+            return available
         if a==0:
-            return False
+            available=False
+            return available
         else:
             print("Wrong value, please repeat the process")
     
-        
-
+    def MenuOptions():
+        print("1- Show all cabins")
+        print("2-Show available cabins")
+        print("3-Change the estatus of the cabins")
+        print("0-Exit the program")
