@@ -36,23 +36,34 @@ def hire():
         # sample usage
 
         ans = int(input("Do you want to add a new student? (1/0)"))
-    with open('employees.pkl', 'a') as outp:  # Overwrites any existing file.
-        outp.write(f"{emple.id} {emple.name} {emple.surname} {emple.gmail} {emple.mobile} {emple.job} {emple.salary}\n")
+    with open('employees.pkl', 'ab') as outp:  # Overwrites any existing file.
+        pickle.dump(emple,outp, pickle.HIGHEST_PROTOCOL)
     del emple
 
 
 def fire():
-    inp = open('employees.pkl', 'r')
-    lines = inp.readlines()
-    inp.close()
+    inp = open('employees.pkl', 'rb')
+    employees = []
+    cont = 1
 
-    n = input('enter the number of the row you want delete')
+    while cont == 1:
+        try:
+            employees.append(pickle.load(inp))
 
-    del lines[n]
+        except EOFError:
+            print('end of employees')
+            cont = 0
 
-    new_inp = open('employees.pkl', 'w+')
+    for emp in employees:
+        print(emp)
 
-    for line in lines:
+    n = int(input('enter the number of the row you want delete'))
+
+    del employees[n]
+
+    new_inp = open('employees.pkl', 'ab')
+
+    for line in employees:
         new_inp.write(line)
 
     new_inp.close()

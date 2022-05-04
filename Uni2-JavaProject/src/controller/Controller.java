@@ -8,7 +8,10 @@ package controller;
 import frames.View;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.beans.PropertyVetoException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Model;
 import model.NewReservation;
 import model.NewReservationTable;
@@ -50,16 +53,32 @@ import model.ProductSoldTable;
                 
                 
                 view.ProductSoldToday.setVisible(true);
-
+                
                 ArrayList <ProductSold> product = model.selectAllProductSoldToday();
                 view.ProductSold.setModel(new ProductSoldTable(model.selectAllProductSoldToday()));
                 view.ProductSold.setVisible(true);
+            {
+                try {
+                    view.NewReservations.setClosed(true);
+                } catch (PropertyVetoException ex) {
+                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
                 
             case "UpcomingReservations":
                 view.NewReservations.setVisible(true);
                 view.Reservations.setVisible(true);
                 ArrayList <NewReservation> reservation = model.selectAllReservations();
                 view.Reservations.setModel(new NewReservationTable(model.selectAllReservations()));
+            {
+                try {
+                    view.ProductSoldToday.setClosed(true);
+                } catch (PropertyVetoException ex) {
+                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
         }
     }
 }

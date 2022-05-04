@@ -7,11 +7,14 @@ package model;
 
 import java.sql.Connection;
 
+
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import java.util.ArrayList;
+
 
 
 /**
@@ -64,12 +67,12 @@ public class Model {
     
     public ArrayList<ProductSold> selectAllProductSoldToday()  {
         
-        
+
        
        ArrayList<ProductSold> products = new ArrayList<>();
    
         
-        String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop";
+        String sql = "SELECT Client_DNI, Product_ID, Amount, Date, Hour, Total_price FROM shop Where Date = CAST(CURRENT_TIMESTAMP AS DATE)";
         
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();

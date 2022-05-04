@@ -11,7 +11,7 @@ while ans:
     3.Fire
     4.Edit
     5.Change Employee Status
-    7.Exit
+    0.Exit
     """)
     ans = input("What would you like to do?")
 
@@ -22,7 +22,8 @@ while ans:
     elif ans == "3":
         fire()
 
-    elif ans == "6":
+    elif ans == "0":
         print("\n Goodbye")
+        exit()
     else:
         print("\n Not Valid Choice Try again")
