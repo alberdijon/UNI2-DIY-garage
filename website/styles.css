@@ -278,6 +278,14 @@ body {
 	margin: 10px;
 }
 
+.dcardm {
+	display: flex;
+	height: 300px;
+	background-color: #f8f9fa;
+	border-radius: 10px;
+	margin: 10px;
+}
+
 .duser {
 	flex-direction: row;
 	align-items: center;
@@ -301,9 +309,22 @@ body {
 }
 
 .dappointment {
-	flex-direction: row;
-	padding: 10px 20px;
-	align-items: center;
+	flex-direction: column;
+	padding: 15px 20px;
+}
+
+.dappointment h2 {
+	margin-bottom: 5px;
+}
+
+.dsettings {
+	padding: 20px;
+	flex-grow: 2;
+}
+
+.dvehicles {
+	padding: 20px;
+	flex-grow: 1;
 }
 
 /*RESPONSIVE*/
@@ -344,6 +365,10 @@ body {
 	}
 
 	/*Login*/
+	.loginbody {
+		background-image: url(./backgrounds/raban-haaijk-wftNpcjCHT4-unsplash.jpg);
+	}
+
 	.loginmain {
 		flex-direction: column;
 		margin: calc(50vh - 300px) 0px;
@@ -351,6 +376,7 @@ body {
 	}
 	.signupbody {
 		height: 120%;
+		background-image: url(./backgrounds/claude-gabriel-p3vvMhj_qjU-unsplash.jpg);
 	}
 
 	/*Dashboard*/

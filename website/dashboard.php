@@ -24,17 +24,24 @@
                         <span>Not <?php echo "$user"?>? <a href="./backend/logout.php">Log out</a></span>
                     </div>
                     <div class="duserimg">
-                        <img src="./resources/default.jpg" alt="user">
+                        <img src="./pfps/default.jpg" alt="user">
                     </div>
                 </div>
                 <div class="dcardl dappointment">
-                    <h3>
+                    <h2>Appointments</h2>
+                    <span>
                         No upcoming appointments
                         <!-- ADD PHP HERE -->
-                    </h3>
+                    </span>
                 </div>
             </div>
             <div class="drow drow2">
+                <div class="dcardm dsettings">
+                    <h2>Settings</h2>
+                </div>
+                <div class="dcardm dvehicles">
+                    <h2>Your vehicles</h2>
+                </div>
             </div>
 		    <?php include ("./elements/footer.html"); ?>
 		</div>
