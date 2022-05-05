@@ -1,4 +1,5 @@
 from BasicMethods import *
+import pickle
 
 
 class Cabins:
@@ -27,34 +28,36 @@ class Cabins:
         print(self.availability)
     def print_(self):
         print(self.id + " " + self.pricePerHour + " " + self.type + " " + self.availability)
-    def listOfCabins():
-        allCabins=[]
-        pkl = open("Cabins.pkl","r")
-        for line in pkl:
-            allCabins.append(line.split(","))
-            return allCabins
-
     def view_cabins():
        pkl = open("Cabins.pkl","r")
        for line in pkl:
            print(line)
     def available_cabins():
         pkl = open("Cabins.pkl","r")
+        for line in pkl:
+            line.split(",",3 )
+            c1=Cabins(line[0],line[1],line[2],line[3])
+            print(line[0],line[1],line[2],line[3])
+           
     def change_estatus():
-        Cabins.listOfCabins()
-        pkl = open("Cabins.pkl","w")
-        id=int(BasicMethods.askInteger("ID"))
-        estatus=input("What estatus you want apply? A for available, O for occupied and R for repairing ")
-        if estatus == "A":
-            Cabins.allCabins[id][3]="A"
-        
-        if estatus == "O":
-            Cabins.allCabins[id][3]="O"
+        with open("Cabins.pkl","rb") as f:
+            pkl= pickle.load(f)
+            allCabins=[]
+            for line in pkl:
+                allCabins.append(line.split(","))
+            id=int(BasicMethods.askInteger("ID"))-1
+            estatus=input("What estatus you want apply? 1 for available, 2 for occupied and 3 for repairing ")
+            if estatus == "1":
+                allCabins[id][3]="available"
             
-        if estatus == "R":
-            Cabins.allCabins[id][3]="R"
-        else :
-            print("Wrong value, repeat please")
+            if estatus == "2":
+                allCabins[id][3]="occupied"
+                
+                
+            if estatus == "3":
+                allCabins[id][3]="repairing"
+            else :
+                print("Wrong value, repeat please")
             
 
     def cabinsMenu():
