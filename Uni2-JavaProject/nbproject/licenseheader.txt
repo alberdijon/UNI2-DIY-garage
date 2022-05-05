@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}This software has been developed by Uni2
+${licensePrefix}Under the GNU General Public License
+<#if licenseLast??>
+${licenseLast}
+</#if>

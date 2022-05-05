@@ -1,0 +1,7 @@
+{
+	"powermode.enabled": true,
+	"powermode.shake.enabled": false,
+	"powermode.presets": "particles",
+	"powermode.combo.location": "default",
+	"powermode.combo.counterEnabled": "default"
+}
