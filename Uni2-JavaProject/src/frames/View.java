@@ -272,7 +272,7 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-        NewReservations.setTitle("Popular items");
+        NewReservations.setTitle("Upcoming Reservations");
         NewReservations.setToolTipText("");
         NewReservations.setVisible(false);
         NewReservations.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -304,6 +304,8 @@ public class View extends javax.swing.JFrame {
 
     private void SoldTodayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoldTodayActionPerformed
         // TODO add your handling code here:
+        HideRest();
+        ProductSoldToday.setVisible(true);
     }//GEN-LAST:event_SoldTodayActionPerformed
 
     private void BtnWorkerListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnWorkerListActionPerformed
@@ -317,11 +319,16 @@ public class View extends javax.swing.JFrame {
 
     private void UpcomingReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpcomingReservationsActionPerformed
         // TODO add your handling code here:
+        HideRest();
+        NewReservations.setVisible(true);
     }//GEN-LAST:event_UpcomingReservationsActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
         PopularItems.setVisible(false);
+        NewReservations.setVisible(false);
+        ProductSoldToday.setVisible(false);
+        
     }
     
     public static View viewaSortuBistaratu() {

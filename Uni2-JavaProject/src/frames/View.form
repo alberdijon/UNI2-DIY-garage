@@ -529,7 +529,7 @@
         </Container>
         <Container class="javax.swing.JInternalFrame" name="NewReservations">
           <Properties>
-            <Property name="title" type="java.lang.String" value="Popular items"/>
+            <Property name="title" type="java.lang.String" value="Upcoming Reservations"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="visible" type="boolean" value="false"/>
           </Properties>

@@ -56,28 +56,19 @@ import model.ProductSoldTable;
                 
                 ArrayList <ProductSold> product = model.selectAllProductSoldToday();
                 view.ProductSold.setModel(new ProductSoldTable(model.selectAllProductSoldToday()));
-                view.ProductSold.setVisible(true);
-            {
-                try {
-                    view.NewReservations.setClosed(true);
-                } catch (PropertyVetoException ex) {
-                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+                
+          
+                view.ProductSoldToday.setClosable(true);
+                
 
                 
             case "UpcomingReservations":
                 view.NewReservations.setVisible(true);
-                view.Reservations.setVisible(true);
+                
                 ArrayList <NewReservation> reservation = model.selectAllReservations();
                 view.Reservations.setModel(new NewReservationTable(model.selectAllReservations()));
-            {
-                try {
-                    view.ProductSoldToday.setClosed(true);
-                } catch (PropertyVetoException ex) {
-                    Logger.getLogger(Controller.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
+                
+                view.NewReservations.setClosable(true);
 
         }
     }

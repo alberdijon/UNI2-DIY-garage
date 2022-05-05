@@ -41,8 +41,8 @@ public class NewReservationTable extends AbstractTableModel {
             
             case 0: return reservation.get(rowIndex).getCabinId();
             case 1: return reservation.get(rowIndex).getClientDni();
-            case 2: return reservation.get(rowIndex).getDate();
-            case 3: return reservation.get(rowIndex).getHour();
+            case 2: return reservation.get(rowIndex).getHour();
+            case 3: return reservation.get(rowIndex).getDate();
             case 4: return reservation.get(rowIndex).getTotal();
             default: return null;
         }

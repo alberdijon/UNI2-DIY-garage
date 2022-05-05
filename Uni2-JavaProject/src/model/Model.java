@@ -44,7 +44,7 @@ public class Model {
        
         ArrayList<NewReservation> reservations = new ArrayList<>();
         
-        String sql = "SELECT Cabin_ID, Client_DNI, Hour, Date, Total FROM reservations";
+        String sql = "SELECT * FROM reservations Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
         
         
         
