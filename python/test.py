@@ -1,5 +1,5 @@
 
-from Employees import *
+from Employee import *
 
 
 def hire(obj, filename):

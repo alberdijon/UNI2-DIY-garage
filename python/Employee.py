@@ -5,74 +5,65 @@ from Person import *
 
 def viewemployees():
     inp = open('employees.pkl', 'rb')
-    employees = []
     cont = 1
 
     while cont == 1:
         try:
-            employees.append(pickle.load(inp))
+            employees = pickle.load(inp)
 
         except EOFError:
             print('end of employees')
-            cont = 0
 
-    for emp in employees:
-        print(emp)
+            employees = []
+    for employee in employees:
+        print(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job, employee.salary)
 
 
 def hire():
+    try:
+        with open('employees.pkl', 'rb') as f:
+            employees = pickle.load(f)
 
-    ans = 1
-    while ans == 1:
-        id = input("Add new employee id: ")
-        name = input("Add new employee name: ")
-        surname = input("Add new employee surname: ")
-        gmail = input("Add new employee gmail: ")
-        mobile = input("Add new employee phone number: ")
-        job = input("Add new employee job: ")
-        salary = input("Add new employee salary: ")
-        emple = Employees(id, name, surname, gmail, mobile, job, salary)
+    except EOFError:
+        ans = 1
+        while ans == 1:
+            employees = []
+            id = input("Add new employee id: ")
+            name = input("Add new employee name: ")
+            surname = input("Add new employee surname: ")
+            gmail = input("Add new employee gmail: ")
+            mobile = input("Add new employee phone number: ")
+            job = input("Add new employee job: ")
+            salary = input("Add new employee salary: ")
+            employee = Employee(id, name, surname, gmail, mobile, job, salary)
 
         # sample usage
+            employees.append(employee)
 
-        ans = int(input("Do you want to add a new student? (1/0)"))
-    with open('employees.pkl', 'ab') as outp:  # Overwrites any existing file.
-        pickle.dump(emple,outp, pickle.HIGHEST_PROTOCOL)
-    del emple
+            ans = int(input("Do you want to add a new student? (1/0)"))
+        del employee
+    # Overwrites any existing file.
+        with open('employees.pkl', 'rb') as f:
+            pickle.dump(employees, f)
 
 
 def fire():
-    inp = open('employees.pkl', 'rb')
-    employees = []
-    cont = 1
+    with open("employees.pkl", "rb") as f:
+        employees = pickle.load(f)
+    employee_to_delete = input("Enter the id of the user you want to delete: ")
 
-    while cont == 1:
-        try:
-            employees.append(pickle.load(inp))
+    for employee in employees:
+        if employee.id == employee_to_delete:
 
-        except EOFError:
-            print('end of employees')
-            cont = 0
+            employees.remove(employee)
 
-    for emp in employees:
-        print(emp)
-
-    n = int(input('enter the number of the row you want delete'))
-
-    del employees[n]
-
-    new_inp = open('employees.pkl', 'ab')
-
-    for line in employees:
-        new_inp.write(line)
-
-    new_inp.close()
+    with open("employees.pkl", "wb") as f:
+        pickle.dump(employees, f)
 
 
-class Employees(Person):
+class Employee(Person):
 
     def __init__(self, ei, en, es, eg, em, j, s):
-
         self.id = ei
         self.name = en
         self.surname = es
@@ -125,9 +116,3 @@ class Employees(Person):
 
     def print(self):
         print(self.id, self.name, self.surname, self.gmail, self.mobile, self.job, self.salary)
-
-
-
-
-
-

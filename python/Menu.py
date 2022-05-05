@@ -1,6 +1,6 @@
 
 
-from Employees import *
+from Employee import *
 
 ans = True
 while ans:
