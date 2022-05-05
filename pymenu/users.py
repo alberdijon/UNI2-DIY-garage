@@ -46,21 +46,29 @@ def view_users():
 
 
 def add_user():
-    first_name = input("Enter first name: ")
-    last_name = input("Enter last name: ")
-    email = input("Enter email: ")
-    password = input("Enter password: ")
-    phone_number = input("Enter phone number: ")
-    user = User(first_name, last_name, email, password, phone_number)
     try:
         with open("users.pickle", "rb") as f:
             users = pickle.load(f)
     except EOFError:
         users = []
-    users.append(user)
-    with open("users.pickle", "wb") as f:
-        pickle.dump(users, f)
-    print("User added")
+        print("No users in database")
+    valid = True
+    first_name = input("Enter first name: ")
+    last_name = input("Enter last name: ")
+    email = input("Enter email: ")
+    for user in users:
+        if user.email == email:
+            print("Email already in use")
+            print("Returning to main menu")
+            valid = False
+    if valid:
+        password = input("Enter password: ")
+        phone_number = input("Enter phone number: ")
+        new_user = User(first_name, last_name, email, password, phone_number)
+        users.append(new_user)
+        with open("users.pickle", "wb") as f:
+            pickle.dump(users, f)
+        print("User added")
     users_menu()
 
 
@@ -71,8 +79,7 @@ def delete_user():
     amount_deleted = 0
     for user in users:
         if user.email == user_to_delete:
-            print("A user has been deleted.")
-            amount_deleted += 1
+            amount_deleted = amount_deleted + 1
             users.remove(user)
     with open("users.pickle", "wb") as f:
         pickle.dump(users, f)
