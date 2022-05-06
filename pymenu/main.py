@@ -3,6 +3,9 @@ from users import users_menu
 
 def main_menu():
     choice = 0
+    print("===============================")
+    print("Welcome to the main menu")
+    print("===============================")
     print("1. users")
     print("2. employees")
     print("3. cabins")
