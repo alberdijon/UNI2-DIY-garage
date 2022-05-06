@@ -1,0 +1,1 @@
+3, wheel, 100, 150, michelin/n
