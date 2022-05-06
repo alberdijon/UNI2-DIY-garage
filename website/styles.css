@@ -50,7 +50,6 @@ body {
 /*SIGN UP / LOGIN*/
 
 .loginbody {
-	/*filenames gotta be changed, this should be random somehow*/
 	background-image: url(./backgrounds/yrka-pictured-2KWoLew_M5Q-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -61,7 +60,6 @@ body {
 }
 
 .signupbody {
-	/*filenames gotta be changed, this should be random somehow*/
 	background-image: url(./backgrounds/prateek-katyal-I02vLowUxgg-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
