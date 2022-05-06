@@ -1,6 +1,0 @@
-1,30,Jumbo O
-2,30, Jumbo, A
-3 , 30 , Jumbo , R
-4 , 20 , Normal , O
-5 , 20 , Normal , A
-6 , 20 , Normal , R
