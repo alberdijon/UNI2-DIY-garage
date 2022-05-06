@@ -26,7 +26,7 @@ def employee_menu():
             edit_employees()
         elif ans == "0":
             print("\n Goodbye")
-            exit()
+            main_menu()
         else:
             print("\n Not Valid Choice Try again")
             employee_menu()
