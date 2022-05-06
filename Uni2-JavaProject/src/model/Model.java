@@ -28,9 +28,9 @@ public class Model {
     public Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/diy_garage";
+            String url = "jdbc:mysql://192.168.72.34:3306/diy_garage";
             String user = "root";
-            String password = "";
+            String password = "uni2";
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -44,7 +44,7 @@ public class Model {
        
         ArrayList<NewReservation> reservations = new ArrayList<>();
         
-        String sql = "SELECT * FROM reservations Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
+        String sql = "SELECT * FROM reservation Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
         
         
         
