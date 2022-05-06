@@ -2,11 +2,12 @@ import pickle
 
 class Product:
     def __init__(self, id, name, price, stock, brand):
-        self.id = id
+        self.id = set
         self.name = name
         self.price = price
         self.stock = stock
         self.brand = brand
+
 
 def Shop_menu():
     print("1. Add product")
@@ -33,14 +34,22 @@ def Shop_menu():
         Shop_menu()
 
 def view_products():
-    with open("Products.pickle", "rb") as f:
+    inp=open('Products.pkl','rb')
+    objects = []
+    cont=1
+    while cont==1:
         try:
-            Products = pickle.load(f)
+            objects.append(pickle.load(inp))
         except EOFError:
-            print("No products in database")
-            Products = []
-    for Product in Products:
-         print(Product.id, Product.name, Product.price, Product.stock, Product.brand)
+            print("end of products\n")
+            cont=0
+    for Product in objects:
+      print(Product.id)
+      print(Product.name)
+      print(Product.price)
+      print(Product.stock)
+      print(Product.brand)
+      cont=0
     Shop_menu()
 
 def stock_menu():
@@ -151,14 +160,16 @@ def add_product():
     stock = input("Enter stock: ")
     brand = input("Enter brand: ")
     p1 = Product(id, name, price, stock, brand)
-    try:
-        with open("Products.pickle", "rb") as f:
-            products = pickle.load(f)
-    except EOFError:
-        products = []
-    products.append(Product)
-    with open("Products.pickle", "wb") as f:
-        pickle.dump(products, f)
+    products = []
+   # try:
+       # with open('Products.pkl', 'wb') as f:
+        #    products.append( pickle.load(f))
+    #except EOFError:
+     #   products = []*/
+    #1
+    # products.append(Product)
+    with open('Products.pkl', 'ab') as f:
+        pickle.dump(p1, f)
     print("Product added")
     Shop_menu()
 
