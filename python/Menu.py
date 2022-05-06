@@ -10,7 +10,6 @@ while ans:
     2.Hire
     3.Fire
     4.Edit
-    5.Change Employee Status
     0.Exit
     """)
     ans = input("What would you like to do?")
@@ -21,7 +20,8 @@ while ans:
         hire()
     elif ans == "3":
         fire()
-
+    elif ans == "4":
+        edit_employees()
     elif ans == "0":
         print("\n Goodbye")
         exit()

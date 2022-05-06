@@ -28,7 +28,7 @@ public class Model {
     public Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:mysql://localhost:3306/garage";
+            String url = "jdbc:mysql://localhost:3306/diy_garage";
             String user = "root";
             String password = "";
             conn = DriverManager.getConnection(url, user, password);
