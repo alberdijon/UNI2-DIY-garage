@@ -14,8 +14,8 @@
             }
         ?>
 		<div class="main">
-		<?php include ("./elements/navbar.php"); ?>
-        <div class="space"></div>
+		    <?php include ("./elements/navbar.php"); ?>
+            <div class="space"></div>
 			<h1 class="title">Make a reservation</h1>
             <div class="reservemain">
                 <div class="rdatetime">
@@ -59,6 +59,32 @@
             </div>
             <div class="spacel"></div>
             <h1 class="title">About the cabins</h1>
+            <div class="maincontent">
+                <p>
+                    never gonna give you up never gonna let you down never gonna run around and desert you never gonna make you cry never gonna say goodbye never gonna tell a lie and hurt you
+                </p>
+                <!-- please change the image -->
+                <img src="./images/sample.jpg" />
+            </div>
+            <div class="spacel"></div>
+            <h1 class="title">The jumbo cabins</h1>
+            <div class="maincontent">
+                <p>
+                    si necesitas reggaeton dale sigue bailando mami no pares acercate a mi pantalon dale
+                </p>
+                <!-- please don't ship these versions -->
+                <img src="./images/sample.jpg" />
+            </div>
+            <div class="spacel"></div>
+            <h1 class="title">The mini cabins</h1>
+            <div class="maincontent">
+                <p>
+                    jon si lees esto recurda recoger la recompensa diaria del vip
+                </p>
+                <!-- rezad para que ruben no mire el historial del github -->
+                <img src="./images/sample.jpg" />
+            </div>
+            <!-- if you wanna add more content go ahead, add a spacel div + a maincontent one -->
 		<?php include ("./elements/footer.html"); ?>
 		</div>
 	</body>

@@ -18,8 +18,26 @@
 		<div class="main">
 			<div class="spacel"></div>
 			<h1 class="title">Do it yourself.</h1>
-			<div class="maincontent"></div>
-			<div class="maincontent"></div>
+			<div class="maincontent">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio repudiandae natus sequi quo quos officia! Quis alias hic, tempore libero placeat quibusdam non asperiores. Sint vitae maxime neque distinctio!
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat cupiditate, quis modi nemo dolorem itaque magnam facere cum laborum nihil doloribus at minima officia deleniti nostrum eum reiciendis ut.
+				</p>
+				<!-- Change the image -->
+				<img src="./images/sample.jpg" />
+			</div>
+			<!-- spacel adds a (L)ittle space -->
+			<div class="spacel"></div>
+			<h1 class="title">Sample title.</h1>
+			<div class="maincontent">
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed optio repudiandae natus sequi quo quos officia! Quis alias hic, tempore libero placeat quibusdam non asperiores. Sint vitae maxime neque distinctio!
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis fugiat cupiditate, quis modi nemo dolorem itaque magnam facere cum laborum nihil doloribus at minima officia deleniti nostrum eum reiciendis ut.
+				</p>
+				<!-- Change the image -->
+				<img src="./images/sample.jpg" />
+			</div>
+			<!-- if you wanna add more content go ahead, add a spacel div + a maincontent one -->
 			<?php include ("./elements/footer.html"); ?>
 		</div>
 	</body>
