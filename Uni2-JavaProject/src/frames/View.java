@@ -42,6 +42,7 @@ public class View extends javax.swing.JFrame {
         PopularCars = new javax.swing.JButton();
         WorkerSalaries = new javax.swing.JButton();
         CustomerList = new javax.swing.JButton();
+        AverageReservations = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         SwToGraphs = new javax.swing.JButton();
@@ -58,6 +59,8 @@ public class View extends javax.swing.JFrame {
         NewReservations = new javax.swing.JInternalFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         Reservations = new javax.swing.JTable();
+        jInternalFrame1 = new javax.swing.JInternalFrame();
+        jScrollPane5 = new javax.swing.JScrollPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -152,6 +155,11 @@ public class View extends javax.swing.JFrame {
         WorkerSalaries.setForeground(new java.awt.Color(51, 51, 51));
         WorkerSalaries.setText("Employee of the month");
         WorkerSalaries.setBorderPainted(false);
+        WorkerSalaries.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WorkerSalariesActionPerformed(evt);
+            }
+        });
         jPanel3.add(WorkerSalaries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 40));
 
         CustomerList.setBackground(new java.awt.Color(153, 153, 255));
@@ -162,7 +170,20 @@ public class View extends javax.swing.JFrame {
         CustomerList.setBorderPainted(false);
         jPanel3.add(CustomerList, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 180, 40));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
+        AverageReservations.setBackground(new java.awt.Color(153, 153, 255));
+        AverageReservations.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        AverageReservations.setForeground(new java.awt.Color(51, 51, 51));
+        AverageReservations.setText("Average of reservations ");
+        AverageReservations.setActionCommand("AverageOfReservations ");
+        AverageReservations.setBorderPainted(false);
+        AverageReservations.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AverageReservationsActionPerformed(evt);
+            }
+        });
+        jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 180, 40));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));
 
         jPanel4.setBackground(new java.awt.Color(204, 204, 255));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -286,7 +307,13 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 450));
+        jInternalFrame1.setVisible(true);
+        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jInternalFrame1.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 570));
+
+        jPanel5.add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
         getAccessibleContext().setAccessibleDescription("");
 
@@ -322,6 +349,14 @@ public class View extends javax.swing.JFrame {
         HideRest();
         NewReservations.setVisible(true);
     }//GEN-LAST:event_UpcomingReservationsActionPerformed
+
+    private void AverageReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AverageReservationsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AverageReservationsActionPerformed
+
+    private void WorkerSalariesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkerSalariesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_WorkerSalariesActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
@@ -343,6 +378,7 @@ public class View extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton AverageReservations;
     public javax.swing.JButton BtnPopularItems;
     public javax.swing.JButton BtnWorkerList;
     public javax.swing.JButton CustomerList;
@@ -358,6 +394,7 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JButton UpcomingReservations;
     public javax.swing.JButton ViewLowStock;
     public javax.swing.JButton WorkerSalaries;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel3;
@@ -367,6 +404,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
