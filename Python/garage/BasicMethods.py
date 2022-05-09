@@ -19,7 +19,7 @@ class BasicMethods:
         else:
             print("Wrong value, please repeat the process")
     
-    def MenuOptions():
+    def Cabins_menu():
         print("1- Show all cabins")
         print("2-Show available cabins")
         print("3-Change the estatus of the cabins")

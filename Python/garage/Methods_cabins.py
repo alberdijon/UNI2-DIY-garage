@@ -1,6 +1,6 @@
 import pickle
 from Cabins import *
-import BasicMethods
+from BasicMethods import *
 
 class Methods_cabins:
     def create_cabins():
@@ -41,8 +41,9 @@ class Methods_cabins:
             except EOFError:
                 print("No more cabins in database \n")
                 cont=0
-        for Cabin in cabins:
-            print(Cabin(S))
+
+        #for cab in cabins:
+        print(cabins)  
 
     def available_cabins():
         with open("Cabins.pickle", "rb") as f:

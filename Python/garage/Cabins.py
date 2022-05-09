@@ -6,10 +6,10 @@ import BasicMethods
 class Cabin:
     
     def __init__(self,id,pricePerHour,type,availability):
-        self.id = id
-        self.pricePerHour = pricePerHour
-        self.type = type
-        self.availability = availability
+        self.id = Cabin.set_id
+        self.pricePerHour = Cabin.set_pricePerHour
+        self.type = Cabin.set_type
+        self.availability = Cabin.set_availability
     
     def set_id(self,id):
         self.id = BasicMethods.askInteger("ID")
