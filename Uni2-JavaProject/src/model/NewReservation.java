@@ -26,7 +26,7 @@ public class NewReservation {
         this.date = date;
         this.total = total;
     }
-
+    
     public int getCabinId() {
         return cabinId;
     }

@@ -96,7 +96,31 @@ public class Model {
         return products;
         
     }
+    
+    public int getNumberOfReservationsEachHour(){
+        
+        int count = 0;
+        
+        String sql = "SELECT Cabin_ID, Hour, COUNT(Hour AS Number_of_reservation_hourly) FROM reservation ORDER BY Hour ";
+        
+        
+        
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
 
+            // loop through the result set
+            while (rs.next()) {
+                
+               NewReservation r = new NewReservation(rs.getInt("Cabin_ID"),rs.getString("Client_DNI"),rs.getTime("Hour"),rs.getDate("Date"),rs.getInt("Total"));
+               
+               
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        
+    }
     
 
 }
