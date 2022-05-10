@@ -42,14 +42,19 @@ def Shop_menu():
     choice = input("Enter your choice: ")
     if choice == "1":
         add_product()
+        Shop_menu()
     elif choice == "2":
         view_products()
+        Shop_menu()
     elif choice == "3":
         stock_menu()
+        Shop_menu()
     elif choice == "4":
         edit_product()
+        Shop_menu()
     elif choice == "5":
         remove_product()
+        Shop_menu()
     elif choice == "0":
         exit_program()
     else:
@@ -73,7 +78,6 @@ def view_products():
       print(Product.stock)
       print(Product.brand)
       cont=0
-    Shop_menu()
 
 def stock_menu():
     print("1. Add stock to a product")
@@ -82,16 +86,18 @@ def stock_menu():
     choice = input("Enter your choice: ")
     if choice == "1":
         add_stock_to_product()
+        stock_menu()
     elif choice == "2":
         remove_stock_from_product()
+        stock_menu()
     elif choice == "0":
         exit_program()
     else:
         print("Invalid choice")
         stock_menu()
-    Shop_menu()
 
 def add_stock_to_product():
+    view_products()
     inp=open('Products.pkl','rb')
     objects = []
     cont=1
@@ -103,14 +109,14 @@ def add_stock_to_product():
             cont=0
     product_to_edit = int(input("Enter the id of the product you want to add stock: "))
     for Product in objects:
-        if Product.id == product_to_edit:
+        the_id = int(Product.id)
+        if the_id == product_to_edit:
             print("Product found")
             new_stock = input("Enter how much stock you want to add: ")
             Product.stock += new_stock
             with open('Products.pkl', 'wb') as inp:
                 pickle.dump(objects, f)
             print("Stock added")
-    Shop_menu()
 
 def remove_stock_from_product():
     try:
@@ -130,7 +136,6 @@ def remove_stock_from_product():
             print("Stock removed")
             Shop_menu()
     print("No product found with that id")
-    Shop_menu()
 
 def edit_product():
     try:
@@ -158,7 +163,6 @@ def edit_product():
             print("Product edited")
             Shop_menu()
     print("No product found with that id")
-    Shop_menu()
 
 def remove_product():
    with open("Products.pickle", "rb") as f:
@@ -176,7 +180,6 @@ def remove_product():
         print("No product found with that id")
    else:
         print("Product deleted")
-   Shop_menu()
 
 def add_product():
     id = input("Enter id: ")
@@ -185,14 +188,11 @@ def add_product():
     stock = input("Enter stock: ")
     brand = input("Enter brand: ")
     p1 = Product(id, name, price, stock, brand)
-    products = []
     with open('Products.pkl', 'ab') as f:
         pickle.dump(p1, f)
     print("Product added")
-    Shop_menu()
 
 def exit_program():
     print("Thank you for using the program")
-    exit()
 
 Shop_menu()
