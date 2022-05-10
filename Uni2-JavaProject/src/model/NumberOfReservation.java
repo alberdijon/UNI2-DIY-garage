@@ -12,23 +12,16 @@ import java.util.Objects;
  * @author rodriguez.markel
  */
 public class NumberOfReservation {
-      private int cabinId;
+      
       private Time hour;
       private int numberOfReservations;
 
-    public NumberOfReservation(int cabinId, Time hour, int numberOfReservations) {
-        this.cabinId = cabinId;
+    public NumberOfReservation( Time hour, int numberOfReservations) {
+        
         this.hour = hour;
         this.numberOfReservations = numberOfReservations;
     }
 
-    public int getCabinId() {
-        return cabinId;
-    }
-
-    public void setCabinId(int cabinId) {
-        this.cabinId = cabinId;
-    }
 
     public Time getHour() {
         return hour;
@@ -48,7 +41,7 @@ public class NumberOfReservation {
 
     @Override
     public String toString() {
-        return "NumberOfReservation{" + "cabinId=" + cabinId + ", hour=" + hour + ", numberOfReservations=" + numberOfReservations + '}';
+        return "NumberOfReservation{" + "hour=" + hour + ", numberOfReservations=" + numberOfReservations + '}';
     }
 
     @Override
@@ -69,9 +62,6 @@ public class NumberOfReservation {
             return false;
         }
         final NumberOfReservation other = (NumberOfReservation) obj;
-        if (this.cabinId != other.cabinId) {
-            return false;
-        }
         if (this.numberOfReservations != other.numberOfReservations) {
             return false;
         }
@@ -80,6 +70,7 @@ public class NumberOfReservation {
         }
         return true;
     }
-      
+
+    
       
 }

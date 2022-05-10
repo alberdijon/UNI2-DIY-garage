@@ -69,6 +69,7 @@ import model.ProductSoldTable;
                 view.Reservations.setModel(new NewReservationTable(model.selectAllReservations()));
                 
                 view.NewReservations.setClosable(true);
+            
 
         }
     }

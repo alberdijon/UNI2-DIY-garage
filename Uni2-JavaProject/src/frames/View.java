@@ -32,6 +32,8 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         BtnWorkerList = new javax.swing.JButton();
@@ -59,8 +61,11 @@ public class View extends javax.swing.JFrame {
         NewReservations = new javax.swing.JInternalFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         Reservations = new javax.swing.JTable();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
-        jScrollPane5 = new javax.swing.JScrollPane();
+        ReservationEachHour = new javax.swing.JInternalFrame();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ReservationGraphic = new javax.swing.JPanel();
+
+        jScrollPane5.setViewportView(jPanel1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -182,6 +187,7 @@ public class View extends javax.swing.JFrame {
             }
         });
         jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 180, 40));
+        AverageReservations.getAccessibleContext().setAccessibleName("AverageReservations ");
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));
 
@@ -307,11 +313,16 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-        jInternalFrame1.setVisible(true);
-        jInternalFrame1.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jInternalFrame1.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 570));
+        ReservationEachHour.setVisible(false);
+        ReservationEachHour.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel5.add(jInternalFrame1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
+        jScrollPane6.setViewportView(ReservationGraphic);
+        ReservationGraphic.getAccessibleContext().setAccessibleName("ReservationGraphic");
+
+        ReservationEachHour.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 570));
+
+        jPanel5.add(ReservationEachHour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
+        ReservationEachHour.getAccessibleContext().setAccessibleName("ReservationEachHour");
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
@@ -352,6 +363,8 @@ public class View extends javax.swing.JFrame {
 
     private void AverageReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AverageReservationsActionPerformed
         // TODO add your handling code here:
+        HideRest();
+        ReservationEachHour.setVisible(false);
     }//GEN-LAST:event_AverageReservationsActionPerformed
 
     private void WorkerSalariesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkerSalariesActionPerformed
@@ -363,7 +376,7 @@ public class View extends javax.swing.JFrame {
         PopularItems.setVisible(false);
         NewReservations.setVisible(false);
         ProductSoldToday.setVisible(false);
-        
+        ReservationEachHour.setVisible(false);
     }
     
     public static View viewaSortuBistaratu() {
@@ -388,15 +401,17 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JInternalFrame PopularItems;
     public javax.swing.JTable ProductSold;
     public javax.swing.JInternalFrame ProductSoldToday;
+    public javax.swing.JInternalFrame ReservationEachHour;
+    public javax.swing.JPanel ReservationGraphic;
     public javax.swing.JTable Reservations;
     public javax.swing.JButton SoldToday;
     public javax.swing.JButton SwToGraphs;
     public javax.swing.JButton UpcomingReservations;
     public javax.swing.JButton ViewLowStock;
     public javax.swing.JButton WorkerSalaries;
-    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -405,6 +420,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables

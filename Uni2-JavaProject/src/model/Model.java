@@ -97,11 +97,11 @@ public class Model {
         
     }
     
-    public int getNumberOfReservationsEachHour(){
+    public ArrayList<NumberOfReservation> getNumberOfReservationsCabin1(){
         
-        int count = 0;
+        ArrayList<NumberOfReservation> reservationsNum1 = new ArrayList<>();
         
-        String sql = "SELECT Cabin_ID, Hour, COUNT(Hour AS Number_of_reservation_hourly) FROM reservation ORDER BY Hour ";
+        String sql = "SELECT Hour, COUNT(Cabin_ID AS Number_of_reservation_hourly) FROM reservation WHERE Cabin_ID = 1 ORDER BY Hour ";
         
         
         
@@ -112,15 +112,62 @@ public class Model {
             // loop through the result set
             while (rs.next()) {
                 
-               NewReservation r = new NewReservation(rs.getInt("Cabin_ID"),rs.getString("Client_DNI"),rs.getTime("Hour"),rs.getDate("Date"),rs.getInt("Total"));
+               NumberOfReservation r = new NumberOfReservation(rs.getTime("Hour"),rs.getInt("COUNT(Cabin_ID)"));
                
-               
+               reservationsNum1.add(r);
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-        
+        return reservationsNum1;
     }
-    
+    public ArrayList<NumberOfReservation> getNumberOfReservationsCabin2(){
+        
+        ArrayList<NumberOfReservation> reservationsNum2 = new ArrayList<>();
+        
+        String sql = "SELECT Hour, COUNT(Cabin_ID AS Number_of_reservation_hourly) FROM reservation WHERE Cabin_ID = 2 ORDER BY Hour ";
+        
+        
+        
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                
+               NumberOfReservation r = new NumberOfReservation(rs.getTime("Hour"),rs.getInt("COUNT(Cabin_ID)"));
+               
+               reservationsNum2.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return reservationsNum2;
+    }
+    public ArrayList<NumberOfReservation> getNumberOfReservationsCabin3(){
+        
+        ArrayList<NumberOfReservation> reservationsNum3 = new ArrayList<>();
+        
+        String sql = "SELECT Hour, COUNT(Cabin_ID AS Number_of_reservation_hourly) FROM reservation WHERE Cabin_ID = 3 ORDER BY Hour ";
+        
+        
+        
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+                
+               NumberOfReservation r = new NumberOfReservation(rs.getTime("Hour"),rs.getInt("COUNT(Cabin_ID)"));
+               
+               reservationsNum3.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return reservationsNum3;
+    }
 
 }
