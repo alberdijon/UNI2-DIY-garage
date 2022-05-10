@@ -3,26 +3,26 @@ from BasicMethods import *
 class Cabin:
 
     def __init__(self, id, type, pricePerHour, availability):
-        self.id = Cabin.id()
-        self.type = Cabin.type()
-        self.pricePerHour = Cabin.pricePerHour()
-        self.availability = Cabin.availability()
+        self.id = Cabin.get_id
+        self.type = Cabin.get_type
+        self.pricePerHour = Cabin.get_pricePerHour
+        self.availability = Cabin.get_availability
     
-    def id(self):
+    def get_id(self):
         return self.id
-    def id(self,a):
+    def set_id(self,a):
         self.id = a
-    def type(self):
+    def get_type(self):
         return self.type
-    def type(self,a):
+    def set_type(self,a):
         self.type = a
-    def pricePerHour(self):
+    def get_pricePerHour(self):
         return self.pricePerHour
-    def pricePerHour(self,a):
+    def set_pricePerHour(self,a):
         self.pricePerHour = a
-    def availability(self):
+    def get_availability(self):
         return self.availability
-    def availability(self,a):
+    def set_availability(self,a):
         self.availability = a
 
 
