@@ -1,6 +1,8 @@
 import pickle
 
+import Employee
 from Employee import *
+
 
 def employee_menu():
     ans = True
@@ -32,27 +34,25 @@ def employee_menu():
 
 
 def viewemployees():
-    inp = open('employees.pkl', 'rb')
-    try:
-        employees = pickle.load(inp)
+    f = open('employees.pkl', 'rb')
+    employees = []
+    cont = 1
+    while cont == 1:
+        try:
 
-    except EOFError:
-        print('end of employees')
+            employees.append(pickle.load(f))
 
-        employees = []
+        except EOFError:
+
+            cont = 0
     for employee in employees:
-        print(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job,
-              employee.salary)
+
+        print(employee.id)
     employee_menu()
 
 
 def hire():
 
-    try:
-        with open('employees.pkl', 'rb') as f:
-            employees = pickle.load(f)
-    except EOFError:
-        employees = []
     ans = 1
     while ans == 1:
         id = input("Add new employee id: ")
@@ -64,23 +64,29 @@ def hire():
         salary = input("Add new employee salary: ")
         employee = Employee(id, name, surname, gmail, mobile, job, salary)
 
-            # sample usage
-        employees.append(employee)
-
-        ans = int(input("Do you want to add a new employee? (1/0)"))
-        del employee
     # Overwrites any existing file.
-        with open('employees.pkl', 'wb') as f:
-            pickle.dump(employees, f)
+        with open('employees.pkl', 'ab') as f:
+            pickle.dump(employee, f)
         print("Added succesfully")
+        del employee
+        ans = int(input("Do you want to add a new employee? (1/0)"))
     employee_menu()
 
 
 def fire():
-    with open("employees.pkl", "rb") as f:
-        employees = pickle.load(f)
-    employee_to_delete = input("Enter the id of the employee you want to delete: ")
+    f = open('employees.pkl', 'rb')
 
+    employees = []
+    cont = 1
+    while cont == 1:
+        try:
+
+            employees.append(pickle.load(f))
+
+        except EOFError:
+
+            cont = 0
+            employee_to_delete = input("Enter the id of the employee you want to delete: ")
     for employee in employees:
         if employee.id == employee_to_delete:
             employees.remove(employee)
@@ -115,9 +121,12 @@ def edit_employees():
             employee.mobile = mobile
             employee.job = job
             employee.salary = salary
-            with open("employees.pkl", "rb") as f:
+            with open("employees.pkl", "wb") as f:
                 pickle.dump(employees, f)
             print("employee edited")
             employee_menu()
     print("no employee found")
     employee_menu()
+
+
+employee_menu()

@@ -63,4 +63,3 @@ class Employee(Person):
         print(self.id, self.name, self.surname, self.gmail, self.mobile, self.job, self.salary)
 
 
-employee_menu()
