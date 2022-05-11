@@ -46,13 +46,12 @@ def viewemployees():
 
             cont = 0
     for employee in employees:
-
-        print(employee.id)
+        print(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job,
+              employee.salary)
     employee_menu()
 
 
 def hire():
-
     ans = 1
     while ans == 1:
         id = input("Add new employee id: ")
@@ -64,7 +63,7 @@ def hire():
         salary = input("Add new employee salary: ")
         employee = Employee(id, name, surname, gmail, mobile, job, salary)
 
-    # Overwrites any existing file.
+        # Overwrites any existing file.
         with open('employees.pkl', 'ab') as f:
             pickle.dump(employee, f)
         print("Added succesfully")
@@ -75,9 +74,9 @@ def hire():
 
 def fire():
     f = open('employees.pkl', 'rb')
-
     employees = []
     cont = 1
+
     while cont == 1:
         try:
 
@@ -86,7 +85,8 @@ def fire():
         except EOFError:
 
             cont = 0
-            employee_to_delete = input("Enter the id of the employee you want to delete: ")
+
+    employee_to_delete = input("Enter the id of the employee you want to delete: ")
     for employee in employees:
         if employee.id == employee_to_delete:
             employees.remove(employee)
@@ -98,12 +98,19 @@ def fire():
 
 
 def edit_employees():
-    try:
-        with open("employees.pkl", "rb") as f:
-            employees = pickle.load(f)
 
-    except EOFError:
-        employees = []
+    f = open('employees.pkl', 'rb')
+
+    cont = 1
+    while cont == 1:
+        try:
+
+            employees.append(pickle.load(f))
+
+        except EOFError:
+
+            cont = 0
+
     employee_to_edit = input("Enter the id of the employee you want to edit: ")
     for employee in employees:
         if employee.id == employee_to_edit:
@@ -115,14 +122,14 @@ def edit_employees():
             job = input("Add new employee job: ")
             salary = input("Add new employee salary: ")
             employee.id = id
-            employee.name = name
+            employee.name= name
             employee.surname = surname
             employee.gmail = gmail
             employee.mobile = mobile
             employee.job = job
             employee.salary = salary
-            with open("employees.pkl", "wb") as f:
-                pickle.dump(employees, f)
+            with open("employees.pkl", "ab") as f:
+                pickle.dump(employee, f)
             print("employee edited")
             employee_menu()
     print("no employee found")
