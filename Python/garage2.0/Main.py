@@ -2,4 +2,4 @@ from CabinMethods import *
 from Cabin import *
 
 class Main:
-    CabinMethods.add_Cabins
+    CabinMethods.menu_cabins()
