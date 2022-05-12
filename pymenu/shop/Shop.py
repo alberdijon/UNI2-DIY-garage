@@ -1,6 +1,6 @@
 from importlib import import_module
 import pickle
-
+#patata
 class Product:
     def __init__(self, id, name, price, stock, brand):
         self.id = int(id)
