@@ -14,22 +14,23 @@ class CabinMethods:
         with open("Cabins.pkl", "ab") as f:
             pickle.dump(new_cabin, f)
         print("User added")
-        del new_cabin
+        new_cabin = 0
         CabinMethods.menu_cabins()
 
     def view_cabins():
         inp=open('Cabins.pkl', 'rb')
-        cabins= []
+        cabins = []
         cont=1
+        iterations =0
         while cont == 1:
-            try:
-                cabins.append(pickle.load(inp))
-                for cab in cabins:
-                    print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
-                    del cab
-            except EOFError:
-                print("end of cabins")
-                cont=0
+                iterations += 1
+                try:
+                    cabins.append(pickle.load(inp))
+                except EOFError:
+                    print("Showing "+str(iterations-1)+" cabins -->")
+                    cont=0
+        for cab in cabins:
+            print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
         CabinMethods.menu_cabins()
             
             
@@ -37,16 +38,19 @@ class CabinMethods:
         inp=open('Cabins.pkl', 'rb')
         cabins = []
         cont=1
+        iterations =0
         while cont == 1:
-            try:
-                cabins.append(pickle.load(inp))
-                for cab in cabins:
-                    if cab.availability == "available":
-                        print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                iterations += 1
+                try:
+                    cabins.append(pickle.load(inp))
+                except EOFError:
+                    cont=0
+        for cab in cabins:
+            if cab.availability== "available":
+                print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+        CabinMethods.menu_cabins()
                         
-            except EOFError:
-                print("end of cabins")
-                cont = 0
+
         CabinMethods.menu_cabins()
     def condition_cabins():
         inp=open('Cabins.pkl', 'rb')
@@ -85,6 +89,7 @@ class CabinMethods:
         if a == 4:
             CabinMethods.condition_cabins()
         if a == 5:
-            print("")
+            print("Good Bye!")
         else:
             print("Wrong value, please repeat the process")
+            CabinMethods.menu_cabins()
