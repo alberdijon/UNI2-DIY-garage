@@ -52,8 +52,8 @@ def viewemployees():
 
 
 def hire():
-    ans = 1
-    while ans == 1:
+    ans = 'y'
+    while ans == 'y':
         id = input("Add new employee id: ")
         name = input("Add new employee name: ")
         surname = input("Add new employee surname: ")
@@ -68,11 +68,12 @@ def hire():
             pickle.dump(employee, f)
         print("Added succesfully")
         del employee
-        ans = int(input("Do you want to add a new employee? (1/0)"))
+        ans = int(input("Do you want to add a new employee? (y/n)"))
     employee_menu()
 
 
 def fire():
+    viewemployees()
     f = open('employees.pkl', 'rb')
     employees = []
     cont = 1
@@ -88,19 +89,28 @@ def fire():
 
     employee_to_delete = input("Enter the id of the employee you want to delete: ")
     for employee in employees:
-        if employee.id == employee_to_delete:
-            employees.remove(employee)
+        e1 = Employee(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job,
+                      employee.salary)
+        try:
+            if employee.id == employee_to_delete:
 
-    with open("employees.pkl", "wb") as f:
-        pickle.dump(employees, f)
-    print("Deleted succesfully")
+                with open("employees.pkl", "wb") as f:
+                    pickle.dump(employee, f)
+                    print("Deleted succesfully")
+
+            else:
+                with open("employees.pkl", "wb") as f:
+                    pickle.dump(e1, f)
+        except EOFError:
+
+            print("no employee found")
     employee_menu()
 
 
 def edit_employees():
-
+    viewemployees()
     f = open('employees.pkl', 'rb')
-
+    employees = []
     cont = 1
     while cont == 1:
         try:
@@ -112,27 +122,30 @@ def edit_employees():
             cont = 0
 
     employee_to_edit = input("Enter the id of the employee you want to edit: ")
+
     for employee in employees:
-        if employee.id == employee_to_edit:
-            id = input("Add new employee id: ")
-            name = input("Add new employee name: ")
-            surname = input("Add new employee surname: ")
-            gmail = input("Add new employee gmail: ")
-            mobile = input("Add new employee phone number: ")
-            job = input("Add new employee job: ")
-            salary = input("Add new employee salary: ")
-            employee.id = id
-            employee.name= name
-            employee.surname = surname
-            employee.gmail = gmail
-            employee.mobile = mobile
-            employee.job = job
-            employee.salary = salary
-            with open("employees.pkl", "ab") as f:
-                pickle.dump(employee, f)
-            print("employee edited")
-            employee_menu()
-    print("no employee found")
+        e1 = Employee(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job,
+                      employee.salary)
+        try:
+
+            if employee.id == employee_to_edit:
+                id = input("Add new employee id: ")
+                name = input("Add new employee name: ")
+                surname = input("Add new employee surname: ")
+                gmail = input("Add new employee gmail: ")
+                mobile = input("Add new employee phone number: ")
+                job = input("Add new employee job: ")
+                salary = input("Add new employee salary: ")
+                e1 = Employee(id, name, surname, gmail, mobile, job, salary)
+                with open("employees.pkl", "ab") as f:
+                    pickle.dump(e1, f)
+                print("employee edited")
+            else:
+                with open("employees.pkl", "wb") as f:
+                    pickle.dump(e1, f)
+        except EOFError:
+
+            print("no employee found")
     employee_menu()
 
 
