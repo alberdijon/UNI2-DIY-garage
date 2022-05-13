@@ -6,11 +6,13 @@ import pickle
 class CabinMethods:
     def add_cabins():
 
-        Cabin.set_id(Cabin,BasicMethods.askInteger("id"))
-        Cabin.set_type(Cabin,BasicMethods.askString("type"))
-        Cabin.set_pricePerHour(Cabin,BasicMethods.askInteger("pricePerHour"))
-        Cabin.set_availability(Cabin,BasicMethods.askString("availability"))
-        new_cabin = Cabin(Cabin.id, Cabin.type, Cabin.pricePerHour, Cabin.availability)
+        #Cabin.set_id(Cabin,BasicMethods.askInteger("id"))
+        #Cabin.set_type(Cabin,BasicMethods.askString("type"))
+        #Cabin.set_pricePerHour(Cabin,BasicMethods.askInteger("pricePerHour"))
+        #Cabin.set_availability(Cabin,BasicMethods.askString("availability"))
+        new_cabin = Cabin(BasicMethods.askInteger("id"), BasicMethods.askString("type"), BasicMethods.askInteger("pricePerHour"), BasicMethods.askString("availability"))
+        #new_cabin.set_id(BasicMethods.askInteger("id")) objetua hutsik sortu eta horrela bete
+
         with open("Cabins.pkl", "ab") as f:
             pickle.dump(new_cabin, f)
         print("User added")
@@ -30,7 +32,8 @@ class CabinMethods:
                     print("Showing "+str(iterations-1)+" cabins -->")
                     cont=0
         for cab in cabins:
-            print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+            cab.print()
+            (str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
         CabinMethods.menu_cabins()
             
             
