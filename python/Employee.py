@@ -6,7 +6,7 @@ from Person import *
 
 
 
-class Employee(Person):
+class Employee():
 
     def __init__(self, ei, en, es, eg, em, j, s):
         self.id = ei
