@@ -67,7 +67,7 @@ def hire():
 
 
 def fire():
-    viewemployees()
+
     f = open('employees.pkl', 'rb')
     employees = []
     cont = 1
@@ -102,7 +102,7 @@ def fire():
 
 
 def edit_employees():
-    viewemployees()
+
     f = open('employees.pkl', 'rb')
     employees = []
     cont = 1
