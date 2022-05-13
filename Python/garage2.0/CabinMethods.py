@@ -55,10 +55,16 @@ class CabinMethods:
     def condition_cabins():
         inp=open('Cabins.pkl', 'rb')
         cabins = []
-        cabins.append(pickle.load(inp))
+        cont=1
+        while cont == 1:
+            
+            try:
+                    cabins.append(pickle.load(inp))
+            except EOFError:
+                    cont=0
         select_cabin=BasicMethods.askInteger("ID")
         for cab in cabins:
-            if cab.id is select_cabin:
+            if cab.id == select_cabin:
                 print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
                 a = int(input("1 for available 2 for occupied 3 for repairing --> "))
                 if a == 1:
