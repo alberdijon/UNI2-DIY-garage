@@ -85,6 +85,7 @@
                 <img src="./images/sample.jpg" />
             </div>
             <!-- if you wanna add more content go ahead, add a spacel div + a maincontent one -->
+            <div class="spacel"></div>
 		<?php include ("./elements/footer.html"); ?>
 		</div>
 	</body>

@@ -37,6 +37,7 @@
 				<!-- Change the image -->
 				<img src="./images/sample.jpg" />
 			</div>
+			<div class="spacel"></div>
 			<!-- if you wanna add more content go ahead, add a spacel div + a maincontent one -->
 			<?php include ("./elements/footer.html"); ?>
 		</div>

@@ -40,6 +40,7 @@ img {
 	background-size: cover;
 	position: relative;
 	border-radius: 0px 0px 20px 20px;
+	box-shadow: 5px 0px 150px rgb(212, 190, 149);
 }
 
 .hero-text {
@@ -71,7 +72,7 @@ img {
 	align-self: center;
 	height: 225px;
 	border-radius: 10px;
-	box-shadow: 5px 5px 15px rgb(197, 197, 197);
+	box-shadow: 5px 5px 15px #d1d1d1;
 }
 
 /*SIGN UP / LOGIN*/
@@ -312,9 +313,17 @@ img {
 }
 
 .duser {
+	background-image: linear-gradient(to bottom right, #7ab3ff, #a35dff);
+	color: white;
 	flex-direction: row;
 	align-items: center;
 	padding: 10px 20px;
+	box-shadow: 5px 5px 50px #b984ff, -5px -5px 50px #95c2fd;
+}
+
+.duser a {
+	color: white;
+	text-decoration: underline;
 }
 
 .duseru {
@@ -333,23 +342,73 @@ img {
 	border-radius: 100%;
 }
 
-.dappointment {
+.dsettings {
 	flex-direction: column;
 	padding: 15px 20px;
 }
 
-.dappointment h2 {
+.dsettings h2 {
 	margin-bottom: 5px;
 }
 
-.dsettings {
+.dsettings a {
+	color: black;
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.dappointment {
 	padding: 20px;
-	flex-grow: 2;
+	flex-grow: 1;
 }
 
 .dvehicles {
 	padding: 20px;
 	flex-grow: 1;
+}
+
+/*Shop*/
+
+.tadminoptions {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.tadminbutton {
+	align-self: center;
+	background-color: #f8f9fa;
+	padding: 10px;
+	border-radius: 10px;
+	color: #7ab3ff;
+	text-decoration: none;
+	box-shadow: 1px 1px 3px #d1d1d1;
+	transition-duration: 0.2s;
+}
+
+.tadminbutton:hover {
+	box-shadow: 3px 3px 10px #d1d1d1;
+}
+
+.sbanner {
+	background-image: linear-gradient(to bottom right, #7ab3ff, #a35dff);
+	border-radius: 10px;
+	padding: 20px;
+	color: white;
+	transition-duration: 0.2s;
+	box-shadow: 1px 1px 10px #b984ff, 0px 0px 5px #95c2fd;
+	cursor: default;
+}
+
+.sbanner:hover {
+	box-shadow: 5px 5px 25px #b984ff, -5px -5px 25px #95c2fd;
+}
+
+.sttitle {
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
 }
 
 /*About*/

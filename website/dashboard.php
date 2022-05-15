@@ -27,17 +27,18 @@
                         <img src="./pfps/default.jpg" alt="user">
                     </div>
                 </div>
-                <div class="dcardl dappointment">
-                    <h2>Appointments</h2>
+                <div class="dcardl dsettings">
+                    <h2>Settings</h2>
                     <span>
-                        No upcoming appointments
-                        <!-- ADD PHP HERE -->
+                        <a href="./settings.php">Change password</a>
+                        <a href="./settings.php">Change email</a>
+                        <a href="./settings.php">Change profile picture</a>
                     </span>
                 </div>
             </div>
             <div class="drow drow2">
-                <div class="dcardm dsettings">
-                    <h2>Settings</h2>
+                <div class="dcardm dappointment">
+                    <h2>Appointments</h2>
                 </div>
                 <div class="dcardm dvehicles">
                     <h2>Your vehicles</h2>

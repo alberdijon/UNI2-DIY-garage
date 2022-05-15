@@ -29,6 +29,7 @@
         session_start();
 
         $_SESSION['name'] = $name;
+        $_SESSION['email'] = $email;
         $_SESSION['userID'] = $userID;
 
         header("Location:../dashboard.php");
