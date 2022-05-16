@@ -17,7 +17,7 @@ import model.NewReservation;
 import model.NewReservationTable;
 import model.ProductSold;
 import model.ProductSoldTable;
-
+import model.ReservationGraphic;
 /**
  *
  * @author rodriguez.markel
@@ -70,7 +70,8 @@ import model.ProductSoldTable;
                 
                 view.NewReservations.setClosable(true);
             
-
+            case "AverageReservations" :
+                view.ReservationEachHour.add(new GraphicReservation());
         }
     }
 }

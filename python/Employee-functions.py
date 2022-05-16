@@ -54,6 +54,7 @@ def viewemployees():
 def hire():
     ans = 'y'
     while ans == 'y':
+        employee=Employee("","","","","","","")
         employee = Employee(employee.setid(), employee.setname(), employee.setsurname(), employee.setgmail(),
                             employee.setmobile(), employee.job, employee.setsalary())
 
@@ -83,18 +84,15 @@ def fire():
 
     employee_to_delete = input("Enter the id of the employee you want to delete: ")
     for employee in employees:
-        # hacer sin esto: e1 = Employee(employee.id, employee.name, employee.surname, employee.gmail, employee.mobile, employee.job,
-        # employee.salary)
         try:
             if employee.id == employee_to_delete:
+                employees.remove(employee)
 
-                with open("employees.pkl", "wb") as f:
-                    pickle.dump(employee, f)
-                    print("Deleted succesfully")
+                print("Deleted succesfully")
 
             else:
                 with open("employees.pkl", "wb") as f:
-                    pickle.dump(e1, f)
+                    pickle.dump(employee, f)
         except EOFError:
 
             print("no employee found")
