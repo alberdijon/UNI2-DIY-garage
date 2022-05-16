@@ -20,7 +20,7 @@
             <div class="reservemain">
                 <div class="rdatetime">
                     <h3>Date and time</h3>
-                    <form>
+                    <form action="./backend/reserve.php" method="post">
                         <div class="form-group">
                             <label for="date">Date</label>
                             <input type="date" class="form-control" id="date" require>
@@ -33,11 +33,22 @@
                             <label for="duration">Duration (hours)</label>
                             <input type="number" class="form-control" id="duration" value="1" min="1" max="3" require>
                         </div>
-                        <button type="submit" class="btn rdtsubmit">Submit</button>
+                        <input type="submit" class="btn rdtsubmit"/>
                     </form>
                 </div>
                 <div class="rgarage">
                     <h3>Select a cabin</h3>
+                    <?php
+                        if(isset($_POST['date'])) {
+                            $date = $_POST['date'];
+                            $time = $_POST['time'];
+                            $duration = $_POST['duration'];
+                            $link = KonektatuDatuBasera();
+                            $sql = "SELECT * FROM cabins WHERE NOT EXISTS (SELECT * FROM cabin-client WHERE cabins.ID = cabin-client.Cabin_ID AND (cabin-client.date = '$date' AND (cabin-client.Hour BETWEEN '$time' AND '$time' + INTERVAL $duration HOUR)))";
+                            $result = mysqli_query($link, $sql);
+                            
+                        }
+                    ?>
                     <div class="rgraphic">
                         <div class="rgcabin cabin"><p>1</p></div>
                         <div class="rgcabin cabin"><p>2</p></div>

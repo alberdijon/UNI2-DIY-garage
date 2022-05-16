@@ -56,7 +56,6 @@ img {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-	/* background-color: red; */
 	padding: 0;
 }
 
@@ -318,7 +317,7 @@ img {
 	flex-direction: row;
 	align-items: center;
 	padding: 10px 20px;
-	box-shadow: 5px 5px 50px #b984ff, -5px -5px 50px #95c2fd;
+	box-shadow: 5px 5px 20px #b984ff, -5px -5px 50px #95c2fd;
 }
 
 .duser a {
@@ -369,6 +368,11 @@ img {
 
 /*Shop*/
 
+.s2title {
+	border-bottom: #e0e0e0 dotted 2px;
+	margin-bottom: 10px;
+}
+
 .tadminoptions {
 	display: flex;
 	flex-direction: row;
@@ -381,14 +385,162 @@ img {
 	background-color: #f8f9fa;
 	padding: 10px;
 	border-radius: 10px;
-	color: #7ab3ff;
+	color: #007bff;
 	text-decoration: none;
 	box-shadow: 1px 1px 3px #d1d1d1;
 	transition-duration: 0.2s;
+	border: none;
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: calc(100vh - 515px);
+}
+
+.stcontent {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.sttext {
+	display: flex;
+	flex-direction: column;
+}
+
+.stbrand {
+	font-size: 20px;
+}
+
+.stright {
+	display: flex;
+	flex-direction: row;
+}
+
+.stright img {
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px #d0d3ff;
+	margin-left: 20px;
+	transition-duration: 0.2s;
+	width: 200px;
+	height: 100px;
+}
+
+.stright img:hover {
+	box-shadow: 10px 10px 20px #d0d3ff;
+}
+
+.stprice {
+	margin-right: 20px;
+	font-size: 30px;
+	align-self: center;
+}
+
+.shopform {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.stbutton {
+	align-self: center;
+	margin-left: 20px;
+	background-color: #f8f9fa;
+	padding: 10px;
+	box-shadow: 1px 1px 3px #d0d3ff;
+	border-radius: 7px;
+	transition-duration: 0.2s;
+	border: none;
+}
+
+.stoos {
+	align-self: center;
+	margin-left: 20px;
+	background-color: #f8f9fa;
+	padding: 10px;
+	box-shadow: 1px 1px 3px #b1b1b1;
+	color: black;
+	border-radius: 7px;
+	transition-duration: 0.2s;
+	cursor: not-allowed;
+}
+
+.stoos:hover {
+	box-shadow: 5px 5px 10px #ffd0d0;
+	text-decoration: none;
+	color: #ff0000;
+}
+
+.stbutton:hover {
+	box-shadow: 5px 5px 10px #d0d3ff;
+	text-decoration: none;
+	color: #007bff;
+}
+
+.snoproducts {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: calc(100vh - 515px);
+	align-items: center;
+	justify-content: center;
 }
 
 .tadminbutton:hover {
 	box-shadow: 3px 3px 10px #d1d1d1;
+	text-decoration: none;
+	color: #007bff;
+	cursor: pointer;
+}
+
+#addproduct {
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	background-image: linear-gradient(to bottom right, #ff7aff, #a35dff);
+	box-shadow: -1px -1px 5px #ff7aff, 1px 1px 5px #a35dff;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	padding: 20px;
+	transition-duration: 0.2s;
+}
+
+#addproduct:hover {
+	box-shadow: -5px -5px 20px #ff7aff, 5px 5px 20px #a35dff;
+}
+
+.admintop {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.admintitle {
+	color: white;
+}
+
+.adminclose {
+	background-color: #00000000;
+	color: white;
+	text-decoration: none;
+	border: none;
+}
+
+.adminform {
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+}
+
+.afstructure {
+	display: flex;
+	flex-direction: row;
+	color: white;
 }
 
 .sbanner {
@@ -405,10 +557,18 @@ img {
 	box-shadow: 5px 5px 25px #b984ff, -5px -5px 25px #95c2fd;
 }
 
-.sttitle {
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
+.staoptionsbutton {
+	border: none;
+	background-color: #00000000;
+	padding: 0;
+}
+
+.staoptions {
+	display: flex;
+}
+
+.staoptions a {
+	cursor: pointer;
 }
 
 /*About*/
@@ -518,6 +678,50 @@ img {
 	.maincontent > img {
 		width: 100%;
 		height: 300px;
+	}
+
+	/*Shop*/
+
+	.stcontent {
+		flex-direction: column-reverse;
+		margin-bottom: 10px;
+	}
+
+	.sttext {
+		margin: 0px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.stprice {
+		margin: 0;
+	}
+
+	.stright {
+		flex-direction: column-reverse;
+	}
+
+	.stright img {
+		align-self: center;
+		margin: 0;
+		margin-top: 10px;
+	}
+
+	.stbutton,
+	.stoos {
+		margin: 0;
+		margin-top: 10px;
+		width: 50%;
+		text-align: center;
+	}
+
+	.shopform {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.sfamount {
+		margin-top: 10px;
 	}
 }
 
