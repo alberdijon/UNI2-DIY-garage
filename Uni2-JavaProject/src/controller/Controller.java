@@ -12,8 +12,12 @@ import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.EmployeeOfTheMonth;
+import model.EmployeeOfTheMonthTable;
 import model.LowStockItems;
 import model.LowStockItemsTable;
+import model.LoyalCustomers;
+import model.LoyalCustomersTable;
 import model.Model;
 import model.NewReservation;
 import model.NewReservationTable;
@@ -96,6 +100,14 @@ import model.ProductSoldTable;
                 view.PopularCarsTable.setModel(new PopularCarsTable(model.selectPopularCars()));
                 
                 //
+            case "WorkerSalaries":
+                view.EmployeeMonthTable.setVisible(true);
+                ArrayList <EmployeeOfTheMonth> memployee=model.selectEmployeeOfTheMonth();
+                view.EmployeeMonthTable.setModel(new EmployeeOfTheMonthTable(model.selectEmployeeOfTheMonth()));
+            case "CustomerList":
+                view.LoyalCustomersTable.setVisible(true);
+                ArrayList <LoyalCustomers> lcustomer=model.selectLoyalCustomers();
+                view.LoyalCustomersTable.setModel(new LoyalCustomersTable(model.selectLoyalCustomers()));
 
         }
     }

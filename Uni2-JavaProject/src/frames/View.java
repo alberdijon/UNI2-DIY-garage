@@ -70,6 +70,9 @@ public class View extends javax.swing.JFrame {
         EmployeeMonth = new javax.swing.JInternalFrame();
         jScrollPane8 = new javax.swing.JScrollPane();
         EmployeeMonthTable = new javax.swing.JTable();
+        LoyalCustomers = new javax.swing.JInternalFrame();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        LoyalCustomersTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jPanel1);
 
@@ -184,6 +187,11 @@ public class View extends javax.swing.JFrame {
         CustomerList.setText("Most loyal customers");
         CustomerList.setActionCommand("CustomerList");
         CustomerList.setBorderPainted(false);
+        CustomerList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerListActionPerformed(evt);
+            }
+        });
         jPanel3.add(CustomerList, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 180, 40));
 
         AverageReservations.setBackground(new java.awt.Color(153, 153, 255));
@@ -319,6 +327,7 @@ public class View extends javax.swing.JFrame {
         jPanel5.add(ReservationEachHour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
         ReservationEachHour.getAccessibleContext().setAccessibleName("ReservationEachHour");
 
+        PopularCars.setTitle("Popular cars");
         PopularCars.setVisible(false);
         PopularCars.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -340,6 +349,7 @@ public class View extends javax.swing.JFrame {
         jPanel5.add(PopularCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
         EmployeeMonth.setBorder(null);
+        EmployeeMonth.setTitle("Employees of the month");
         EmployeeMonth.setVisible(false);
 
         EmployeeMonthTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -358,6 +368,27 @@ public class View extends javax.swing.JFrame {
         EmployeeMonth.getContentPane().add(jScrollPane8, java.awt.BorderLayout.CENTER);
 
         jPanel5.add(EmployeeMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 600));
+
+        LoyalCustomers.setBorder(null);
+        LoyalCustomers.setTitle("Loyal Customers");
+        LoyalCustomers.setVisible(false);
+
+        LoyalCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane9.setViewportView(LoyalCustomersTable);
+
+        LoyalCustomers.getContentPane().add(jScrollPane9, java.awt.BorderLayout.CENTER);
+
+        jPanel5.add(LoyalCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
@@ -409,6 +440,10 @@ public class View extends javax.swing.JFrame {
     private void BtnPopularCarsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPopularCarsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BtnPopularCarsActionPerformed
+
+    private void CustomerListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CustomerListActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
@@ -439,6 +474,8 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JTable EmployeeMonthTable;
     private javax.swing.JInternalFrame LowStock;
     public javax.swing.JTable LowStockItemTable;
+    private javax.swing.JInternalFrame LoyalCustomers;
+    public javax.swing.JTable LoyalCustomersTable;
     public javax.swing.JInternalFrame NewReservations;
     public javax.swing.JInternalFrame PopularCars;
     public javax.swing.JTable PopularCarsTable;
@@ -468,5 +505,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     // End of variables declaration//GEN-END:variables
 }
