@@ -6,6 +6,7 @@
 package controller;
 
 import frames.View;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyVetoException;
@@ -27,6 +28,7 @@ import model.ProductSoldTable;
     public class Controller implements ActionListener {
     private Model model;
     private View view;
+    private Graphics gGraphics;
     public Controller(Model model, View view) {
         this.model = model;
         this.view = view;
@@ -73,7 +75,7 @@ import model.ProductSoldTable;
                 view.NewReservations.setClosable(true);
             
             case "AverageReservations" :
-                ArrayList<NumberOfReservation> reservationNum = model.getNumberOfReservationsCabin();
+               model.drawReport1(gGraphics, model.getNumberOfReservationsCabin());
                 
                 
         }
