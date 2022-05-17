@@ -91,25 +91,25 @@
 						<form action="backend/sadd.php" method="post" enctype="multipart/form-data">
 							<div class="adminform">
 								<label for="brand">Brand:</label>
-								<input type="text" name="brand" id="brand" required />
+								<input class="admininput" type="text" name="brand" id="brand" required />
 							</div>
 							<div class="adminform">
 								<label for="name">Name:</label>
-								<input type="text" name="name" id="name" required />
+								<input class="admininput" type="text" name="name" id="name" required />
 							</div>
 							<div class="adminform">
 								<label for="price">Price:</label>
-								<input type="number" min="0" name="price" id="price" required />
+								<input class="admininput" type="number" min="0" name="price" id="price" required />
 							</div>
 							<div class="adminform">
 								<label for="stock">Stock:</label>
-								<input type="number" min="0" name="stock" id="stock" required></input>
+								<input class="admininput" type="number" min="0" name="stock" id="stock" required></input>
 							</div>
 							<div class="adminform">
 								<label for="image">Image:</label>
 								<input type="file" name="image" id="image" />
 							</div>
-							<input type="submit" value="Add product" class="adminbutton" />
+							<input type="submit" value="Add product" class="afbutton" />
 						</form>
 					</div>
 					

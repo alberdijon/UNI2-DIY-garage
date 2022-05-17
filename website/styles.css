@@ -180,6 +180,10 @@ img {
 	flex-direction: column;
 }
 
+.rgctext {
+	align-self: center;
+}
+
 /*DATE AND TIME*/
 .rdatetime {
 	flex-grow: 1;
@@ -505,7 +509,7 @@ img {
 	box-shadow: -1px -1px 5px #ff7aff, 1px 1px 5px #a35dff;
 	margin-bottom: 20px;
 	border-radius: 10px;
-	padding: 20px;
+	padding: 20px 20px 5px 20px;
 	transition-duration: 0.2s;
 }
 
@@ -541,6 +545,31 @@ img {
 	display: flex;
 	flex-direction: row;
 	color: white;
+}
+
+.adminform > label {
+	width: 55px;
+}
+
+.admininput {
+	border-radius: 7px;
+	border: none;
+	background-color: #ffffffc4;
+	padding: 0px 7px;
+}
+
+.afbutton {
+	border-radius: 10px;
+	border: none;
+	padding: 10px;
+	color: white;
+	background-color: black;
+	margin-top: 10px;
+	transition-duration: 0.2s;
+}
+
+.afbutton:hover {
+	box-shadow: 0px 0px 10px black;
 }
 
 .sbanner {

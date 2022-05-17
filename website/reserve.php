@@ -20,18 +20,19 @@
             <div class="reservemain">
                 <div class="rdatetime">
                     <h3>Date and time</h3>
+                    <!-- FORM START -->
                     <form action="./backend/reserve.php" method="post">
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="date" class="form-control" id="date" require>
+                            <input type="date" class="form-control" id="date" required>
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
-                            <input type="time" step="3600" class="form-control" id="time" require>
+                            <input type="time" step="3600" class="form-control" id="time" required>
                         </div>
                         <div class="form-group">
                             <label for="duration">Duration (hours)</label>
-                            <input type="number" class="form-control" id="duration" value="1" min="1" max="3" require>
+                            <input type="number" class="form-control" id="duration" value="1" min="1" max="3" required>
                         </div>
                         <input type="submit" class="btn rdtsubmit"/>
                     </form>
@@ -40,25 +41,27 @@
                     <h3>Select a cabin</h3>
                     <?php
                         if(isset($_POST['date'])) {
-                            $date = $_POST['date'];
-                            $time = $_POST['time'];
-                            $duration = $_POST['duration'];
-                            $link = KonektatuDatuBasera();
-                            $sql = "SELECT * FROM cabins WHERE NOT EXISTS (SELECT * FROM cabin-client WHERE cabins.ID = cabin-client.Cabin_ID AND (cabin-client.date = '$date' AND (cabin-client.Hour BETWEEN '$time' AND '$time' + INTERVAL $duration HOUR)))";
-                            $result = mysqli_query($link, $sql);
-                            
-                        }
-                    ?>
-                    <div class="rgraphic">
-                        <div class="rgcabin cabin"><p>1</p></div>
-                        <div class="rgcabin cabin"><p>2</p></div>
-                        <div class="rgcabin cabin"><p>3</p></div>
-                        <div class="rgvcabin">
+                            ?>
+                            <div class="rgraphic">
+                            <div class="rgcabin cabin"><p>1</p></div>
+                            <div class="rgcabin cabin"><p>2</p></div>
+                            <div class="rgcabin cabin"><p>3</p></div>
+                            <div class="rgvcabin">
                             <div class="rgmcabin cabin"><p>4</p></div>
                             <div class="rgmcabin cabin"><p>5</p></div>
                             <div class="rgmcabin cabin"><p>6</p></div>
                         </div>
                     </div>
+                    <?php
+                        } else {
+                            ?>
+                            <div class="rgraphic">
+                                <h2 class="rgctext">Please select a date and time first.</h2>
+                            </div>
+                    <?php
+                        }
+                    ?> 
+                    
                 </div>
                 <div class="rconfirm">
                     <h3>Price</h3>
