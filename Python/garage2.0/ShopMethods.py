@@ -11,7 +11,7 @@ class ShopMethods:
         print("4. Edit product")
         print("5. Remove product")
         print("0. Exit")
-        choice = input("Enter your choice: ")
+        choice = BasicMethods.askInteger("your choice")
         if choice == "1":
             ShopMethods.add_product()
             ShopMethods.Shop_menu()
@@ -55,7 +55,7 @@ class ShopMethods:
         print("1. Add stock to a product")
         print("2. Remove stock from a product")
         print("0. Exit")
-        choice = input("Enter your choice: ")
+        choice = BasicMethods.askString("your choice")
         if choice == "1":
             ShopMethods.add_stock_to_product()
             ShopMethods.stock_menu()
@@ -79,8 +79,7 @@ class ShopMethods:
             except EOFError:
                 print("end of products\n")
                 cont = 0
-        product_to_edit = int(
-            input("Enter the id of the product you want to add stock: "))
+        product_to_edit = BasicMethods.askInteger("the id of the product you want to edit")
         first_object = objects[0]
         for product in objects:
             the_id = int(product.id)
@@ -89,8 +88,7 @@ class ShopMethods:
             try:
                 if the_id == first_object.id:
                     print("Product found")
-                    new_stock = int(
-                        input("Enter how much stock you want to add: "))
+                    new_stock = BasicMethods.askInteger("the stock you want to add")
                     the_stock = int(product.stock)
                     the_stock += new_stock
                     p1.stock = the_stock
@@ -99,8 +97,7 @@ class ShopMethods:
                     print("Stock added")
                 elif the_id == product_to_edit:
                     print("Product found")
-                    new_stock = int(
-                        input("Enter how much stock you want to add: "))
+                    new_stock = BasicMethods.askInteger("the stock you want to add")
                     the_stock = int(product.stock)
                     the_stock += new_stock
                     p1.stock = the_stock
@@ -124,18 +121,15 @@ class ShopMethods:
             except EOFError:
                 print("end of products\n")
                 cont = 0
-        product_to_edit = int(
-            input("Enter the id of the product you want to reduce stock: "))
+        product_to_edit = BasicMethods.askInteger("The id of the product you want to reduce stock")
         first_object = objects[0]
         for product in objects:
             the_id = int(product.id)
-            p1 = Product(product.id, product.name, product.price,
-                         product.stock, product.brand)
+            p1 = Product(product.id, product.name, product.price,product.stock, product.brand)
             try:
                 if the_id == first_object.id:
                     print("Product found")
-                    new_stock = int(
-                        input("Enter how much stock you reduce to reduce: "))
+                    new_stock = BasicMethods.askInteger("how much stock you want to reduce")
                     the_stock = int(product.stock)
                     the_stock -= new_stock
                     p1.stock = the_stock
@@ -144,8 +138,7 @@ class ShopMethods:
                     print("Stock reduced")
                 elif the_id == product_to_edit:
                     print("Product found")
-                    new_stock = int(
-                        input("Enter how much stock you want to reduce: "))
+                    new_stock = BasicMethods.askInteger("how much stock you want to reduce")
                     the_stock = int(product.stock)
                     the_stock -= new_stock
                     p1.stock = the_stock
@@ -169,13 +162,11 @@ class ShopMethods:
             except EOFError:
                 print("end of products\n")
                 cont = 0
-        product_to_edit = int(
-            input("Enter the id of the product you want to edit: "))
+        product_to_edit = BasicMethods.askInteger("ID for the product you want to edit ")
         first_object = objects[0]
         for product in objects:
             the_id = int(product.id)
-            p1 = Product(product.id, product.name, product.price,
-                         product.stock, product.brand)
+            p1 = Product(product.id, product.name, product.price,product.stock, product.brand)
             try:
                 if the_id == first_object.id:
                     p1 = Product(Product.set_id(BasicMethods.askInteger("ID")), Product.set_name(BasicMethods.askString("Name")), Product.set_price(BasicMethods.askInteger("Price")), Product.set_stock(BasicMethods.askString("Stock")), Product.set_brand(BasicMethods.askString("Brand")))
@@ -204,7 +195,7 @@ class ShopMethods:
             except EOFError:
                 print("end of products\n")
                 cont = 0
-        product_to_delete = BasicMethods.askString("ID for the product you want to delete ")
+        product_to_delete = BasicMethods.askInteger("ID for the product you want to delete ")
         first_object = objects[0]
         contt = 0
         is_the_first = 0
@@ -234,7 +225,7 @@ class ShopMethods:
                 print("No product found with that id")
 
     def add_product():
-        p1 = Product(Product.set_id(BasicMethods.askInteger("ID")), Product.set_name(BasicMethods.askString("Name")), Product.set_price(BasicMethods.askInteger("Price")), Product.set_stock(BasicMethods.askString("Stock")), Product.set_brand(BasicMethods.askString("Brand")))
+        p1 = Product(BasicMethods.askInteger("ID"),BasicMethods.askString("Name"),BasicMethods.askInteger("Price"),BasicMethods.askString("Stock"),BasicMethods.askString("Brand"))
         with open('Products.pkl', 'ab') as f:
             pickle.dump(p1, f)
         print("Product added")

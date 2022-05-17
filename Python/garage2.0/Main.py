@@ -4,8 +4,7 @@ from ShopMethods import *
 from EmployeeMethods import *
 
 class Main:
-
-
+    
     def main_menu():
         print("1. users")
         print("2. employees")
@@ -28,4 +27,3 @@ class Main:
 
 
     main_menu()
-

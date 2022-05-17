@@ -35,8 +35,7 @@ class UserMethods:
                 print("No users in database")
                 users = []
         for user in users:
-            print(user.first_name, user.last_name, user.email,
-                  user.password, user.phone_number)
+            print(user.first_name, user.last_name, user.email,user.password, user.phone_number)
         UserMethods.users_menu()
 
     def add_user():
@@ -47,19 +46,18 @@ class UserMethods:
             users = []
             print("No users in database")
         valid = True
-        first_name = input("Enter first name: ")
-        last_name = input("Enter last name: ")
-        email = input("Enter email: ")
+        first_name = BasicMethods.askString("First Name")
+        last_name = BasicMethods.askString("Last Name")
+        email = BasicMethods.askString("Email")
         for user in users:
             if user.email == email:
                 print("Email already in use")
                 print("Returning to main menu")
                 valid = False
         if valid:
-            password = input("Enter password: ")
-            phone_number = input("Enter phone number: ")
-            new_user = User(first_name, last_name, email,
-                            password, phone_number)
+            password = BasicMethods.askString("Password")
+            phone_number = BasicMethods.askInteger("Phone Number")
+            new_user = User(first_name, last_name, email,password, phone_number)
             users.append(new_user)
             with open("Users.pkl", "wb") as f:
                 pickle.dump(users, f)
@@ -69,8 +67,7 @@ class UserMethods:
     def delete_user():
         with open("Users.pkl", "rb") as f:
             users = pickle.load(f)
-        user_to_delete = input(
-            "Enter the email of the user you want to delete: ")
+        user_to_delete = BasicMethods.askString("The E-mail of the user you want to delete")
         amount_deleted = 0
         for user in users:
             if user.email == user_to_delete:
@@ -91,13 +88,12 @@ class UserMethods:
         except EOFError:
             users = []
             print("No users in database")
-        user_to_edit = BasicMethods.askString(
-            "Enter the email of the user you want to edit: ")
+        user_to_edit = BasicMethods.askString("The email of the user you want to edit")
         for user in users:
             if user.email == user_to_edit:
                 print("User found")
-                user = User(User.set_first_name(BasicMethods.askString("First name")), User.set_last_name(BasicMethods.askString("Last name")), User.set_email(
-                    BasicMethods.askString("e-mail")), User.set_password(BasicMethods("Password")), User.set_phone_number(BasicMethods.askInteger("Phone number")))
+                user=User("","","","","")
+                user = User(BasicMethods.askString("First name"),BasicMethods.askString("Last name"),BasicMethods.askString("E-mail"),BasicMethods("Password"),BasicMethods.askInteger("Phone number"))
             with open("Users.pkl", "wb") as f:
                 pickle.dump(users, f)
             print("User edited")
