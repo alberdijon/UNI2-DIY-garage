@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 15, 2022 at 10:52 PM
+-- Generation Time: May 17, 2022 at 06:58 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `cabin-client` (
   `Cabin_ID` int(10) NOT NULL,
   `Client_DNI` varchar(10) NOT NULL,
-  `Hour` time(6) NOT NULL,
+  `Hour` time NOT NULL,
   `Date` date NOT NULL,
   `Total` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -148,8 +148,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`ID`, `Brand`, `Name`, `Price`, `Stock`, `img`) VALUES
-(1, 'Repsol', 'Diesel 10L', 20, 15, NULL),
-(2, 'Michelin', 'Guide', 10, 7, NULL);
+(1, 'Cepsa', 'Diesel 10L', 20, 3, NULL),
+(5, 'Michelin', 'Michelin Guide', 10, 1, NULL);
 
 -- --------------------------------------------------------
 
@@ -165,6 +165,19 @@ CREATE TABLE `shop` (
   `Hour` time(6) NOT NULL,
   `Total_price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shop`
+--
+
+INSERT INTO `shop` (`Client_DNI`, `Product_ID`, `Amount`, `Date`, `Hour`, `Total_price`) VALUES
+('14798322F', 5, 1, '2022-05-16', '18:25:20.000000', 10),
+('admin', 1, 1, '2022-05-16', '16:22:00.000000', 40),
+('admin', 1, 1, '2022-05-16', '16:22:02.000000', 40),
+('admin', 1, 3, '2022-05-16', '16:25:45.000000', 120),
+('admin', 5, 1, '2022-05-16', '17:19:17.000000', 10),
+('admin', 5, 3, '2022-05-16', '17:19:45.000000', 30),
+('admin', 5, 1, '2022-05-16', '17:19:59.000000', 10);
 
 -- --------------------------------------------------------
 
@@ -297,6 +310,22 @@ ALTER TABLE `worker`
   ADD UNIQUE KEY `DNI` (`DNI`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `Product_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -318,8 +347,8 @@ ALTER TABLE `job-worker`
 -- Constraints for table `shop`
 --
 ALTER TABLE `shop`
-  ADD CONSTRAINT `FK_Product-ID` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`ID`),
-  ADD CONSTRAINT `shop_ibfk_1` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`);
+  ADD CONSTRAINT `shop_ibfk_1` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`),
+  ADD CONSTRAINT `shop_ibfk_2` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`ID`);
 
 --
 -- Constraints for table `vehicle`
