@@ -12,9 +12,11 @@ import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFrame;
 import model.Model;
 import model.NewReservation;
 import model.NewReservationTable;
+import model.NumberOfReservation;
 import model.ProductSold;
 import model.ProductSoldTable;
 import model.ReservationGraphic;
@@ -71,7 +73,9 @@ import model.ReservationGraphic;
                 view.NewReservations.setClosable(true);
             
             case "AverageReservations" :
-                view.ReservationEachHour.add(new GraphicReservation());
+                ArrayList<NumberOfReservation> reservationNum = model.getNumberOfReservationsCabin();
+                
+                
         }
     }
 }

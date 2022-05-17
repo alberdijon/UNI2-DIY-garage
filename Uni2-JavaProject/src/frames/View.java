@@ -62,8 +62,7 @@ public class View extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         Reservations = new javax.swing.JTable();
         ReservationEachHour = new javax.swing.JInternalFrame();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        ReservationGraphic = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jPanel1);
 
@@ -315,11 +314,7 @@ public class View extends javax.swing.JFrame {
 
         ReservationEachHour.setVisible(false);
         ReservationEachHour.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane6.setViewportView(ReservationGraphic);
-        ReservationGraphic.getAccessibleContext().setAccessibleName("ReservationGraphic");
-
-        ReservationEachHour.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 570));
+        ReservationEachHour.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 570));
 
         jPanel5.add(ReservationEachHour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
         ReservationEachHour.getAccessibleContext().setAccessibleName("ReservationEachHour");
@@ -402,7 +397,6 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JTable ProductSold;
     public javax.swing.JInternalFrame ProductSoldToday;
     public javax.swing.JInternalFrame ReservationEachHour;
-    public javax.swing.JPanel ReservationGraphic;
     public javax.swing.JTable Reservations;
     public javax.swing.JButton SoldToday;
     public javax.swing.JButton SwToGraphs;
@@ -412,6 +406,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
@@ -420,7 +415,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
