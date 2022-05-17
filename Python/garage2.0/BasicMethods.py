@@ -8,7 +8,7 @@ class BasicMethods:
     def askString(name):
         a = str(input("Enter a value for "+ name+" --> "))
         return a
-    def saveObjects(file, objects, object):
+    def saveObjects(file, objects):
         with open(file, "wb") as f:
             for object in objects:
                 pickle.dump(object, f)

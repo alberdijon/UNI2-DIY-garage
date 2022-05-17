@@ -26,6 +26,5 @@ class Cabin:
         self.availability = a
 
 
-    def print_(self,):
-        print(self.id + " " + self.pricePerHour + " " + self.type + " " + self.availability)
+
     

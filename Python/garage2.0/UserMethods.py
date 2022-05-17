@@ -92,10 +92,8 @@ class UserMethods:
         for user in users:
             if user.email == user_to_edit:
                 print("User found")
-                user=User("","","","","")
-                user = User(BasicMethods.askString("First name"),BasicMethods.askString("Last name"),BasicMethods.askString("E-mail"),BasicMethods("Password"),BasicMethods.askInteger("Phone number"))
-            with open("Users.pkl", "wb") as f:
-                pickle.dump(users, f)
+                user = User(BasicMethods.askString("First name"),BasicMethods.askString("Last name"),BasicMethods.askString("E-mail"),BasicMethods.askString("Password"),BasicMethods.askInteger("Phone number"))
+            BasicMethods.saveObjects("Users.pkl", users,user)
             print("User edited")
             UserMethods.users_menu()
         print("No users found with that email")

@@ -5,15 +5,10 @@ import pickle
 
 class CabinMethods:
     def add_cabins():
-
-
         new_cabin = Cabin(BasicMethods.askInteger("id"), BasicMethods.askString("type"), BasicMethods.askInteger("pricePerHour"), BasicMethods.askString("availability"))
-
-
         with open("Cabins.pkl", "ab") as f:
             pickle.dump(new_cabin, f)
         print("User added")
-        new_cabin = 0
         CabinMethods.menu_cabins()
 
     def view_cabins():
@@ -29,10 +24,8 @@ class CabinMethods:
                     print("Showing "+str(iterations-1)+" cabins -->")
                     cont=0
         for cab in cabins:
-            print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
-        CabinMethods.menu_cabins()
-            
-            
+            print(vars(cab))
+        CabinMethods.menu_cabins()         
     def available_cabins():
         inp=open('Cabins.pkl', 'rb')
         cabins = []
@@ -46,17 +39,14 @@ class CabinMethods:
                     cont=0
         for cab in cabins:
             if cab.availability== "available":
-                print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                print(vars(cab))         
         CabinMethods.menu_cabins()
                         
-
-        CabinMethods.menu_cabins()
     def condition_cabins():
         inp=open('Cabins.pkl', 'rb')
         cabins = []
         cont=1
         while cont == 1:
-            
             try:
                     cabins.append(pickle.load(inp))
             except EOFError:
@@ -64,23 +54,21 @@ class CabinMethods:
         select_cabin=BasicMethods.askInteger("ID")
         for cab in cabins:
             if cab.id == select_cabin:
-                print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                print(vars(cab))
                 a = int(input("1 for available 2 for occupied 3 for repairing --> "))
                 if a == 1:
                     cab.availability = "available"
-                    print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                    print(vars(cab))
                 elif a == 2:
                     cab.availability = "occupied"
-                    print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                    print(vars(cab))
                 elif a == 3:
                     cab.availability = "repairing"
-                    print(str(cab.id)+" "+cab.type+" "+str(cab.pricePerHour)+" "+cab.availability)
+                    print(vars(cab))
                 else:
                     print("Wrong number try again")
-            BasicMethods.saveObjects('Cabins.pkl', cabins, cab)
+            BasicMethods.saveObjects('Cabins.pkl', cabins)
             CabinMethods.menu_cabins()
-
-    
 
     def menu_cabins():
         BasicMethods.menu()
