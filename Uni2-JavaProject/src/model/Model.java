@@ -37,7 +37,7 @@ public class Model {
 
     public ArrayList<LowStockItems> selectLowStock() {
         ArrayList<LowStockItems> lsitem = new ArrayList<>();
-        String sql = "SELECT * FROM product Where Stock <=5  ORDER BY Stock";
+        String sql = "SELECT * FROM product Where Stock <= 5  ORDER BY Stock";
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {

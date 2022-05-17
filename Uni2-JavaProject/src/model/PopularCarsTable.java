@@ -5,12 +5,13 @@
 package model;
 
 import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
  * @author agirrezabala.peru
  */
-public class PopularCarsTable {
+public class PopularCarsTable extends AbstractTableModel {
     private ArrayList<PopularCars> pcars = new ArrayList<>();
     private final String[] columnName = {"Brand", "Model"};
     

@@ -67,6 +67,9 @@ public class View extends javax.swing.JFrame {
         PopularCars = new javax.swing.JInternalFrame();
         jScrollPane7 = new javax.swing.JScrollPane();
         PopularCarsTable = new javax.swing.JTable();
+        EmployeeMonth = new javax.swing.JInternalFrame();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        EmployeeMonthTable = new javax.swing.JTable();
 
         jScrollPane5.setViewportView(jPanel1);
 
@@ -321,13 +324,13 @@ public class View extends javax.swing.JFrame {
 
         PopularCarsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane7.setViewportView(PopularCarsTable);
@@ -335,6 +338,26 @@ public class View extends javax.swing.JFrame {
         PopularCars.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 270));
 
         jPanel5.add(PopularCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
+
+        EmployeeMonth.setBorder(null);
+        EmployeeMonth.setVisible(false);
+
+        EmployeeMonthTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane8.setViewportView(EmployeeMonthTable);
+
+        EmployeeMonth.getContentPane().add(jScrollPane8, java.awt.BorderLayout.CENTER);
+
+        jPanel5.add(EmployeeMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 600));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
@@ -412,6 +435,8 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JButton BtnPopularItems;
     public javax.swing.JButton BtnWorkerList;
     public javax.swing.JButton CustomerList;
+    private javax.swing.JInternalFrame EmployeeMonth;
+    public javax.swing.JTable EmployeeMonthTable;
     private javax.swing.JInternalFrame LowStock;
     public javax.swing.JTable LowStockItemTable;
     public javax.swing.JInternalFrame NewReservations;
@@ -441,6 +466,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    public javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     // End of variables declaration//GEN-END:variables
 }
