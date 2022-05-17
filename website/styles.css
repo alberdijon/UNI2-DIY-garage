@@ -226,14 +226,6 @@ img {
 	flex-direction: row;
 }
 
-.rgcabin {
-	height: 100%;
-	flex-grow: 1;
-	border-radius: 10px;
-	background-color: red;
-	margin: 3px;
-}
-
 .rgvcabin {
 	height: 100%;
 	flex-grow: 1;
@@ -247,7 +239,6 @@ img {
 	height: 100%;
 	flex-grow: 1;
 	border-radius: 10px;
-	background-color: red;
 	margin: 3px;
 }
 
@@ -255,8 +246,15 @@ img {
 	width: 100%;
 	flex-grow: 1;
 	border-radius: 10px;
-	background-color: red;
 	margin: 3px 0;
+}
+
+.cabinfalse {
+	background-color: red;
+}
+
+.cabintrue {
+	background-color: green;
 }
 
 .cabin {

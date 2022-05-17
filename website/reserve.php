@@ -24,15 +24,15 @@
                     <form action="./backend/reserve.php" method="post">
                         <div class="form-group">
                             <label for="date">Date</label>
-                            <input type="date" class="form-control" id="date" required>
+                            <input type="date" class="form-control" name="date" required>
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
-                            <input type="time" step="3600" class="form-control" id="time" required>
+                            <input type="time" step="3600" class="form-control" name="time" required>
                         </div>
                         <div class="form-group">
                             <label for="duration">Duration (hours)</label>
-                            <input type="number" class="form-control" id="duration" value="1" min="1" max="3" required>
+                            <input type="number" class="form-control" name="duration" value="1" min="1" max="3" required>
                         </div>
                         <input type="submit" class="btn rdtsubmit"/>
                     </form>
@@ -40,16 +40,53 @@
                 <div class="rgarage">
                     <h3>Select a cabin</h3>
                     <?php
-                        if(isset($_POST['date'])) {
+                        if(isset($_GET['bin'])) {
+                            $bin = $_GET['bin'];
+                            $cabarr = array(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
+                            for ($cabin = 6; $cabin <= 1; $cabin++) {
+                                if ($bin >= $cabin) {
+                                    $cabarr[$cabin - 1] = TRUE;
+                                    $bin = $bin - $cabin;
+                                } else {
+                                    $cabarr[$cabin - 1] = FALSE;
+                                }
+                            }
                             ?>
                             <div class="rgraphic">
-                            <div class="rgcabin cabin"><p>1</p></div>
+                                <?php 
+                                    for($cabin = 1; $cabin <= 3; $cabin++) {
+                                        if($cabarr[$cabin - 1]) {
+                                            ?>
+                                            <div class="rgcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <div class="rgcabin cabin cabinfalse"><p><?php echo "$cabin" ?></p></div>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                            <div class="rgvcabin">
+                                <?php
+                                    for ($cabin = 4; $cabin <= 6; $cabin++) {
+                                        if($cabarr[$cabin - 1]) {
+                                            ?>
+                                                <div class="rgmcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
+                                            <?php
+                                        } else {
+                                            ?>
+                                            <div class="rgmcabin cabin cabinfalse"><p><?php echo "$cabin" ?></p></div>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                            <!-- <div class="rgcabin cabin"><p>1</p></div>
                             <div class="rgcabin cabin"><p>2</p></div>
                             <div class="rgcabin cabin"><p>3</p></div>
                             <div class="rgvcabin">
                             <div class="rgmcabin cabin"><p>4</p></div>
                             <div class="rgmcabin cabin"><p>5</p></div>
-                            <div class="rgmcabin cabin"><p>6</p></div>
+                            <div class="rgmcabin cabin"><p>6</p></div> -->
                         </div>
                     </div>
                     <?php
