@@ -42,10 +42,11 @@ public class View extends javax.swing.JFrame {
         SoldToday = new javax.swing.JButton();
         UpcomingReservations = new javax.swing.JButton();
         PopularCars = new javax.swing.JButton();
-        WorkerSalaries = new javax.swing.JButton();
         CustomerList = new javax.swing.JButton();
         AverageReservations = new javax.swing.JButton();
         EarningsEachMonth = new javax.swing.JButton();
+        SoldGraphic = new javax.swing.JButton();
+        WorkerSalaries = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         SwToGraphs = new javax.swing.JButton();
@@ -153,18 +154,6 @@ public class View extends javax.swing.JFrame {
         PopularCars.setBorderPainted(false);
         jPanel3.add(PopularCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 180, 40));
 
-        WorkerSalaries.setBackground(new java.awt.Color(153, 153, 255));
-        WorkerSalaries.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        WorkerSalaries.setForeground(new java.awt.Color(51, 51, 51));
-        WorkerSalaries.setText("Employee of the month");
-        WorkerSalaries.setBorderPainted(false);
-        WorkerSalaries.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WorkerSalariesActionPerformed(evt);
-            }
-        });
-        jPanel3.add(WorkerSalaries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 40));
-
         CustomerList.setBackground(new java.awt.Color(153, 153, 255));
         CustomerList.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         CustomerList.setForeground(new java.awt.Color(51, 51, 51));
@@ -184,7 +173,7 @@ public class View extends javax.swing.JFrame {
                 AverageReservationsActionPerformed(evt);
             }
         });
-        jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 180, 40));
+        jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 180, 40));
         AverageReservations.getAccessibleContext().setAccessibleName("");
 
         EarningsEachMonth.setBackground(new java.awt.Color(153, 153, 255));
@@ -200,6 +189,32 @@ public class View extends javax.swing.JFrame {
         });
         jPanel3.add(EarningsEachMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 180, 40));
         EarningsEachMonth.getAccessibleContext().setAccessibleName("EarningsEachMonth");
+
+        SoldGraphic.setBackground(new java.awt.Color(153, 153, 255));
+        SoldGraphic.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        SoldGraphic.setForeground(new java.awt.Color(51, 51, 51));
+        SoldGraphic.setText("Draw Product Sold Today");
+        SoldGraphic.setActionCommand("AverageOfReservations ");
+        SoldGraphic.setBorderPainted(false);
+        SoldGraphic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SoldGraphicActionPerformed(evt);
+            }
+        });
+        jPanel3.add(SoldGraphic, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 180, 40));
+        SoldGraphic.getAccessibleContext().setAccessibleName("SoldGraphic");
+
+        WorkerSalaries.setBackground(new java.awt.Color(153, 153, 255));
+        WorkerSalaries.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        WorkerSalaries.setForeground(new java.awt.Color(51, 51, 51));
+        WorkerSalaries.setText("Employee of the month");
+        WorkerSalaries.setBorderPainted(false);
+        WorkerSalaries.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                WorkerSalariesActionPerformed(evt);
+            }
+        });
+        jPanel3.add(WorkerSalaries, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 340, 180, 40));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));
 
@@ -375,6 +390,10 @@ public class View extends javax.swing.JFrame {
     private void EarningsEachMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EarningsEachMonthActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EarningsEachMonthActionPerformed
+
+    private void SoldGraphicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SoldGraphicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SoldGraphicActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
@@ -408,6 +427,7 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JTable ProductSold;
     public javax.swing.JInternalFrame ProductSoldToday;
     public javax.swing.JTable Reservations;
+    public javax.swing.JButton SoldGraphic;
     public javax.swing.JButton SoldToday;
     public javax.swing.JButton SwToGraphs;
     public javax.swing.JButton UpcomingReservations;

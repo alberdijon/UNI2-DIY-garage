@@ -33,9 +33,9 @@ public class Model {
     public Connection connect() {
         Connection conn = null;
         try {
-            String url = "jdbc:mysql://192.168.72.34:3306/diy_garage";
+            String url = "jdbc:mysql://localhost:3306/garage";
             String user = "root";
-            String password = "uni2";
+            String password = "";
             conn = DriverManager.getConnection(url, user, password);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -144,6 +144,31 @@ public class Model {
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
         return total;
+    }
+    
+     public int drawAllProductSoldToday(String model) {
+
+        int sold = 0;
+
+        String sql = "SELECT (SELECT COUNT(Product_ID) FROM shop CAST(CURRENT_TIMESTAMP AS DATE)) AS 'Sold_Today'";
+
+        try (Connection conn = connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+
+               sold = rs.getInt("Sold_Today");
+
+                
+
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return sold;
+
     }
 }
   

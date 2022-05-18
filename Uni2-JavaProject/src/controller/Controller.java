@@ -28,6 +28,7 @@ import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
 
 /**
  *
@@ -111,28 +112,28 @@ public class Controller implements ActionListener {
 
                 
 
-                DefaultCategoryDataset ds2 = new DefaultCategoryDataset();
-                ds2.addValue(model.bookingsMonthD(1), "January", "");
-                ds2.addValue(model.bookingsMonthD(2), "February", "");
-                ds2.addValue(model.bookingsMonthD(3), "March", "");
-                ds2.addValue(model.bookingsMonthD(4), "April", "");
-                ds2.addValue(model.bookingsMonthD(5), "May", "");
-                ds2.addValue(model.bookingsMonthD(6), "June", "");
-                ds2.addValue(model.bookingsMonthD(7), "July", "");
-                ds2.addValue(model.bookingsMonthD(8), "August", "");
-                ds2.addValue(model.bookingsMonthD(9), "September", "");
-                ds2.addValue(model.bookingsMonthD(10), "October", "");
-                ds2.addValue(model.bookingsMonthD(11), "November", "");
-                ds2.addValue(model.bookingsMonthD(12), "December", "");
+                DefaultPieDataset dataset=new DefaultPieDataset();  
+                dataset.setValue("January", model.bookingsMonthD(1) );
+                dataset.setValue("February",model.bookingsMonthD(2));
+                dataset.setValue("March", model.bookingsMonthD(3));
+                dataset.setValue("April",model.bookingsMonthD(4));
+                dataset.setValue("May", model.bookingsMonthD(5));
+                dataset.setValue( "June", model.bookingsMonthD(6));
+                dataset.setValue("July", model.bookingsMonthD(7));
+                dataset.setValue("August", model.bookingsMonthD(8) );
+                dataset.setValue("September", model.bookingsMonthD(9));
+                dataset.setValue("October", model.bookingsMonthD(10));
+                dataset.setValue("November",model.bookingsMonthD(11));
+                dataset.setValue("December",model.bookingsMonthD(12));
 
                 JFreeChart jf2;
-                jf2 = ChartFactory.createBarChart("Bookings", "Comparison between Bookings per Month", "EARNED MONEY", ds2, PlotOrientation.VERTICAL, true, true, true);
+                jf2 = ChartFactory.createPieChart("Earnings each month by booking", dataset, true, true, true);
                 ChartFrame f2 = new ChartFrame("Graphic", jf2);
                 f2.setSize(1000, 600);
                 f2.setLocationRelativeTo(null);
                 f2.setVisible(true);
                 
-                
+            
         }
     }
 }
