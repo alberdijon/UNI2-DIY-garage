@@ -43,19 +43,19 @@
                         if(isset($_GET['bin'])) {
                             $bin = $_GET['bin'];
                             $cabarr = array(TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
-                            for ($cabin = 6; $cabin <= 1; $cabin++) {
-                                if ($bin >= $cabin) {
-                                    $cabarr[$cabin - 1] = TRUE;
-                                    $bin = $bin - $cabin;
+                            for ($cabin = 6; $cabin >= 1; $cabin--) {
+                                if ($bin >= (pow(2, ($cabin - 1)))) {
+                                    $cabarr[($cabin - 1)] = TRUE;
+                                    $bin = $bin - (pow(2, ($cabin - 1)));
                                 } else {
-                                    $cabarr[$cabin - 1] = FALSE;
+                                    $cabarr[($cabin - 1)] = FALSE;
                                 }
                             }
                             ?>
                             <div class="rgraphic">
                                 <?php 
                                     for($cabin = 1; $cabin <= 3; $cabin++) {
-                                        if($cabarr[$cabin - 1]) {
+                                        if($cabarr[($cabin - 1)]) {
                                             ?>
                                             <div class="rgcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
                                             <?php
@@ -69,7 +69,7 @@
                             <div class="rgvcabin">
                                 <?php
                                     for ($cabin = 4; $cabin <= 6; $cabin++) {
-                                        if($cabarr[$cabin - 1]) {
+                                        if($cabarr[($cabin - 1)]) {
                                             ?>
                                                 <div class="rgmcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
                                             <?php
@@ -80,6 +80,7 @@
                                         }
                                     }
                                 ?>
+                            <!-- Legacy (without a loop) -->
                             <!-- <div class="rgcabin cabin"><p>1</p></div>
                             <div class="rgcabin cabin"><p>2</p></div>
                             <div class="rgcabin cabin"><p>3</p></div>
@@ -139,5 +140,6 @@
             <div class="spacel"></div>
 		<?php include ("./elements/footer.html"); ?>
 		</div>
+        <script src="./js/reserve.js"></script>
 	</body>
 </html>

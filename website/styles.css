@@ -250,11 +250,25 @@ img {
 }
 
 .cabinfalse {
-	background-color: red;
+	background-color: none;
+	border: 5px solid rgb(114, 255, 149);
+	cursor: pointer;
+}
+
+.cabinfalse:hover {
+	background-color: rgb(184, 255, 202);
+	border: 5px solid rgb(114, 255, 149);
 }
 
 .cabintrue {
-	background-color: green;
+	background-color: none;
+	border: 5px solid rgb(255, 114, 114);
+	cursor: not-allowed;
+}
+
+.cabintrue:hover {
+	background-color: rgb(255, 184, 184);
+	border: 5px solid rgb(255, 114, 114);
 }
 
 .cabin {
@@ -262,6 +276,7 @@ img {
 	color: black;
 	text-align: center;
 	position: relative;
+	transition-duration: 0.2s;
 }
 
 .cabin p {
