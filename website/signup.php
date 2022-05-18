@@ -1,6 +1,6 @@
 <html lang="en">
 	<head>
-		<title>Sign up - uni2</title>
+		<title>Sign up - PitStop</title>
 		<?php include "./elements/bs4.html"; ?>
 		<link rel="stylesheet" href="styles.css" />
 	</head>

@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Dashboard - uni2</title>
+		<title>Dashboard - PitStop</title>
 		<?php include ("./elements/bs4.html"); ?>
         <link rel="stylesheet" href="styles.css" />
 	</head>

@@ -4,7 +4,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top mainnav">
-            <a class="navbar-brand" href="./index.php"><img class="navimg" src="./logob.png"></img></a>
+            <a class="navbar-brand" href="./index.php"><img class="navimg" src="./logobmini.png"></img></a>
             <button
                 class="navbar-toggler"
                 type="button"

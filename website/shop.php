@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Shop - uni2</title>
+		<title>Shop - PitStop</title>
 		<?php include ("./elements/bs4.html"); ?>
         <link rel="stylesheet" href="styles.css" />
 	</head>
