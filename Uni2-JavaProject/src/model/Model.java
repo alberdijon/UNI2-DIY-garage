@@ -57,11 +57,7 @@ public class Model {
 
     public ArrayList<PopularItems> selectPopularItems() {
         ArrayList<PopularItems> pitems = new ArrayList<>();
-        String sql = "SELECT product.ID, product.Name, product.Brand, product.Price "
-                + " FROM product "
-                + "INNER JOIN shop ON product.ID=shop.Product_ID"
-                + "Where Stock <=5"
-                + "ORDER BY Stock";
+        String sql = "SELECT ID, Name, Brand, Stock FROM Product";
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery(sql)) {
@@ -78,6 +74,68 @@ public class Model {
         }
         return pitems;
     }
+    public ArrayList<EmployeeOfTheMonth> selectEmployeeOfTheMonth() {
+        ArrayList<EmployeeOfTheMonth> memployee = new ArrayList<>();
+        String sql = "SELECT ID ,Name, Surname FROM worker";
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+
+                EmployeeOfTheMonth r = new EmployeeOfTheMonth(rs.getInt("ID"), rs.getNString("Name"), rs.getNString("Surname"));
+
+                memployee.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return memployee;
+    }
+    
+        public ArrayList<LoyalCustomers> selectLoyalCustomers() {
+        ArrayList<LoyalCustomers> lcustomer = new ArrayList<>();
+        String sql = "SELECT DNI, Name, Surname FROM client";
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+
+                LoyalCustomers r = new LoyalCustomers(rs.getString("DNI"), rs.getNString("Name"), rs.getNString("Surname"));
+
+                lcustomer.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return lcustomer;
+    }
+        public ArrayList<ProfitsPerMonth> selectProfitsPerMonth() {
+            ArrayList<ProfitsPerMonth> pmonth = new ArrayList<>();
+            String sql = "SELECT product.ID, product.Name, product.Brand, product.Price "
+                    + " FROM product "
+                    + "INNER JOIN shop ON product.ID=shop.Product_ID"
+                    + "Where Stock <=5"
+                    + "ORDER BY Stock";
+            try (Connection conn = this.connect();
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(sql)) {
+
+                // loop through the result set
+                while (rs.next()) {
+
+                    ProfitsPerMonth r = new ProfitsPerMonth(rs.getInt("TotalProfit"), rs.getNString("Date"));
+
+                    pmonth.add(r);
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            return pmonth;
+        }
 
     public ArrayList<NewReservation> selectAllReservations() {
 
@@ -106,7 +164,7 @@ public class Model {
 
         ArrayList<PopularCars> pcars = new ArrayList<>();
 
-        String sql = "SELECT * FROM reservation Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
+        String sql = "SELECT Brand, Model from vehicle";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();

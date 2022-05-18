@@ -12,8 +12,12 @@ import java.beans.PropertyVetoException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.EmployeeOfTheMonth;
+import model.EmployeeOfTheMonthTable;
 import model.LowStockItems;
 import model.LowStockItemsTable;
+import model.LoyalCustomers;
+import model.LoyalCustomersTable;
 import model.Model;
 import model.NewReservation;
 import model.NewReservationTable;
@@ -23,6 +27,8 @@ import model.PopularItems;
 import model.PopularItemsTable;
 import model.ProductSold;
 import model.ProductSoldTable;
+import model.ProfitsPerMonth;
+import model.ProfitsPerMonthTable;
 
 /**
  *
@@ -77,26 +83,37 @@ import model.ProductSoldTable;
                 view.NewReservations.setClosable(true);
             
                 
-            case "LowStockItems":
+            case "Low stock items":
                 view.LowStockItemTable.setVisible(true);
                 ArrayList <LowStockItems> lsitem = model.selectLowStock();
                 view.LowStockItemTable.setModel(new LowStockItemsTable(model.selectLowStock()));
                 
                 //view.NewReservations.setClosable(true);
-            case "PopularItems":
+            case "Popular items":
                 view.PopularItemsTable.setVisible(true);
                 ArrayList <PopularItems> pitems = model.selectPopularItems();
                 view.PopularItemsTable.setModel(new PopularItemsTable(model.selectPopularItems()));
                 
                 //view.
             
-            case "PopularCars":
+            case "Most popular cars":
                 view.PopularCarsTable.setVisible(true);
                 ArrayList <PopularCars> pcars=model.selectPopularCars();
                 view.PopularCarsTable.setModel(new PopularCarsTable(model.selectPopularCars()));
                 
                 //
-
+            case "Employee of the month":
+                view.EmployeeMonthTable.setVisible(true);
+                ArrayList <EmployeeOfTheMonth> memployee=model.selectEmployeeOfTheMonth();
+                view.EmployeeMonthTable.setModel(new EmployeeOfTheMonthTable(model.selectEmployeeOfTheMonth()));
+            case "Most loyal customers":
+                view.LoyalCustomersTable.setVisible(true);
+                ArrayList <LoyalCustomers> lcustomer=model.selectLoyalCustomers();
+                view.LoyalCustomersTable.setModel(new LoyalCustomersTable(model.selectLoyalCustomers()));
+            case "Profits per month":
+                view.ProfitsPerMonthTable.setVisible(true);
+                ArrayList <ProfitsPerMonth> pmonth = model.selectProfitsPerMonth();
+                view.ProfitsPerMonthTable.setModel(new ProfitsPerMonthTable(model.selectProfitsPerMonth()));
         }
     }
 }
