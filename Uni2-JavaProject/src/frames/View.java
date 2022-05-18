@@ -71,17 +71,12 @@ public class View extends javax.swing.JFrame {
         LoyalCustomers = new javax.swing.JInternalFrame();
         jScrollPane9 = new javax.swing.JScrollPane();
         LoyalCustomersTable = new javax.swing.JTable();
-<<<<<<< HEAD
         ProfitsPerMonth = new javax.swing.JInternalFrame();
         jScrollPane10 = new javax.swing.JScrollPane();
         ProfitsPerMonthTable = new javax.swing.JTable();
         LowStock1 = new javax.swing.JInternalFrame();
         jScrollPane5 = new javax.swing.JScrollPane();
         LowStockItemTable1 = new javax.swing.JTable();
-=======
-
-        jScrollPane5.setViewportView(jPanel1);
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -324,21 +319,6 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-<<<<<<< HEAD
-=======
-        ReservationEachHour.setVisible(false);
-        ReservationEachHour.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane6.setViewportView(ReservationGraphic);
-        ReservationGraphic.getAccessibleContext().setAccessibleName("ReservationGraphic");
-
-        ReservationEachHour.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 610, 570));
-
-        jPanel5.add(ReservationEachHour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
-        ReservationEachHour.getAccessibleContext().setAccessibleName("ReservationEachHour");
-
-        PopularCars.setTitle("Popular cars");
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         PopularCars.setVisible(false);
         PopularCars.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -392,11 +372,7 @@ public class View extends javax.swing.JFrame {
         jPanel5.add(EmployeeMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 600));
 
         LoyalCustomers.setBorder(null);
-<<<<<<< HEAD
         LoyalCustomers.setTitle("Most Loyal Customers");
-=======
-        LoyalCustomers.setTitle("Loyal Customers");
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         LoyalCustomers.setVisible(false);
 
         LoyalCustomersTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -416,7 +392,6 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(LoyalCustomers, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
 
-<<<<<<< HEAD
         ProfitsPerMonth.setBorder(null);
         ProfitsPerMonth.setTitle("Profits per month");
         ProfitsPerMonth.setVisible(false);
@@ -461,8 +436,6 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(LowStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 4, 620, 590));
 
-=======
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
         getAccessibleContext().setAccessibleDescription("");
@@ -522,11 +495,8 @@ public class View extends javax.swing.JFrame {
 
     private void CustomerListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerListActionPerformed
         // TODO add your handling code here:
-<<<<<<< HEAD
         HideRest();
         LoyalCustomers.setVisible(true);
-=======
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
     }//GEN-LAST:event_CustomerListActionPerformed
     
     private void HideRest() {
@@ -561,13 +531,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JInternalFrame EmployeeMonth;
     public javax.swing.JTable EmployeeMonthTable;
     private javax.swing.JInternalFrame LowStock;
-<<<<<<< HEAD
     private javax.swing.JInternalFrame LowStock1;
     private javax.swing.JTable LowStockItemTable;
     public javax.swing.JTable LowStockItemTable1;
-=======
-    public javax.swing.JTable LowStockItemTable;
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
     private javax.swing.JInternalFrame LoyalCustomers;
     public javax.swing.JTable LoyalCustomersTable;
     public javax.swing.JInternalFrame NewReservations;

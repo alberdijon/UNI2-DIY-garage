@@ -102,7 +102,6 @@ import model.ProfitsPerMonthTable;
                 view.PopularCarsTable.setModel(new PopularCarsTable(model.selectPopularCars()));
                 
                 //
-<<<<<<< HEAD
             case "Employee of the month":
                 view.EmployeeMonthTable.setVisible(true);
                 ArrayList <EmployeeOfTheMonth> memployee=model.selectEmployeeOfTheMonth();
@@ -115,17 +114,6 @@ import model.ProfitsPerMonthTable;
                 view.ProfitsPerMonthTable.setVisible(true);
                 ArrayList <ProfitsPerMonth> pmonth = model.selectProfitsPerMonth();
                 view.ProfitsPerMonthTable.setModel(new ProfitsPerMonthTable(model.selectProfitsPerMonth()));
-=======
-            case "WorkerSalaries":
-                view.EmployeeMonthTable.setVisible(true);
-                ArrayList <EmployeeOfTheMonth> memployee=model.selectEmployeeOfTheMonth();
-                view.EmployeeMonthTable.setModel(new EmployeeOfTheMonthTable(model.selectEmployeeOfTheMonth()));
-            case "CustomerList":
-                view.LoyalCustomersTable.setVisible(true);
-                ArrayList <LoyalCustomers> lcustomer=model.selectLoyalCustomers();
-                view.LoyalCustomersTable.setModel(new LoyalCustomersTable(model.selectLoyalCustomers()));
-
->>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         }
     }
 }
