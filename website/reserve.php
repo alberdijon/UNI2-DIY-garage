@@ -3,6 +3,7 @@
 		<title>Reserve - PitStop</title>
 		<?php include ("./elements/bs4.html"); ?>
         <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="dynamicstyles.php">
 	</head>
 	<body>
         <?php 
@@ -52,55 +53,48 @@
                                 }
                             }
                             ?>
-                            <div class="rgraphic">
+                            <form class="rgraphic" action="./backend/reserve2.php" method="post">
+                            <input type="hidden" name="date" value="<?php echo $date; ?>" />
+                            <input type="hidden" name="time" value="<?php echo $time; ?>" />
+                            <input type="hidden" name="duration" value="<?php echo $duration; ?>" />
+                            <input type="hidden" name="bin" value="<?php echo $_GET['bin']; ?>" />
                                 <?php 
                                     for($cabin = 1; $cabin <= 3; $cabin++) {
                                         if($cabarr[($cabin - 1)]) {
                                             ?>
-                                            <div class="rgcabin cabin cabintrue" id="<?php echo '$cabin' ?>"><p><?php echo "$cabin" ?></p></div>
+                                            <div class="rgcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
                                             <?php
                                         } else {
                                             ?>
-                                            <script type="text/javascript" src="./js/reserve.js">
-                                                var cabin = <?php echo $cabin ?>;
-                                            </script>
-                                            <div class="rgcabin cabin cabinfalse" id="<?php echo '$cabin' ?>" onclick="selectCabin(cabin)"><p><?php echo "$cabin" ?></p></div>
-                                            <script type="text/javascript">
-                                                var cabin = <?php echo $cabin ?>;
-                                                setSelectable(cabin);
-                                            </script>
+                                            <input type="submit" class="rgcabin cabin cabinfalse" name="cabin" value="<?php echo "$cabin" ?>">
                                             <?php
                                         }
                                     }
                                 ?>
-                            <div class="rgvcabin">
-                                <?php
-                                    for ($cabin = 4; $cabin <= 6; $cabin++) {
-                                        if($cabarr[($cabin - 1)]) {
-                                            ?>
-                                                <div class="rgmcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
-                                            <?php
-                                        } else {
-                                            ?>
-                                            <div class="rgmcabin cabin cabinfalse"><p><?php echo "$cabin" ?></p></div>
-                                            <script type="text/javascript" src="./js/reserve.js">
-                                                var cabin = <?php echo $cabin ?>;
-                                                setSelectable(cabin);
-                                            </script>
-                                            <?php
+                                <div class="rgvcabin">
+                                    <?php
+                                        for ($cabin = 4; $cabin <= 6; $cabin++) {
+                                            if($cabarr[($cabin - 1)]) {
+                                                ?>
+                                                    <div class="rgmcabin cabin cabintrue"><p><?php echo "$cabin" ?></p></div>
+                                                <?php
+                                            } else {
+                                                ?>
+                                                <input type="submit" class="rgmcabin cabin cabinfalse" name="cabin" value="<?php echo "$cabin" ?>">
+                                                <?php
+                                            }
                                         }
-                                    }
-                                ?>
-                            <!-- Legacy (without a loop) -->
-                            <!-- <div class="rgcabin cabin"><p>1</p></div>
-                            <div class="rgcabin cabin"><p>2</p></div>
-                            <div class="rgcabin cabin"><p>3</p></div>
-                            <div class="rgvcabin">
-                            <div class="rgmcabin cabin"><p>4</p></div>
-                            <div class="rgmcabin cabin"><p>5</p></div>
-                            <div class="rgmcabin cabin"><p>6</p></div> -->
-                        </div>
-                    </div>
+                                    ?>
+                                    <!-- Legacy (without a loop) -->
+                                    <!-- <div class="rgcabin cabin"><p>1</p></div>
+                                    <div class="rgcabin cabin"><p>2</p></div>
+                                    <div class="rgcabin cabin"><p>3</p></div>
+                                    <div class="rgvcabin">
+                                    <div class="rgmcabin cabin"><p>4</p></div>
+                                    <div class="rgmcabin cabin"><p>5</p></div>
+                                    <div class="rgmcabin cabin"><p>6</p></div> -->
+                                </div>
+                                    </form>
                     <?php
                         } else {
                             ?>

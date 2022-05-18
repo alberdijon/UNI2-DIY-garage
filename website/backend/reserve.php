@@ -5,7 +5,6 @@
     $date = $_POST["date"];
     $time = $_POST["time"];
     $duration = $_POST["duration"];
-    // add duration to $time in a new variable called timewindow
     $timewindow = date('H:i:s', strtotime("$time + $duration hours"));
     $link = KonektatuDatuBasera();
     $bin = 0;

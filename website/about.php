@@ -31,12 +31,10 @@
 				<h1 class="title">About us</h1>
 				<div class="maincontent">
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						Sed euismod ipsum eget nunc tincidunt, eget euismod nunc lobortis.
-						Sed euismod ipsum eget nunc tincidunt, eget euismod nunc lobortis.
+						We're a small team with a garage to help you with all your car-related needs. We're located in Eibar, please feel free to visit us anytime. Contact us if you have any questions.
 					</p>
 					<!-- Put the garage's images or something here -->
-					<img src="./images/sample.jpg" />
+					<img src="./images/alex-suprun-AHnhdjyTNGM-unsplash.jpg" />
 				</div>
 			<?php include ("./elements/footer.html"); ?>
 		</div>
