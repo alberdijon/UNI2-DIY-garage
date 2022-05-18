@@ -45,6 +45,7 @@ public class View extends javax.swing.JFrame {
         WorkerSalaries = new javax.swing.JButton();
         CustomerList = new javax.swing.JButton();
         AverageReservations = new javax.swing.JButton();
+        EarningsEachMonth = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         SwToGraphs = new javax.swing.JButton();
@@ -61,8 +62,6 @@ public class View extends javax.swing.JFrame {
         NewReservations = new javax.swing.JInternalFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         Reservations = new javax.swing.JTable();
-        ReservationEachHour = new javax.swing.JInternalFrame();
-        jPanel2 = new javax.swing.JPanel();
 
         jScrollPane5.setViewportView(jPanel1);
 
@@ -177,7 +176,7 @@ public class View extends javax.swing.JFrame {
         AverageReservations.setBackground(new java.awt.Color(153, 153, 255));
         AverageReservations.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         AverageReservations.setForeground(new java.awt.Color(51, 51, 51));
-        AverageReservations.setText("Average of reservations ");
+        AverageReservations.setText("Reservations each month");
         AverageReservations.setActionCommand("AverageOfReservations ");
         AverageReservations.setBorderPainted(false);
         AverageReservations.addActionListener(new java.awt.event.ActionListener() {
@@ -185,8 +184,22 @@ public class View extends javax.swing.JFrame {
                 AverageReservationsActionPerformed(evt);
             }
         });
-        jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 180, 40));
-        AverageReservations.getAccessibleContext().setAccessibleName("AverageReservations ");
+        jPanel3.add(AverageReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 540, 180, 40));
+        AverageReservations.getAccessibleContext().setAccessibleName("");
+
+        EarningsEachMonth.setBackground(new java.awt.Color(153, 153, 255));
+        EarningsEachMonth.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EarningsEachMonth.setForeground(new java.awt.Color(51, 51, 51));
+        EarningsEachMonth.setText("Earning each month");
+        EarningsEachMonth.setActionCommand("AverageOfReservations ");
+        EarningsEachMonth.setBorderPainted(false);
+        EarningsEachMonth.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EarningsEachMonthActionPerformed(evt);
+            }
+        });
+        jPanel3.add(EarningsEachMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, 180, 40));
+        EarningsEachMonth.getAccessibleContext().setAccessibleName("EarningsEachMonth");
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 650));
 
@@ -312,13 +325,6 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
 
-        ReservationEachHour.setVisible(false);
-        ReservationEachHour.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        ReservationEachHour.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 570));
-
-        jPanel5.add(ReservationEachHour, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
-        ReservationEachHour.getAccessibleContext().setAccessibleName("ReservationEachHour");
-
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
         getAccessibleContext().setAccessibleDescription("");
@@ -359,19 +365,23 @@ public class View extends javax.swing.JFrame {
     private void AverageReservationsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AverageReservationsActionPerformed
         // TODO add your handling code here:
         HideRest();
-        ReservationEachHour.setVisible(false);
+
     }//GEN-LAST:event_AverageReservationsActionPerformed
 
     private void WorkerSalariesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WorkerSalariesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_WorkerSalariesActionPerformed
+
+    private void EarningsEachMonthActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EarningsEachMonthActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EarningsEachMonthActionPerformed
     
     private void HideRest() {
         LowStock.setVisible(false);
         PopularItems.setVisible(false);
         NewReservations.setVisible(false);
         ProductSoldToday.setVisible(false);
-        ReservationEachHour.setVisible(false);
+
     }
     
     public static View viewaSortuBistaratu() {
@@ -390,13 +400,13 @@ public class View extends javax.swing.JFrame {
     public javax.swing.JButton BtnPopularItems;
     public javax.swing.JButton BtnWorkerList;
     public javax.swing.JButton CustomerList;
+    public javax.swing.JButton EarningsEachMonth;
     private javax.swing.JInternalFrame LowStock;
     public javax.swing.JInternalFrame NewReservations;
     public javax.swing.JButton PopularCars;
     private javax.swing.JInternalFrame PopularItems;
     public javax.swing.JTable ProductSold;
     public javax.swing.JInternalFrame ProductSoldToday;
-    public javax.swing.JInternalFrame ReservationEachHour;
     public javax.swing.JTable Reservations;
     public javax.swing.JButton SoldToday;
     public javax.swing.JButton SwToGraphs;
@@ -406,7 +416,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
