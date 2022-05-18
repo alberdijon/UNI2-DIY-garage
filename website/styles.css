@@ -292,6 +292,11 @@ img {
 	transform: translate(-50%, -50%);
 }
 
+/*CAN'T STAND THAT PHP FFS*/
+.duration {
+	display: hidden;
+}
+
 /*CONFIRMATION*/
 
 .greenbutton {

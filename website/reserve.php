@@ -31,9 +31,9 @@
                             <label for="time">Time</label>
                             <input type="time" step="3600" class="form-control" name="time" required>
                         </div>
-                        <div class="form-group">
-                            <label for="duration">Duration (hours)</label>
-                            <input type="number" class="form-control" name="duration" value="1" min="1" max="3" required>
+                        <div class="form-group duration">
+                            <!-- <label for="duration">Duration (hours)</label> -->
+                            <input type="hidden" class="form-control" name="duration" value="1" min="1" max="3" required>
                         </div>
                         <input type="submit" class="btn rdtsubmit"/>
                     </form>
