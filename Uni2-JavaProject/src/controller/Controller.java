@@ -64,23 +64,23 @@ import model.ProfitsPerMonthTable;
                 
                 
                 
-                view.ProductSoldToday.setVisible(true);
+                view.ProductSold.setVisible(true);
                 
                 ArrayList <ProductSold> product = model.selectAllProductSoldToday();
                 view.ProductSold.setModel(new ProductSoldTable(model.selectAllProductSoldToday()));
                 
           
-                view.ProductSoldToday.setClosable(true);
+      
                 
 
                 
             case "UpcomingReservations":
-                view.NewReservations.setVisible(true);
+                view.Reservations.setVisible(true);
                 
                 ArrayList <NewReservation> reservation = model.selectAllReservations();
                 view.Reservations.setModel(new NewReservationTable(model.selectAllReservations()));
                 
-                view.NewReservations.setClosable(true);
+  
             
                 
             case "Low stock items":

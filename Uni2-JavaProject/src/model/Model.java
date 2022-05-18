@@ -164,7 +164,7 @@ public class Model {
 
         ArrayList<PopularCars> pcars = new ArrayList<>();
 
-        String sql = "SELECT Brand, Model from vehicle";
+        String sql = "SELECT Brand, Model, COUNT(Model) FROM vehicle GROUP BY Model ORDER BY COUNT(Model) DESC";
 
         try (Connection conn = this.connect();
                 Statement stmt = conn.createStatement();
@@ -173,7 +173,7 @@ public class Model {
             // loop through the result set
             while (rs.next()) {
 
-                PopularCars r = new PopularCars(rs.getString("Brand"), rs.getString("Model"));
+                PopularCars r = new PopularCars(rs.getString("Brand"), rs.getString("Model"),rs.getInt("COUNT(Model)"));
 
                 pcars.add(r);
             }

@@ -48,19 +48,16 @@ public class View extends javax.swing.JFrame {
         SwToGraphs = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         LowStock = new javax.swing.JInternalFrame();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jScrollPane5 = new javax.swing.JScrollPane();
         LowStockItemTable = new javax.swing.JTable();
         PopularItems = new javax.swing.JInternalFrame();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane11 = new javax.swing.JScrollPane();
         PopularItemsTable = new javax.swing.JTable();
         ProductSoldToday = new javax.swing.JInternalFrame();
-        jScrollPane3 = new javax.swing.JScrollPane();
+        jScrollPane12 = new javax.swing.JScrollPane();
         ProductSold = new javax.swing.JTable();
-        NewReservations = new javax.swing.JInternalFrame();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        Reservations = new javax.swing.JTable();
         PopularCars = new javax.swing.JInternalFrame();
-        jScrollPane7 = new javax.swing.JScrollPane();
+        jScrollPane14 = new javax.swing.JScrollPane();
         PopularCarsTable = new javax.swing.JTable();
         ReservationEachHour = new javax.swing.JInternalFrame();
         jScrollPane6 = new javax.swing.JScrollPane();
@@ -74,9 +71,9 @@ public class View extends javax.swing.JFrame {
         ProfitsPerMonth = new javax.swing.JInternalFrame();
         jScrollPane10 = new javax.swing.JScrollPane();
         ProfitsPerMonthTable = new javax.swing.JTable();
-        LowStock1 = new javax.swing.JInternalFrame();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        LowStockItemTable1 = new javax.swing.JTable();
+        NewReservations = new javax.swing.JInternalFrame();
+        jScrollPane13 = new javax.swing.JScrollPane();
+        Reservations = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("DIY Garage");
@@ -237,12 +234,8 @@ public class View extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         LowStock.setBorder(null);
-        LowStock.setTitle("Low stock items");
-        LowStock.setToolTipText("");
+        LowStock.setToolTipText("Low Stock Items");
         LowStock.setVisible(false);
-        LowStock.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane1.setBorder(null);
 
         LowStockItemTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -255,21 +248,19 @@ public class View extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(LowStockItemTable);
+        jScrollPane5.setViewportView(LowStockItemTable);
 
-        LowStock.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
+        LowStock.getContentPane().add(jScrollPane5, java.awt.BorderLayout.CENTER);
 
-        jPanel5.add(LowStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+        jPanel5.add(LowStock, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 4, 620, 590));
 
-        PopularItems.setTitle("Popular items");
-        PopularItems.setToolTipText("");
+        PopularItems.setBorder(null);
+        PopularItems.setTitle("Popular Items");
         PopularItems.setVisible(false);
-        PopularItems.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane2.setBorder(null);
 
         PopularItemsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {},
                 {},
                 {},
                 {}
@@ -278,49 +269,36 @@ public class View extends javax.swing.JFrame {
 
             }
         ));
-        PopularItemsTable.setToolTipText("");
-        jScrollPane2.setViewportView(PopularItemsTable);
-        PopularItemsTable.getAccessibleContext().setAccessibleName("");
+        jScrollPane11.setViewportView(PopularItemsTable);
 
-        PopularItems.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 410));
+        PopularItems.getContentPane().add(jScrollPane11, java.awt.BorderLayout.CENTER);
 
-        jPanel5.add(PopularItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+        jPanel5.add(PopularItems, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
 
-        ProductSoldToday.setTitle("Products sold  today");
-        ProductSoldToday.setToolTipText("");
+        ProductSoldToday.setBorder(null);
+        ProductSoldToday.setTitle("Products sold today");
         ProductSoldToday.setVisible(false);
-        ProductSoldToday.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane3.setViewportView(ProductSold);
-
-        ProductSoldToday.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
-
-        jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
-
-        NewReservations.setTitle("Upcoming Reservations");
-        NewReservations.setToolTipText("");
-        NewReservations.setVisible(false);
-        NewReservations.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane4.setBorder(null);
-
-        Reservations.setModel(new javax.swing.table.DefaultTableModel(
+        ProductSold.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
 
             }
         ));
-        Reservations.setToolTipText("");
-        jScrollPane4.setViewportView(Reservations);
+        jScrollPane12.setViewportView(ProductSold);
 
-        NewReservations.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 420));
+        ProductSoldToday.getContentPane().add(jScrollPane12, java.awt.BorderLayout.CENTER);
 
-        jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 450));
+        jPanel5.add(ProductSoldToday, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 4, 620, 590));
 
+        PopularCars.setBorder(null);
+        PopularCars.setTitle("Populars cars");
         PopularCars.setVisible(false);
-        PopularCars.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PopularCarsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -333,11 +311,11 @@ public class View extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane7.setViewportView(PopularCarsTable);
+        jScrollPane14.setViewportView(PopularCarsTable);
 
-        PopularCars.getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 380));
+        PopularCars.getContentPane().add(jScrollPane14, java.awt.BorderLayout.CENTER);
 
-        jPanel5.add(PopularCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, 620, 450));
+        jPanel5.add(PopularCars, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -6, 620, 600));
 
         ReservationEachHour.setVisible(false);
         ReservationEachHour.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -415,11 +393,11 @@ public class View extends javax.swing.JFrame {
 
         jPanel5.add(ProfitsPerMonth, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 600));
 
-        LowStock1.setBorder(null);
-        LowStock1.setToolTipText("Low Stock Items");
-        LowStock1.setVisible(false);
+        NewReservations.setBorder(null);
+        NewReservations.setTitle("Upcoming reservations");
+        NewReservations.setVisible(false);
 
-        LowStockItemTable1.setModel(new javax.swing.table.DefaultTableModel(
+        Reservations.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -430,11 +408,11 @@ public class View extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane5.setViewportView(LowStockItemTable1);
+        jScrollPane13.setViewportView(Reservations);
 
-        LowStock1.getContentPane().add(jScrollPane5, java.awt.BorderLayout.CENTER);
+        NewReservations.getContentPane().add(jScrollPane13, java.awt.BorderLayout.CENTER);
 
-        jPanel5.add(LowStock1, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 4, 620, 590));
+        jPanel5.add(NewReservations, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, 4, 620, 590));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 50, 620, 600));
 
@@ -531,18 +509,16 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JInternalFrame EmployeeMonth;
     public javax.swing.JTable EmployeeMonthTable;
     private javax.swing.JInternalFrame LowStock;
-    private javax.swing.JInternalFrame LowStock1;
-    private javax.swing.JTable LowStockItemTable;
-    public javax.swing.JTable LowStockItemTable1;
+    public javax.swing.JTable LowStockItemTable;
     private javax.swing.JInternalFrame LoyalCustomers;
     public javax.swing.JTable LoyalCustomersTable;
-    public javax.swing.JInternalFrame NewReservations;
-    public javax.swing.JInternalFrame PopularCars;
+    private javax.swing.JInternalFrame NewReservations;
+    private javax.swing.JInternalFrame PopularCars;
     public javax.swing.JTable PopularCarsTable;
     private javax.swing.JInternalFrame PopularItems;
     public javax.swing.JTable PopularItemsTable;
     public javax.swing.JTable ProductSold;
-    public javax.swing.JInternalFrame ProductSoldToday;
+    private javax.swing.JInternalFrame ProductSoldToday;
     private javax.swing.JInternalFrame ProfitsPerMonth;
     public javax.swing.JTable ProfitsPerMonthTable;
     public javax.swing.JInternalFrame ReservationEachHour;
@@ -558,14 +534,13 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane11;
+    private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane13;
+    private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     // End of variables declaration//GEN-END:variables

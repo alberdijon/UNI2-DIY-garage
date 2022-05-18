@@ -12,10 +12,12 @@ import java.util.Objects;
  */
 public class PopularCars {
     private String brand, model;
+    private int cuantity;
     
-    public PopularCars(String brand, String model){
+    public PopularCars(String brand, String model, int cuantity){
         this.brand=brand;
         this.model=model;
+        this.cuantity=cuantity;
     }
 
     public String getBrand() {
@@ -34,11 +36,20 @@ public class PopularCars {
         this.model = model;
     }
 
+    public int getCuantity() {
+        return cuantity;
+    }
+
+    public void setCuantity(int cuantity) {
+        this.cuantity = cuantity;
+    }
+
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 89 * hash + Objects.hashCode(this.brand);
-        hash = 89 * hash + Objects.hashCode(this.model);
+        hash = 31 * hash + Objects.hashCode(this.brand);
+        hash = 31 * hash + Objects.hashCode(this.model);
+        hash = 31 * hash + this.cuantity;
         return hash;
     }
 
@@ -54,6 +65,9 @@ public class PopularCars {
             return false;
         }
         final PopularCars other = (PopularCars) obj;
+        if (this.cuantity != other.cuantity) {
+            return false;
+        }
         if (!Objects.equals(this.brand, other.brand)) {
             return false;
         }
@@ -62,6 +76,9 @@ public class PopularCars {
         }
         return true;
     }
+
+    
+
     
     
 }

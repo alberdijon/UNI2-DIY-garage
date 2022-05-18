@@ -13,7 +13,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class PopularCarsTable extends AbstractTableModel {
     private ArrayList<PopularCars> pcars = new ArrayList<>();
-    private final String[] columnName = {"Brand", "Model"};
+    private final String[] columnName = {"Brand", "Model","Cuantity"};
     
     public PopularCarsTable(ArrayList<PopularCars> regularCars){
         this.pcars=regularCars;
@@ -34,6 +34,7 @@ public class PopularCarsTable extends AbstractTableModel {
             
             case 0: return pcars.get(rowIndex).getBrand();
             case 1: return pcars.get(rowIndex).getModel();
+            case 2: return pcars.get(rowIndex).getCuantity();
 
 
             default: return null;
