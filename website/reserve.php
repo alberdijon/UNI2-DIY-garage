@@ -17,6 +17,11 @@
 		<div class="main">
 		    <?php include ("./elements/navbar.php"); ?>
             <div class="space"></div>
+            <?php
+                if (isset ($_GET["reserve"]) && $_GET["reserve"] == "success") {
+                        echo "<div class='alert alert-success' role='alert'>Reservation successful!</div>";
+                }
+            ?>
 			<h1 class="title">Make a reservation</h1>
             <div class="reservemain">
                 <div class="rdatetime">
@@ -109,9 +114,23 @@
                 <div class="rconfirm">
                     <h3>Price</h3>
                     <div class="rconfirmprice">
-                        0€
+                        <?php
+                            if (isset ($_GET['pr'])) {
+                                $price = $_GET['pr'];
+                                echo "€$price";
+                            } else {
+                                echo "€0";
+                            }
+                        ?>
                     </div>
-                    <button class="greenbutton" type="submit">Confirm</button>
+                    <form action="./backend/reserveconfirm.php" method="post">
+                        <input type="hidden" name="date" value="<?php echo $date; ?>" />
+                        <input type="hidden" name="time" value="<?php echo $time; ?>" />
+                        <input type="hidden" name="cabin" value="<?php echo $cabin; ?>" />
+                        <input type="hidden" name="price" value="<?php echo $price; ?>" />
+                        <input type="submit" class="greenbutton" type="submit" value="Confirm">
+                    </form>
+                    
                 </div>
             </div>
             <div class="spacel"></div>
