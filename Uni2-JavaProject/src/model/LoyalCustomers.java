@@ -8,7 +8,11 @@ import java.util.Objects;
 
 /**
  *
+<<<<<<< HEAD
  * @author agirrezabala.peru
+=======
+ * @author USUARIO
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
  */
 public class LoyalCustomers {
     private String dni,name,surname;
@@ -16,6 +20,10 @@ public class LoyalCustomers {
         this.dni=dni;
         this.name=name;
         this.surname=surname;
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
     }
 
     public String getDni() {
@@ -44,10 +52,17 @@ public class LoyalCustomers {
 
     @Override
     public int hashCode() {
+<<<<<<< HEAD
         int hash = 5;
         hash = 79 * hash + Objects.hashCode(this.dni);
         hash = 79 * hash + Objects.hashCode(this.name);
         hash = 79 * hash + Objects.hashCode(this.surname);
+=======
+        int hash = 7;
+        hash = 19 * hash + Objects.hashCode(this.dni);
+        hash = 19 * hash + Objects.hashCode(this.name);
+        hash = 19 * hash + Objects.hashCode(this.surname);
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         return hash;
     }
 
@@ -75,4 +90,8 @@ public class LoyalCustomers {
         return true;
     }
     
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
 }

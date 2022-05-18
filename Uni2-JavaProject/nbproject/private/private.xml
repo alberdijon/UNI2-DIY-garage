@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/model/Model.java</file>
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/model/LowStockItemsTable.java</file>
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/frames/View.java</file>
@@ -10,6 +11,16 @@
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/exekutagarriak/Main.java</file>
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/model/LowStockItems.java</file>
             <file>file:/C:/Users/agirrezabala.peru/Documents/GIT-ERRONKA/UNI2-DIY-garage/Uni2-JavaProject/src/controller/Controller.java</file>
+=======
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/model/EmployeeOfTheMonth.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/frames/View.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/model/LoyalCustomers.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/model/Model.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/model/EmployeeOfTheMonthTable.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/model/LoyalCustomersTable.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/exekutagarriak/Main.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Programas/UNI2-DIY-garage/Uni2-JavaProject/src/controller/Controller.java</file>
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         </group>
     </open-files>
 </project-private>

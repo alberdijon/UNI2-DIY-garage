@@ -690,6 +690,56 @@
             </Container>
           </SubComponents>
         </Container>
+<<<<<<< HEAD
+=======
+        <Container class="javax.swing.JInternalFrame" name="PopularCars">
+          <Properties>
+            <Property name="title" type="java.lang.String" value="Popular cars"/>
+            <Property name="visible" type="boolean" value="false"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="270" y="220" width="-1" height="-1"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <Constraints>
+                <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+                  <AbsoluteConstraints x="0" y="0" width="390" height="270"/>
+                </Constraint>
+              </Constraints>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="PopularCarsTable">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="0" rowCount="4"/>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0"/>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
         <Container class="javax.swing.JInternalFrame" name="EmployeeMonth">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -740,7 +790,11 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
+<<<<<<< HEAD
             <Property name="title" type="java.lang.String" value="Most Loyal Customers"/>
+=======
+            <Property name="title" type="java.lang.String" value="Loyal Customers"/>
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
             <Property name="visible" type="boolean" value="false"/>
           </Properties>
           <Constraints>
@@ -780,6 +834,7 @@
             </Container>
           </SubComponents>
         </Container>
+<<<<<<< HEAD
         <Container class="javax.swing.JInternalFrame" name="ProfitsPerMonth">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -875,6 +930,8 @@
             </Container>
           </SubComponents>
         </Container>
+=======
+>>>>>>> 5bca822bb255ef2bfb3f127e1ad7f6745126e8f2
       </SubComponents>
     </Container>
   </SubComponents>

@@ -183,6 +183,51 @@ public class Model {
         return pcars;
     }
 
+    public ArrayList<EmployeeOfTheMonth> selectEmployeeOfTheMonth() {
+
+        ArrayList<EmployeeOfTheMonth> memployee = new ArrayList<>();
+
+        String sql = "SELECT * FROM reservation Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
+
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+
+                EmployeeOfTheMonth r = new EmployeeOfTheMonth(rs.getInt("ID"), rs.getString("Name"),rs.getString("Surname"));
+
+                memployee.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return memployee;
+    }
+        public ArrayList<LoyalCustomers> selectLoyalCustomers() {
+
+        ArrayList<LoyalCustomers> lcustomer = new ArrayList<>();
+
+        String sql = "SELECT * FROM reservation Where Date >= CAST(CURRENT_TIMESTAMP AS DATE) AND Hour >= CAST(CURRENT_TIMESTAMP AS TIME) ORDER BY Date";
+
+        try (Connection conn = this.connect();
+                Statement stmt = conn.createStatement();
+                ResultSet rs = stmt.executeQuery(sql)) {
+
+            // loop through the result set
+            while (rs.next()) {
+
+                LoyalCustomers r = new LoyalCustomers(rs.getString("DNI"), rs.getString("Name"),rs.getString("Surname"));
+
+                lcustomer.add(r);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return lcustomer;
+    }
+
     public ArrayList<ProductSold> selectAllProductSoldToday() {
 
         ArrayList<ProductSold> products = new ArrayList<>();
