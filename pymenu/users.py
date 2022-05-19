@@ -11,7 +11,9 @@ class User:
 
 
 def users_menu():
+    print("=============================")
     print("Welcome to the User Database")
+    print("=============================")
     print("1. View Users")
     print("2. Add User")
     print("3. Delete User")

@@ -4,7 +4,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-light navbar-light sticky-top mainnav">
-            <a class="navbar-brand" href="./index.php"><img class="navimg" src="./logob.png"></img></a>
+            <a class="navbar-brand" href="./index.php"><img class="navimg" src="./logobmini.png"></img></a>
             <button
                 class="navbar-toggler"
                 type="button"
@@ -24,7 +24,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="">
+                        <a class="nav-link" href="./shop.php">
                             <span class="spanlink">Shop</span>
                         </a>
                     </li>

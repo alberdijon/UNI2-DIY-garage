@@ -25,20 +25,13 @@
         $userID = mysqli_query($link,"SELECT DNI from client WHERE E_mail = '$email'");
         $userID = mysqli_fetch_array($userID);
         $userID = $userID[0];
-
-        mysqli_query($link,"INSERT into session values (NULL , '$userID', '$name', 'NOW()')");
-
-        $session = mysqli_query($link,"select MAX(session) from session");
-        $session = mysqli_fetch_array($session);
-        $session = $session[0];
         
         session_start();
 
         $_SESSION['name'] = $name;
+        $_SESSION['email'] = $email;
         $_SESSION['userID'] = $userID;
-        $_SESSION['session'] = $session;
 
-        
         header("Location:../dashboard.php");
     }
 ?>

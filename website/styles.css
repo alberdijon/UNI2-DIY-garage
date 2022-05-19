@@ -3,6 +3,10 @@ body {
 	top: 0;
 }
 
+img {
+	object-fit: cover;
+}
+
 .flexv {
 	display: flex;
 	flex-direction: column;
@@ -36,6 +40,7 @@ body {
 	background-size: cover;
 	position: relative;
 	border-radius: 0px 0px 20px 20px;
+	box-shadow: 5px 0px 150px rgb(212, 190, 149);
 }
 
 .hero-text {
@@ -47,10 +52,32 @@ body {
 	color: rgb(255, 255, 255);
 }
 
+.maincontent {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 0;
+}
+
+.maincontent > p {
+	word-break: break-word;
+	padding: 0;
+	width: 75%;
+	font-size: larger;
+	margin-right: 20px;
+}
+
+.maincontent > img {
+	width: 25%;
+	align-self: center;
+	height: 225px;
+	border-radius: 10px;
+	box-shadow: 5px 5px 15px #d1d1d1;
+}
+
 /*SIGN UP / LOGIN*/
 
 .loginbody {
-	/*filenames gotta be changed, this should be random somehow*/
 	background-image: url(./backgrounds/yrka-pictured-2KWoLew_M5Q-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -61,7 +88,6 @@ body {
 }
 
 .signupbody {
-	/*filenames gotta be changed, this should be random somehow*/
 	background-image: url(./backgrounds/prateek-katyal-I02vLowUxgg-unsplash.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -155,6 +181,10 @@ body {
 	flex-direction: column;
 }
 
+.rgctext {
+	align-self: center;
+}
+
 /*DATE AND TIME*/
 .rdatetime {
 	flex-grow: 1;
@@ -197,14 +227,6 @@ body {
 	flex-direction: row;
 }
 
-.rgcabin {
-	height: 100%;
-	flex-grow: 1;
-	border-radius: 10px;
-	background-color: red;
-	margin: 3px;
-}
-
 .rgvcabin {
 	height: 100%;
 	flex-grow: 1;
@@ -218,7 +240,6 @@ body {
 	height: 100%;
 	flex-grow: 1;
 	border-radius: 10px;
-	background-color: red;
 	margin: 3px;
 }
 
@@ -226,8 +247,33 @@ body {
 	width: 100%;
 	flex-grow: 1;
 	border-radius: 10px;
-	background-color: red;
 	margin: 3px 0;
+}
+
+.cabinfalse {
+	background-color: none;
+	border: 5px solid rgb(114, 255, 149);
+	cursor: pointer;
+}
+
+.cabinfalse:hover {
+	background-color: rgb(184, 255, 202);
+	border: 5px solid rgb(114, 255, 149);
+}
+
+.cabintrue {
+	background-color: none;
+	border: 5px solid rgb(255, 114, 114);
+	cursor: not-allowed;
+}
+
+.cabintrue:hover {
+	background-color: rgb(255, 184, 184);
+	border: 5px solid rgb(255, 114, 114);
+}
+
+.selected {
+	background-color: rgb(114, 255, 149);
 }
 
 .cabin {
@@ -235,6 +281,7 @@ body {
 	color: black;
 	text-align: center;
 	position: relative;
+	transition-duration: 0.2s;
 }
 
 .cabin p {
@@ -243,6 +290,12 @@ body {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
+}
+
+/*CAN'T STAND THAT PHP FFS*/
+
+.duration {
+	display: hidden;
 }
 
 /*CONFIRMATION*/
@@ -287,9 +340,17 @@ body {
 }
 
 .duser {
+	background-image: linear-gradient(to bottom right, #7ab3ff, #a35dff);
+	color: white;
 	flex-direction: row;
 	align-items: center;
 	padding: 10px 20px;
+	box-shadow: 5px 5px 20px #b984ff, -5px -5px 50px #95c2fd;
+}
+
+.duser a {
+	color: white;
+	text-decoration: underline;
 }
 
 .duseru {
@@ -308,23 +369,286 @@ body {
 	border-radius: 100%;
 }
 
-.dappointment {
+.dsettings {
 	flex-direction: column;
 	padding: 15px 20px;
 }
 
-.dappointment h2 {
+.dsettings h2 {
 	margin-bottom: 5px;
 }
 
-.dsettings {
+.dsettings a {
+	color: black;
+	text-decoration: underline;
+	margin-right: 10px;
+}
+
+.dappointment {
 	padding: 20px;
-	flex-grow: 2;
+	flex-grow: 1;
 }
 
 .dvehicles {
 	padding: 20px;
 	flex-grow: 1;
+}
+
+/*Shop*/
+
+.s2title {
+	border-bottom: #e0e0e0 dotted 2px;
+	margin-bottom: 10px;
+}
+
+.tadminoptions {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.tadminbutton {
+	align-self: center;
+	background-color: #f8f9fa;
+	padding: 10px;
+	border-radius: 10px;
+	color: #007bff;
+	text-decoration: none;
+	box-shadow: 1px 1px 3px #d1d1d1;
+	transition-duration: 0.2s;
+	border: none;
+}
+
+.products {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: calc(100vh - 515px);
+}
+
+.stcontent {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.sttext {
+	display: flex;
+	flex-direction: column;
+}
+
+.stbrand {
+	font-size: 20px;
+}
+
+.stright {
+	display: flex;
+	flex-direction: row;
+}
+
+.stright img {
+	border-radius: 10px;
+	box-shadow: 5px 5px 10px #d0d3ff;
+	margin-left: 20px;
+	transition-duration: 0.2s;
+	width: 200px;
+	height: 100px;
+}
+
+.stright img:hover {
+	box-shadow: 10px 10px 20px #d0d3ff;
+}
+
+.stprice {
+	margin-right: 20px;
+	font-size: 30px;
+	align-self: center;
+}
+
+.shopform {
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.stbutton {
+	align-self: center;
+	margin-left: 20px;
+	background-color: #f8f9fa;
+	padding: 10px;
+	box-shadow: 1px 1px 3px #d0d3ff;
+	border-radius: 7px;
+	transition-duration: 0.2s;
+	border: none;
+}
+
+.stoos {
+	align-self: center;
+	margin-left: 20px;
+	background-color: #f8f9fa;
+	padding: 10px;
+	box-shadow: 1px 1px 3px #b1b1b1;
+	color: black;
+	border-radius: 7px;
+	transition-duration: 0.2s;
+	cursor: not-allowed;
+}
+
+.stoos:hover {
+	box-shadow: 5px 5px 10px #ffd0d0;
+	text-decoration: none;
+	color: #ff0000;
+}
+
+.stbutton:hover {
+	box-shadow: 5px 5px 10px #d0d3ff;
+	text-decoration: none;
+	color: #007bff;
+}
+
+.snoproducts {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	min-height: calc(100vh - 515px);
+	align-items: center;
+	justify-content: center;
+}
+
+.tadminbutton:hover {
+	box-shadow: 3px 3px 10px #d1d1d1;
+	text-decoration: none;
+	color: #007bff;
+	cursor: pointer;
+}
+
+#addproduct {
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	background-image: linear-gradient(to bottom right, #ff7aff, #a35dff);
+	box-shadow: -1px -1px 5px #ff7aff, 1px 1px 5px #a35dff;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	padding: 20px 20px 5px 20px;
+	transition-duration: 0.2s;
+}
+
+#addproduct:hover {
+	box-shadow: -5px -5px 20px #ff7aff, 5px 5px 20px #a35dff;
+}
+
+.admintop {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-between;
+}
+
+.admintitle {
+	color: white;
+}
+
+.adminclose {
+	background-color: #00000000;
+	color: white;
+	text-decoration: none;
+	border: none;
+}
+
+.adminform {
+	display: flex;
+	flex-direction: row;
+	padding: 5px;
+}
+
+.afstructure {
+	display: flex;
+	flex-direction: row;
+	color: white;
+}
+
+.adminform > label {
+	width: 55px;
+}
+
+.admininput {
+	border-radius: 7px;
+	border: none;
+	background-color: #ffffffc4;
+	padding: 0px 7px;
+}
+
+.afbutton {
+	border-radius: 10px;
+	border: none;
+	padding: 10px;
+	color: white;
+	background-color: black;
+	margin-top: 10px;
+	transition-duration: 0.2s;
+}
+
+.afbutton:hover {
+	box-shadow: 0px 0px 10px black;
+}
+
+.sbanner {
+	background-image: linear-gradient(to bottom right, #7ab3ff, #a35dff);
+	border-radius: 10px;
+	padding: 20px;
+	color: white;
+	transition-duration: 0.2s;
+	box-shadow: 1px 1px 10px #b984ff, 0px 0px 5px #95c2fd;
+	cursor: default;
+}
+
+.sbanner:hover {
+	box-shadow: 5px 5px 25px #b984ff, -5px -5px 25px #95c2fd;
+}
+
+.staoptionsbutton {
+	border: none;
+	background-color: #00000000;
+	padding: 0;
+}
+
+.staoptions {
+	display: flex;
+}
+
+.staoptions a {
+	cursor: pointer;
+}
+
+/*About*/
+
+.location {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.map {
+	flex-grow: 1;
+	margin: 10px;
+	background-color: #f8f9fa;
+	border-radius: 10px;
+}
+
+.address {
+	flex-grow: 1;
+	margin: 10px;
+	background-color: #f8f9fa;
+	border-radius: 10px;
+	height: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /*RESPONSIVE*/
@@ -352,6 +676,17 @@ body {
 		height: 700px;
 		width: 400px;
 		margin: 0px;
+	}
+
+	/*Main content*/
+
+	.maincontent > p {
+		width: 65%;
+	}
+
+	.maincontent > img {
+		width: 35%;
+		height: 250px;
 	}
 }
 
@@ -382,6 +717,75 @@ body {
 	/*Dashboard*/
 	.drow {
 		flex-direction: column;
+	}
+
+	/*Main content*/
+	.maincontent {
+		flex-direction: column;
+	}
+
+	.maincontent > p {
+		width: 100%;
+	}
+
+	.maincontent > img {
+		width: 100%;
+		height: 300px;
+	}
+
+	/*About*/
+
+	.location {
+		flex-direction: column;
+	}
+
+	.map {
+		width: 100%;
+		height: 400px;
+	}
+
+	/*Shop*/
+
+	.stcontent {
+		flex-direction: column-reverse;
+		margin-bottom: 10px;
+	}
+
+	.sttext {
+		margin: 0px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	.stprice {
+		margin: 0;
+	}
+
+	.stright {
+		flex-direction: column-reverse;
+	}
+
+	.stright img {
+		align-self: center;
+		margin: 0;
+		margin-top: 10px;
+	}
+
+	.stbutton,
+	.stoos {
+		margin: 0;
+		margin-top: 10px;
+		width: 50%;
+		text-align: center;
+	}
+
+	.shopform {
+		flex-direction: column;
+		margin: 0;
+	}
+
+	.sfamount {
+		margin-top: 10px;
 	}
 }
 

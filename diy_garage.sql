@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4deb2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 29-04-2022 a las 07:06:16
--- Versión del servidor: 10.5.15-MariaDB-0+deb11u1
--- Versión de PHP: 7.4.28
+-- Host: 127.0.0.1
+-- Generation Time: May 17, 2022 at 06:58 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,19 +18,19 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `diy_garage`
+-- Database: `diy_garage`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cabin-client`
+-- Table structure for table `cabin-client`
 --
 
 CREATE TABLE `cabin-client` (
   `Cabin_ID` int(10) NOT NULL,
   `Client_DNI` varchar(10) NOT NULL,
-  `Hour` time(6) NOT NULL,
+  `Hour` time NOT NULL,
   `Date` date NOT NULL,
   `Total` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `cabin-client` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `cabins`
+-- Table structure for table `cabins`
 --
 
 CREATE TABLE `cabins` (
@@ -48,7 +48,7 @@ CREATE TABLE `cabins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `cabins`
+-- Dumping data for table `cabins`
 --
 
 INSERT INTO `cabins` (`ID`, `€xh`, `Type`) VALUES
@@ -62,7 +62,7 @@ INSERT INTO `cabins` (`ID`, `€xh`, `Type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `client`
+-- Table structure for table `client`
 --
 
 CREATE TABLE `client` (
@@ -71,29 +71,31 @@ CREATE TABLE `client` (
   `Telf` int(14) NOT NULL,
   `E_mail` varchar(40) NOT NULL,
   `DNI` varchar(10) NOT NULL,
-  `Password` varchar(32) NOT NULL
+  `Password` varchar(32) NOT NULL,
+  `img` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `client`
+-- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`Name`, `Surname`, `Telf`, `E_mail`, `DNI`, `Password`) VALUES
-('Lucia', 'Sanchez', 862465609, 'Lucia@gmail.com', '14798322F', '1'),
-('Brandon', 'Moreno', 107158783, 'Brandon@gmail.com', '24732734Y', '1'),
-('Andres', 'Perez', 742571971, 'Andres@gmail.com', '38619590Z', '1'),
-('Jose', 'Perez', 119916095, 'Jose@gmail.com', '39763789D', '1'),
-('Andrea', 'Casquero', 466457167, 'Andrea@gmail.com', '47461706X', '1'),
-('Unai', 'Cortes', 516921334, 'Unai@gmail.com', '50223406P', '1'),
-('Leire', 'Urtubuia', 296902880, 'Leire@gmail.com', '69306470H', '1'),
-('Igone', 'Aizpurua', 152408969, 'Igone@gmail.com', '70890506K', '1'),
-('Ibon', 'Urrestilla', 537283090, 'Ibon@gmail.com', '74375855L', '1'),
-('Sara', 'Gimenez', 627218596, 'Sara@gmail.com', '78483927S', '1');
+INSERT INTO `client` (`Name`, `Surname`, `Telf`, `E_mail`, `DNI`, `Password`, `img`) VALUES
+('Lucia', 'Sanchez', 862465609, 'Lucia@gmail.com', '14798322F', '1', NULL),
+('Brandon', 'Moreno', 107158783, 'Brandon@gmail.com', '24732734Y', '1', NULL),
+('Andres', 'Perez', 742571971, 'Andres@gmail.com', '38619590Z', '1', NULL),
+('Jose', 'Perez', 119916095, 'Jose@gmail.com', '39763789D', '1', NULL),
+('Andrea', 'Casquero', 466457167, 'Andrea@gmail.com', '47461706X', '1', NULL),
+('Unai', 'Cortes', 516921334, 'Unai@gmail.com', '50223406P', '1', NULL),
+('Leire', 'Urtubuia', 296902880, 'Leire@gmail.com', '69306470H', '1', NULL),
+('Igone', 'Aizpurua', 152408969, 'Igone@gmail.com', '70890506K', '1', NULL),
+('Ibon', 'Urrestilla', 537283090, 'Ibon@gmail.com', '74375855L', '1', NULL),
+('Sara', 'Gimenez', 627218596, 'Sara@gmail.com', '78483927S', '1', NULL),
+('Admin', 'Admin', 1337, 'admin@uni2.eus', 'admin', 'admin', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `job`
+-- Table structure for table `job`
 --
 
 CREATE TABLE `job` (
@@ -103,7 +105,7 @@ CREATE TABLE `job` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `job`
+-- Dumping data for table `job`
 --
 
 INSERT INTO `job` (`ID`, `Name`, `€xh`) VALUES
@@ -115,7 +117,7 @@ INSERT INTO `job` (`ID`, `Name`, `€xh`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `job-worker`
+-- Table structure for table `job-worker`
 --
 
 CREATE TABLE `job-worker` (
@@ -129,7 +131,7 @@ CREATE TABLE `job-worker` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `product`
+-- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
@@ -137,13 +139,22 @@ CREATE TABLE `product` (
   `Brand` varchar(10) NOT NULL,
   `Name` varchar(15) NOT NULL,
   `Price` int(10) NOT NULL,
-  `Stock` int(20) NOT NULL
+  `Stock` int(20) NOT NULL,
+  `img` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`ID`, `Brand`, `Name`, `Price`, `Stock`, `img`) VALUES
+(1, 'Cepsa', 'Diesel 10L', 20, 3, NULL),
+(5, 'Michelin', 'Michelin Guide', 10, 1, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `shop`
+-- Table structure for table `shop`
 --
 
 CREATE TABLE `shop` (
@@ -155,10 +166,23 @@ CREATE TABLE `shop` (
   `Total_price` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `shop`
+--
+
+INSERT INTO `shop` (`Client_DNI`, `Product_ID`, `Amount`, `Date`, `Hour`, `Total_price`) VALUES
+('14798322F', 5, 1, '2022-05-16', '18:25:20.000000', 10),
+('admin', 1, 1, '2022-05-16', '16:22:00.000000', 40),
+('admin', 1, 1, '2022-05-16', '16:22:02.000000', 40),
+('admin', 1, 3, '2022-05-16', '16:25:45.000000', 120),
+('admin', 5, 1, '2022-05-16', '17:19:17.000000', 10),
+('admin', 5, 3, '2022-05-16', '17:19:45.000000', 30),
+('admin', 5, 1, '2022-05-16', '17:19:59.000000', 10);
+
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `vehicle`
+-- Table structure for table `vehicle`
 --
 
 CREATE TABLE `vehicle` (
@@ -172,7 +196,7 @@ CREATE TABLE `vehicle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `vehicle`
+-- Dumping data for table `vehicle`
 --
 
 INSERT INTO `vehicle` (`Enrollment`, `Brand`, `Model`, `Color`, `Year`, `Fuel`, `Client_DNI`) VALUES
@@ -190,7 +214,7 @@ INSERT INTO `vehicle` (`Enrollment`, `Brand`, `Model`, `Color`, `Year`, `Fuel`, 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `worker`
+-- Table structure for table `worker`
 --
 
 CREATE TABLE `worker` (
@@ -203,7 +227,7 @@ CREATE TABLE `worker` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `worker`
+-- Dumping data for table `worker`
 --
 
 INSERT INTO `worker` (`ID`, `Name`, `Surname`, `E_mail`, `Telf`, `DNI`) VALUES
@@ -219,24 +243,24 @@ INSERT INTO `worker` (`ID`, `Name`, `Surname`, `E_mail`, `Telf`, `DNI`) VALUES
 (10, 'Leire', 'Unzurrunzaga', 'L.Unzurrunzaga@gmail.com', 519059888, '27575395M');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `cabin-client`
+-- Indexes for table `cabin-client`
 --
 ALTER TABLE `cabin-client`
   ADD PRIMARY KEY (`Cabin_ID`,`Client_DNI`,`Hour`,`Date`),
   ADD KEY `FK_Client-DNI` (`Client_DNI`);
 
 --
--- Indices de la tabla `cabins`
+-- Indexes for table `cabins`
 --
 ALTER TABLE `cabins`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `client`
+-- Indexes for table `client`
 --
 ALTER TABLE `client`
   ADD PRIMARY KEY (`DNI`),
@@ -244,39 +268,40 @@ ALTER TABLE `client`
   ADD UNIQUE KEY `Telf` (`Telf`);
 
 --
--- Indices de la tabla `job`
+-- Indexes for table `job`
 --
 ALTER TABLE `job`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `job-worker`
+-- Indexes for table `job-worker`
 --
 ALTER TABLE `job-worker`
   ADD PRIMARY KEY (`Worker_ID`,`Work_ID`,`Day`),
   ADD KEY `Work-ID` (`Work_ID`);
 
 --
--- Indices de la tabla `product`
+-- Indexes for table `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indices de la tabla `shop`
+-- Indexes for table `shop`
 --
 ALTER TABLE `shop`
   ADD PRIMARY KEY (`Client_DNI`,`Product_ID`,`Date`,`Hour`),
   ADD KEY `FK_Product-ID` (`Product_ID`);
 
 --
--- Indices de la tabla `vehicle`
+-- Indexes for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  ADD PRIMARY KEY (`Enrollment`);
+  ADD PRIMARY KEY (`Enrollment`),
+  ADD KEY `vehicle_ibfk_1` (`Client_DNI`);
 
 --
--- Indices de la tabla `worker`
+-- Indexes for table `worker`
 --
 ALTER TABLE `worker`
   ADD PRIMARY KEY (`ID`),
@@ -285,32 +310,48 @@ ALTER TABLE `worker`
   ADD UNIQUE KEY `DNI` (`DNI`);
 
 --
--- Restricciones para tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Filtros para la tabla `cabin-client`
+-- AUTO_INCREMENT for table `product`
+--
+ALTER TABLE `product`
+  MODIFY `ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `shop`
+--
+ALTER TABLE `shop`
+  MODIFY `Product_ID` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cabin-client`
 --
 ALTER TABLE `cabin-client`
   ADD CONSTRAINT `FK_Cabin-ID` FOREIGN KEY (`Cabin_ID`) REFERENCES `cabins` (`ID`),
   ADD CONSTRAINT `FK_Client-DNI` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`);
 
 --
--- Filtros para la tabla `job-worker`
+-- Constraints for table `job-worker`
 --
 ALTER TABLE `job-worker`
   ADD CONSTRAINT `job-worker_ibfk_1` FOREIGN KEY (`Work_ID`) REFERENCES `job` (`ID`),
   ADD CONSTRAINT `job-worker_ibfk_2` FOREIGN KEY (`Worker_ID`) REFERENCES `worker` (`ID`);
 
 --
--- Filtros para la tabla `shop`
+-- Constraints for table `shop`
 --
 ALTER TABLE `shop`
-  ADD CONSTRAINT `FK_Product-ID` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`ID`),
-  ADD CONSTRAINT `shop_ibfk_1` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`);
+  ADD CONSTRAINT `shop_ibfk_1` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`),
+  ADD CONSTRAINT `shop_ibfk_2` FOREIGN KEY (`Product_ID`) REFERENCES `product` (`ID`);
 
 --
--- Filtros para la tabla `vehicle`
+-- Constraints for table `vehicle`
 --
 ALTER TABLE `vehicle`
   ADD CONSTRAINT `vehicle_ibfk_1` FOREIGN KEY (`Client_DNI`) REFERENCES `client` (`DNI`);
