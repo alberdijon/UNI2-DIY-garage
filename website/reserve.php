@@ -126,8 +126,8 @@
                     <form action="./backend/reserveconfirm.php" method="post">
                         <?php
                             if (isset ($_GET['cb'])) {
-                                $rrcabin = $_GET('cb');
-                                echo "<input type='hidden' name='cabin' value='$rrcabin' />";
+                                $rrcabin = $_GET['cb'];
+                                echo "<input type='hidden' name='rrcabin' value='$rrcabin' />";
                             }
                         ?>
                         <input type="hidden" name="reserve_date" value="<?php echo $date; ?>" />
