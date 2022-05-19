@@ -20,5 +20,5 @@
             $bin = $bin + (pow(2, ($cabin - 1)));
         }
     }
-    header("Location: ../reserve.php?bin=$bin");
+    header("Location: ../reserve.php?bin=$bin&dt=$date&tm=$time");
 ?>

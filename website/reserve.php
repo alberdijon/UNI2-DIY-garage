@@ -129,9 +129,20 @@
                                 $rrcabin = $_GET['cb'];
                                 echo "<input type='hidden' name='rrcabin' value='$rrcabin' />";
                             }
+
+                            if (isset ($_GET['dt'])) {
+                                $date = $_GET['dt'];
+                            }
+                            if (isset ($_GET['tm'])) {
+                                $time = $_GET['tm'];
+                            }
+                            if (isset ($_GET['dt'])) {
+                                $date = $_GET['dt'];
+                            }   
+
                         ?>
-                        <input type="hidden" name="reserve_date" value="<?php echo $date; ?>" />
-                        <input type="hidden" name="reserve_time" value="<?php echo $time; ?>" />
+                        <input type="hidden" name="rrdate" value="<?php echo $date; ?>" />
+                        <input type="hidden" name="rrtime" value="<?php echo $time; ?>" />
                         <input type="hidden" name="reserve_price" value="<?php echo $price; ?>" />
                         <input type="submit" class="greenbutton" value="Confirm">
                     </form>
