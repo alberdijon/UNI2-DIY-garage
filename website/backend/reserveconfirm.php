@@ -1,20 +1,16 @@
 <?php
     include "./connect.php";
     session_start();
-
-    $date = $_POST["date"];
-    $time = $_POST["time"];
-    $cabin = $_POST["cabin"];
-    $price = $_POST["price"];
-    $dni = $_SESSION["userID"];
-    $link = KonektatuDatuBasera();
-    echo $date;
-    echo $time;
-    echo $cabin;
-    echo $price;
-    echo $dni;
     
-    $sql = "INSERT INTO reservation VALUES ('$cabin', '$dni', '$time', '$date', '$price')";
+    $reserve_cabin = $_POST['reserve_cabin'];
+    $reserve_date = $_POST['reserve_date'];
+    $reserve_time = $_POST['reserve_time'];
+    $reserve_dni = $_SESSION["userID"];
+    $reserve_price = $_POST['reserve_price'];
+    $link = KonektatuDatuBasera();
+    echo $reserve_cabin;   
+
+    $sql = "INSERT INTO reservation VALUES ('$reserve_cabin', '$reserve_dni', '$reserve_time', '$reserve_date', '$reserve_price')";
     mysqli_query($link, $sql);
-    header("Location: ../reserve.php?reserve=success");
+    //header("Location: ../reserve.php?reserve=success");
 ?>

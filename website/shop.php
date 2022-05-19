@@ -177,8 +177,8 @@
 										}
 											
 										// Image
-										if ($row['img'] != "") {
-											echo "<img src='".$row['Image']."'/>";
+										if (isset ($row['Image'])) {
+											echo "<img class='stimage' src='".$row['img'];"' />";
 										}
 										else {
 											echo "<img src='./resources/nomedia.png'/>";

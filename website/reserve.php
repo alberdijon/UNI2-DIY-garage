@@ -71,7 +71,7 @@
                                             <?php
                                         } else {
                                             ?>
-                                            <input type="submit" class="rgcabin cabin cabinfalse" name="cabin" value="<?php echo "$cabin" ?>">
+                                            <input type="submit" class="rgcabin cabin cabinfalse" name="reservedcabin" value="<?php echo "$cabin" ?>">
                                             <?php
                                         }
                                     }
@@ -85,7 +85,7 @@
                                                 <?php
                                             } else {
                                                 ?>
-                                                <input type="submit" class="rgmcabin cabin cabinfalse" name="cabin" value="<?php echo "$cabin" ?>">
+                                                <input type="submit" class="rgmcabin cabin cabinfalse" name="reservedcabin" value="<?php echo "$cabin" ?>">
                                                 <?php
                                             }
                                         }
@@ -124,11 +124,16 @@
                         ?>
                     </div>
                     <form action="./backend/reserveconfirm.php" method="post">
-                        <input type="hidden" name="date" value="<?php echo $date; ?>" />
-                        <input type="hidden" name="time" value="<?php echo $time; ?>" />
-                        <input type="hidden" name="cabin" value="<?php echo $cabin; ?>" />
-                        <input type="hidden" name="price" value="<?php echo $price; ?>" />
-                        <input type="submit" class="greenbutton" type="submit" value="Confirm">
+                        <?php
+                            if (isset ($_GET['cb'])) {
+                                $rrcabin = $_GET('cb');
+                                echo "<input type='hidden' name='cabin' value='$rrcabin' />";
+                            }
+                        ?>
+                        <input type="hidden" name="reserve_date" value="<?php echo $date; ?>" />
+                        <input type="hidden" name="reserve_time" value="<?php echo $time; ?>" />
+                        <input type="hidden" name="reserve_price" value="<?php echo $price; ?>" />
+                        <input type="submit" class="greenbutton" value="Confirm">
                     </form>
                     
                 </div>
